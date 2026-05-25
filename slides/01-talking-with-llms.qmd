@@ -1,0 +1,124 @@
+---
+title: "Talking with LLMs via code"
+subtitle: "Programming with LLMs for Data Practitioners"
+author: "Julia Silge | Posit PBC"
+footer: "<https://juliasilge.github.io/applied-stats-byu-2026/>"
+highlight-style: atom-one
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    transition: fade
+    preview-links: auto
+    width: 1280
+    height: 720
+    template-partials:
+      - title-slide.html
+    title-slide-attributes:
+      data-background-image: "../images/undraw_chat-with-ai_ir62.svg"
+      data-background-size: "auto 50%"
+      data-background-position: "82% 85%"
+      data-background-repeat: "no-repeat"
+---
+
+# Hello!
+
+<center>
+
+<img src="https://github.com/juliasilge.png" style="border-radius: 50%;" width="300px"/>
+
+[{{< fa brands github >}} \@juliasilge](https://github.com/juliasilge)
+
+[{{< fa brands bluesky >}} \@juliasilge.com](https://bsky.app/profile/juliasilge.com)
+
+[{{< fa link >}} juliasilge.com](https://juliasilge.com/)
+
+</center>
+
+## Who are you?
+
+-   You know some R and/or Python
+-   You are curious about working with LLMs from code
+-   You want hands-on practice, not just slides
+
+## Day 1: Build on AI
+
+1.  Talking with LLMs via code (this session)
+2.  Programming with LLMs
+3.  Augmented generation
+4.  Beyond tools
+
+# Welcome and getting started {background-image="../images/undraw_chat-with-ai_ir62.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
+## Welcome (10 min)
+
+-   Introductions
+-   What to expect from these two days
+-   **Activity:** introduce yourself to your neighbors
+
+## Set-up and verify API access (10 min)
+
+-   How API keys work
+-   Where to put them so the workshop code can find them
+-   **Activity** (`01-hello-llm`): make your first API call by writing a short "I'm at SIAS 2026" social media post
+
+## Think empirically, be pragmatic (10 min)
+
+-   The right mindset for working with LLMs
+-   Models are not deterministic; try things, iterate, compare
+-   Extra time here to troubleshoot setup as needed
+
+# Anatomy of a conversation {background-image="../images/undraw_chat-with-ai_ir62.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
+## To get a response, you send a message (20 min)
+
+-   Under the hood: an HTTP request to a provider
+-   Message roles: `system`, `user`, `assistant`
+-   `ellmer` and `chatlas` hide the boilerplate
+
+## Activity: word guessing game (`02-word-game`)
+
+-   System prompt: *You are playing a word guessing game. At each turn, guess the word and tell us what it is.*
+-   First message includes a modifier (e.g. "In British English," "In pirate,") that steers later answers
+
+## The conversation is stateless
+
+-   The model has no memory between requests
+-   The library replays history each turn
+-   Demo (`clearbot`): show what happens when you clear the chat
+
+# How LLMs work {background-image="../images/undraw_chat-with-ai_ir62.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
+## Tokens as the fundamental unit (20 min)
+
+-   What is a token?
+-   How models predict the next token
+-   Why this matters for cost and context length
+-   Demo: token possibilities visualizer
+
+# Shinychat basics {background-image="../images/undraw_chat-with-ai_ir62.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
+## Try a chat UI in seconds (20 min)
+
+-   `live_console()` / `live_browser()` in ellmer
+-   `chat.console()` / `chat.app()` in chatlas
+-   **Activity** (`03-live`): launch a live chat against your own chat object
+
+## Build your own Shiny chat app
+
+-   Shiny `chat_ui()` and `chat_append()` (R: also `chat_mod_server()`)
+-   **Activity** (`04-word-game-reverse`): flip the word game so the LLM holds a secret word and gives hints; the user has to guess
+
+
+# Thanks!
+
+<center>
+
+<img src="https://github.com/juliasilge.png" style="border-radius: 50%;" width="300px"/>
+
+[{{< fa brands github >}} \@juliasilge](https://github.com/juliasilge)
+
+[{{< fa brands bluesky >}} \@juliasilge.com](https://bsky.app/profile/juliasilge.com)
+
+[{{< fa link >}} juliasilge.com](https://juliasilge.com/)
+
+</center>
+
+::: footer
+Illustrations from [unDraw](https://undraw.co/) 
+:::

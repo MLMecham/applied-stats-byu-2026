@@ -1,0 +1,61 @@
+/*-- scss:defaults --*/
+
+/*-- scss:rules --*/
+
+// Title slide layout:
+// - Reveal applies a .center class to title slides (via center: true, the
+//   default) and uses JS to set an inline `top` for vertical centering. Force
+//   the section back to the full slide height starting at top: 0 so absolute
+//   positioning of the inner block anchors to the top of the slide.
+// - Title and subtitle span the full slide width and sit on top of the
+//   illustration set via title-slide-attributes data-background-image
+//   (anchored in the lower-right corner).
+// - Author / institute / date stay in a narrower column so they don't crash
+//   into the illustration.
+.reveal section#title-slide {
+  top: 0 !important;
+  height: 100% !important;
+  text-align: left;
+}
+
+.reveal section#title-slide .title-slide-inner {
+  position: absolute;
+  top: 0%;
+  left: 2%;
+  right: 2%;
+  text-align: left;
+}
+
+.reveal section#title-slide .title,
+.reveal section#title-slide .subtitle {
+  text-align: left;
+  max-width: none;
+}
+
+.reveal section#title-slide .subtitle {
+  margin-bottom: 0.4em;
+}
+
+.reveal section#title-slide .author,
+.reveal section#title-slide .institute,
+.reveal section#title-slide .date {
+  text-align: left;
+  max-width: 50%;
+  font-size: 0.7em;
+  margin-top: 0.4em;
+}
+
+// Section divider slides (any slide that has an H1 as a direct child).
+// Override reveal's vertical centering for these so the heading anchors
+// near the top of the slide instead of floating in the middle.
+// The title slide's h1 lives inside .title-slide-inner, so this rule does
+// not affect it.
+.reveal .slides section:has(> h1) {
+  top: 0 !important;
+  height: 100% !important;
+}
+
+.reveal .slides section:has(> h1) > h1 {
+  margin-top: 5%;
+  text-align: left;
+}

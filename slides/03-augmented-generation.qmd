@@ -1,0 +1,99 @@
+---
+title: "Augmented generation"
+subtitle: "Programming with LLMs for Data Practitioners"
+author: "Julia Silge | Posit PBC"
+footer: "<https://juliasilge.github.io/applied-stats-byu-2026/>"
+highlight-style: atom-one
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    transition: fade
+    preview-links: auto
+    width: 1280
+    height: 720
+    template-partials:
+      - title-slide.html
+    title-slide-attributes:
+      data-background-image: "../images/undraw_ai-research-assistant_cxx0.svg"
+      data-background-size: "auto 50%"
+      data-background-position: "82% 85%"
+      data-background-repeat: "no-repeat"
+---
+
+# Augmented generation {background-image="../images/undraw_ai-research-assistant_cxx0.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
+
+How to add knowledge to LLMs and let them act on it. We will build a simple RAG system, which leads naturally into tool calling.
+
+# Manual RAG {background-image="../images/undraw_ai-research-assistant_cxx0.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
+## Context in, better answers out (10 min)
+
+-   "Retrieval-Augmented Generation" without any fancy infrastructure
+-   Stuff the relevant docs into the prompt yourself
+-   Most "RAG" is this idea plus automation
+
+## Activity: coding assistant (`13-coding-assistant`)
+
+-   Ask the LLM to write a function using a niche package (R: `weathR`, Python: `NWS`)
+-   First with no context; note what goes wrong
+-   Then paste the README into the prompt and compare
+
+# RAG {background-image="../images/undraw_ai-research-assistant_cxx0.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
+## How RAG actually works (30 min)
+
+-   Chunk your documents
+-   Compute embeddings for each chunk
+-   At query time, find the most similar chunks and add them to the prompt
+-   The "retrieval" is just nearest-neighbor search
+
+## Activity: build a dynamic RAG system (`14-rag`)
+
+-   Source documents: R for Data Science (R) or Polars Cookbook (Python)
+-   Tools: `ragnar` (R), `llama-index` or chatlas helpers (Python)
+-   Wire retrieval up as a tool the model can call
+
+# Tool calling {background-image="../images/undraw_ai-research-assistant_cxx0.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
+## Letting the model use your functions (20 min)
+
+-   The model decides when to call; you decide what is callable
+-   The shape: function name, description, JSON schema for arguments
+-   You execute the function and send the result back
+
+## Demos
+
+-   Manual loop (`_demos/manual-tools`): see every step
+-   Automatic loop (`_demos/tools`): let the library handle the round trips
+
+## Activity: quiz show with tools (`15-quiz-game-tools`)
+
+-   Provide a function that plays a sound (R: `beepr`, Python: `playsound`)
+-   Document it well and register it as a tool in the quiz show app
+-   Watch the model learn when to play which sound
+
+# Tool calling UI {background-image="../images/undraw_ai-research-assistant_cxx0.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
+## Showing tool activity to users (30 min)
+
+A series of progressive upgrades to the quiz show app (`16-quiz-game-ui`):
+
+-   Add tool annotations: give each tool an icon and title
+-   Return a `ContentToolResult` with a custom title and icon
+-   Track answers and score in reactive value boxes that update from tool calls
+-   (Optional) Add a "finish round" tool that displays the final score
+
+
+# Thanks!
+
+<center>
+
+<img src="https://github.com/juliasilge.png" style="border-radius: 50%;" width="300px"/>
+
+[{{< fa brands github >}} \@juliasilge](https://github.com/juliasilge)
+
+[{{< fa brands bluesky >}} \@juliasilge.com](https://bsky.app/profile/juliasilge.com)
+
+[{{< fa link >}} juliasilge.com](https://juliasilge.com/)
+
+</center>
+
+::: footer
+Illustrations from [unDraw](https://undraw.co/) 
+:::

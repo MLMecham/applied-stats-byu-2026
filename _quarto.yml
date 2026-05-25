@@ -1,0 +1,46 @@
+project:
+  type: website
+  render:
+    - "index.qmd"
+    - "slides/*.qmd"
+    - "!code/"
+    - "!CODE_OF_CONDUCT.md"
+  output-dir: docs
+
+website:
+  title: "Programming With LLMs For Data Practitioners"
+  description: "A workshop on programming with LLMs at SIAS 2026"
+  open-graph: true
+  twitter-card: true
+  site-url: "https://juliasilge.github.io/applied-stats-byu-2026/"
+  repo-url: "https://github.com/juliasilge/applied-stats-byu-2026"
+  repo-actions: [edit, issue]
+  search: false
+  navbar:
+    pinned: true
+    right:
+      - text: Learn more
+        menu:
+          - href: https://ellmer.tidyverse.org/
+            text: "ellmer"
+          - href: https://posit-dev.github.io/chatlas/
+            text: "chatlas"
+          - href: https://posit.co/products/ai/
+            text: "Posit AI"  
+
+  page-footer:
+    left: |
+      Content {{< fa brands creative-commons >}} 2026 by [Julia Silge](https://juliasilge.com/)<br>
+      All content licensed under a {{< fa brands creative-commons >}}
+      {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}}
+      [Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)
+    right: |
+      Made with [Quarto](https://quarto.org/)<br>
+      [View the source at {{< fa brands github >}} GitHub](https://github.com/juliasilge/applied-stats-byu-2026/)
+
+format:
+  html:
+    theme:
+      - zephyr
+      - footer.scss
+    toc: false

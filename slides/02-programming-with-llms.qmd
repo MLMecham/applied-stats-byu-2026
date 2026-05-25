@@ -1,0 +1,117 @@
+---
+title: "Programming with LLMs"
+subtitle: "Programming with LLMs for Data Practitioners"
+author: "Julia Silge | Posit PBC"
+footer: "<https://juliasilge.github.io/applied-stats-byu-2026/>"
+highlight-style: atom-one
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    transition: fade
+    preview-links: auto
+    width: 1280
+    height: 720
+    template-partials:
+      - title-slide.html
+    title-slide-attributes:
+      data-background-image: "../images/undraw_large-language-models_m4no.svg"
+      data-background-size: "auto 45%"
+      data-background-position: "82% 85%"
+      data-background-repeat: "no-repeat"
+---
+
+# Programming with LLMs {background-image="../images/undraw_large-language-models_m4no.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
+
+A deeper look at what you can do with LLMs from code that you can't easily do in a chat UI.
+
+# Choosing a model {background-image="../images/undraw_large-language-models_m4no.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
+## The landscape (15 min)
+
+-   Major providers: OpenAI, Anthropic, Google, plus local options like ollama
+-   Tradeoffs: capability, context length, speed, cost
+-   Newer is not always better for your task
+
+## Activity: same question, different model (`05-models`)
+
+-   Change one string to switch providers: `chat_openai()` vs. `chat_anthropic()`, etc.
+-   Compare answers, latency, and token usage
+
+# Multi-modal input {background-image="../images/undraw_large-language-models_m4no.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
+## Beyond text (15 min)
+
+-   Vision: pass an image alongside your prompt
+-   PDFs: pass document bytes directly
+-   When to extract text up front vs. let the model see the file
+
+## Activities
+
+-   `06-vision`: pass food photos and ask for recipe suggestions
+-   `07-pdf`: take a PDF recipe and turn it into clean Markdown
+
+# Structured output {background-image="../images/undraw_large-language-models_m4no.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
+## Getting parseable answers (15 min)
+
+-   R: `ellmer::type_*()`
+-   Python: Pydantic models with `chatlas`
+-   Schemas double as documentation for the model
+
+## Activity (`08-structured-output`)
+
+-   Extract structured fields from the recipe PDF: ingredients, steps, yield, prep time
+-   Tip: turn on `use_attribute_docstrings` in Pydantic to let docstrings guide the model
+
+# Parallel and batch calls {background-image="../images/undraw_large-language-models_m4no.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
+## Scaling out (10 min)
+
+-   When one prompt becomes a hundred
+-   Parallel API calls vs. provider batch APIs (cheaper, slower)
+-   Watch for rate limits
+
+## Activity (`09-batch`)
+
+-   Re-run the structured extraction across many recipes in parallel
+-   Save the JSON output so we can reuse it later
+
+# Prompt engineering and hallucinations {background-image="../images/undraw_large-language-models_m4no.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
+## Models will confidently make things up (35 min)
+
+-   What hallucination looks like
+-   Why a confident answer is not a correct answer
+
+## Activity: ask about a plot (`10-plot-interpret`)
+
+-   Generate a plot of mpg vs. weight from `mtcars`
+-   Ask the model to interpret it
+-   Discuss what it got right and where it leaned on priors
+
+## Activity: ask about noise (`11-plot-noise`)
+
+-   Replace the plot with random noise, keep the prompt the same
+-   What does the model say?
+-   Part 2: pair up and try to steer the model into a "decent" interpretation of pure noise
+
+## System prompt best practices
+
+-   Be explicit about role, audience, and format
+-   Show, don't just tell (few-shot examples)
+-   Tell the model how to handle uncertainty
+-   **Activity** (`12-quiz-game-prompt`): write the system prompt for our quiz game show
+
+
+# Thanks!
+
+<center>
+
+<img src="https://github.com/juliasilge.png" style="border-radius: 50%;" width="300px"/>
+
+[{{< fa brands github >}} \@juliasilge](https://github.com/juliasilge)
+
+[{{< fa brands bluesky >}} \@juliasilge.com](https://bsky.app/profile/juliasilge.com)
+
+[{{< fa link >}} juliasilge.com](https://juliasilge.com/)
+
+</center>
+
+::: footer
+Illustrations from [unDraw](https://undraw.co/) 
+:::

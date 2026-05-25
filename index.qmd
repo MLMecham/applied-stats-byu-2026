@@ -1,0 +1,73 @@
+---
+title: "Programming with LLMs for Data Practitioners"
+---
+
+![](images/undraw_vibe-coding_mjme.svg){fig-align="center" width="55%" fig-alt="Illustration of a person coding alongside an AI assistant"}
+
+## Welcome
+
+These are the materials for a two-day workshop at the [50th Summer Institute of Applied Statistics (SIAS)](https://statistics.byu.edu/sias) at [Brigham Young University](https://statistics.byu.edu/) on 17-18 June 2026, taught by [Julia Silge](https://juliasilge.com/). The workshop is split into two days:
+
+- **Day 1, Build on AI:** programming with large language models (LLMs) from R and Python using [ellmer](https://ellmer.tidyverse.org/) and [chatlas](https://posit-dev.github.io/chatlas/), covering prompts, token management, structured output, tool calling, retrieval-augmented generation (RAG), and Shiny chat interfaces.
+
+- **Day 2, Build with AI:** using AI coding assistants effectively as a data practitioner, from inline completions to chat-based help to agentic, more autonomous workflows.
+
+No prior AI background is required; the workshop is built for both newcomers and experienced data practitioners.
+
+## Learning objectives
+
+At the end of this workshop, participants will understand how to:
+
+- Call LLMs from R and Python using [ellmer](https://ellmer.tidyverse.org/) and/or [chatlas](https://posit-dev.github.io/chatlas/).
+- Design effective system prompts and reason about token usage, history, and cost.
+- Use structured output and tool calling to make LLMs reliably interact with data and other systems.
+- Build retrieval-augmented generation (RAG) workflows and wrap LLM-powered features into [Shiny](https://shiny.posit.co/) apps.
+- Choose between inline, chat, and agentic AI coding assistants and use each one effectively.
+- Maintain control of AI-assisted code through good context, tests, and plans.
+
+## Preparation
+
+We will be working locally during the workshop, so please come with a laptop that has the following installed (all available for free):
+
+- A recent version of Python (perhaps installed using [uv](https://docs.astral.sh/uv/guides/install-python/)) and/or R
+- A recent version of your IDE of choice, such as [Positron](https://positron.posit.co/download), [RStudio](https://posit.co/download/rstudio-desktop), or [VS Code](https://code.visualstudio.com/Download)
+- Clone the [workshop repo](https://github.com/juliasilge/applied-stats-byu-2026)
+- Install the Python packages from `requirements.txt` and/or the R packages via TODO.
+
+You will also need API credentials for at least one LLM provider; we will share details closer to the workshop.
+
+## Schedule
+
+Code files for working along [are available on GitHub](https://github.com/juliasilge/applied-stats-byu-2026/tree/main/code).
+
+### Tuesday, 17 June 2026: Build on AI
+
+| Time          | Activity                                                                   |
+| :------------ | :------------------------------------------------------------------------- |
+| 09:00 - 10:10 | [Talking with LLMs via code](slides/01-talking-with-llms.html)             |
+| 10:10 - 10:30 | *Break*                                                             |
+| 10:30 - 11:45 | [Programming with LLMs](slides/02-programming-with-llms.html)              |
+| 11:45 - 13:30 | *Lunch*                                                              |
+| 13:30 - 14:40 | [Augmented generation](slides/03-augmented-generation.html)                |
+| 14:40 - 15:00 | *Break*                                                             |
+| 15:00 - 16:15 | [Beyond tools](slides/04-beyond-tools.html)                                |
+
+### Wednesday, 18 June 2026: Build with AI
+
+| Time          | Activity                                                                   |
+| :------------ | :------------------------------------------------------------------------- |
+| 09:00 - 10:10 | [Intro to AI coding assistants](slides/05-ai-coding-assistants.html)       |
+| 10:10 - 10:30 | *Break*                                                             |
+| 10:30 - 11:45 | [Code completions and inline suggestions](slides/06-code-completions.html) |
+| 11:45 - 13:30 | *Lunch*                                                              |
+| 13:30 - 14:40 | [Chat-based assistance](slides/07-chat-assistance.html)                    |
+| 14:40 - 15:00 | *Break*                                                             |
+| 15:00 - 16:15 | [Agentic and autonomous workflows](slides/08-agentic-workflows.html)       |
+
+## Instructor bio
+
+Julia Silge is a data scientist and engineering manager at [Posit PBC](https://posit.co/), where she works on open source software for data science in Python and R. She is an author, an international keynote speaker, and a real-world practitioner focusing on data analysis and machine learning. Julia loves text analysis, making beautiful charts, and communicating about technical topics with diverse audiences.
+
+## Credits
+
+Illustrations throughout the workshop materials are from [unDraw](https://undraw.co/) and used under their [license](https://undraw.co/license).

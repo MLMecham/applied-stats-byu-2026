@@ -1,0 +1,8 @@
+chatlas
+shiny
+ipykernel
+jupyter
+papermill
+pandas
+plotnine
+great_tables

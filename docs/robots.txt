@@ -1,0 +1,1 @@
+Sitemap: https://juliasilge.github.io/applied-stats-byu-2026/sitemap.xml

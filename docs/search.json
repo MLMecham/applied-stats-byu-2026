@@ -1,0 +1,422 @@
+[
+  {
+    "objectID": "slides/08-agentic-workflows.html#what-is-an-agent",
+    "href": "slides/08-agentic-workflows.html#what-is-an-agent",
+    "title": "Agentic workflows",
+    "section": "What is an agent?",
+    "text": "What is an agent?\nTODO"
+  },
+  {
+    "objectID": "slides/08-agentic-workflows.html#planning-before-doing",
+    "href": "slides/08-agentic-workflows.html#planning-before-doing",
+    "title": "Agentic workflows",
+    "section": "Planning before doing",
+    "text": "Planning before doing\nTODO"
+  },
+  {
+    "objectID": "slides/08-agentic-workflows.html#tests-as-guardrails",
+    "href": "slides/08-agentic-workflows.html#tests-as-guardrails",
+    "title": "Agentic workflows",
+    "section": "Tests as guardrails",
+    "text": "Tests as guardrails\nTODO"
+  },
+  {
+    "objectID": "slides/08-agentic-workflows.html#maintaining-control",
+    "href": "slides/08-agentic-workflows.html#maintaining-control",
+    "title": "Agentic workflows",
+    "section": "Maintaining control",
+    "text": "Maintaining control\nTODO"
+  },
+  {
+    "objectID": "slides/08-agentic-workflows.html#where-to-go-from-here",
+    "href": "slides/08-agentic-workflows.html#where-to-go-from-here",
+    "title": "Agentic workflows",
+    "section": "Where to go from here",
+    "text": "Where to go from here\nTODO"
+  },
+  {
+    "objectID": "slides/06-code-completions.html#inline-suggestions-in-practice",
+    "href": "slides/06-code-completions.html#inline-suggestions-in-practice",
+    "title": "Code completions and inline suggestions",
+    "section": "Inline suggestions in practice",
+    "text": "Inline suggestions in practice\nTODO"
+  },
+  {
+    "objectID": "slides/06-code-completions.html#using-comments-to-steer",
+    "href": "slides/06-code-completions.html#using-comments-to-steer",
+    "title": "Code completions and inline suggestions",
+    "section": "Using comments to steer",
+    "text": "Using comments to steer\nTODO"
+  },
+  {
+    "objectID": "slides/06-code-completions.html#accepting-editing-rejecting",
+    "href": "slides/06-code-completions.html#accepting-editing-rejecting",
+    "title": "Code completions and inline suggestions",
+    "section": "Accepting, editing, rejecting",
+    "text": "Accepting, editing, rejecting\nTODO"
+  },
+  {
+    "objectID": "slides/06-code-completions.html#habits-that-go-wrong",
+    "href": "slides/06-code-completions.html#habits-that-go-wrong",
+    "title": "Code completions and inline suggestions",
+    "section": "Habits that go wrong",
+    "text": "Habits that go wrong\nTODO"
+  },
+  {
+    "objectID": "slides/04-beyond-tools.html#chatting-with-your-data-10-min",
+    "href": "slides/04-beyond-tools.html#chatting-with-your-data-10-min",
+    "title": "Beyond tools",
+    "section": "Chatting with your data (10 min)",
+    "text": "Chatting with your data (10 min)\n\nA drop-in Shiny module that turns a data frame into a chat-driven explorer\nThe model writes the SQL or dplyr; the app runs it\nActivity (17-querychat): add querychat to an existing Shiny app"
+  },
+  {
+    "objectID": "slides/04-beyond-tools.html#model-context-protocol-10-min",
+    "href": "slides/04-beyond-tools.html#model-context-protocol-10-min",
+    "title": "Beyond tools",
+    "section": "Model Context Protocol (10 min)",
+    "text": "Model Context Protocol (10 min)\n\nA common standard for exposing tools and resources to LLM clients\nWhy this matters: write a server once, use it from many clients\nMCP support is growing in Positron, VS Code, Claude Desktop, etc."
+  },
+  {
+    "objectID": "slides/04-beyond-tools.html#activity-18-mcp",
+    "href": "slides/04-beyond-tools.html#activity-18-mcp",
+    "title": "Beyond tools",
+    "section": "Activity (18-mcp)",
+    "text": "Activity (18-mcp)\n\nConnect an MCP server to ellmer or chatlas\nOptions to try: ArXiV, fetcher, git-ingest, github, context7\nNotice: the model now has access to tools you did not write"
+  },
+  {
+    "objectID": "slides/04-beyond-tools.html#what-is-an-agent-30-min",
+    "href": "slides/04-beyond-tools.html#what-is-an-agent-30-min",
+    "title": "Beyond tools",
+    "section": "What is an agent? (30 min)",
+    "text": "What is an agent? (30 min)\n\nHadley / Simon Willison short definition: an LLM with a read tool and a write tool\nThe “you know it when you see it” definition: autonomous, long-context, minimal intervention\nDemo: a working agent (databot-style) doing a real task end to end"
+  },
+  {
+    "objectID": "slides/04-beyond-tools.html#hopes-and-fears-30-min",
+    "href": "slides/04-beyond-tools.html#hopes-and-fears-30-min",
+    "title": "Beyond tools",
+    "section": "Hopes and fears (30 min)",
+    "text": "Hopes and fears (30 min)\n\nWhere these tools seem to be going\nWhat to watch out for: cost, lock-in, evaluation, trust\nOpen discussion: what does this change about your day-to-day work?"
+  },
+  {
+    "objectID": "slides/02-programming-with-llms.html#the-landscape-15-min",
+    "href": "slides/02-programming-with-llms.html#the-landscape-15-min",
+    "title": "Programming with LLMs",
+    "section": "The landscape (15 min)",
+    "text": "The landscape (15 min)\n\nMajor providers: OpenAI, Anthropic, Google, plus local options like ollama\nTradeoffs: capability, context length, speed, cost\nNewer is not always better for your task"
+  },
+  {
+    "objectID": "slides/02-programming-with-llms.html#activity-same-question-different-model-05-models",
+    "href": "slides/02-programming-with-llms.html#activity-same-question-different-model-05-models",
+    "title": "Programming with LLMs",
+    "section": "Activity: same question, different model (05-models)",
+    "text": "Activity: same question, different model (05-models)\n\nChange one string to switch providers: chat_openai() vs. chat_anthropic(), etc.\nCompare answers, latency, and token usage"
+  },
+  {
+    "objectID": "slides/02-programming-with-llms.html#beyond-text-15-min",
+    "href": "slides/02-programming-with-llms.html#beyond-text-15-min",
+    "title": "Programming with LLMs",
+    "section": "Beyond text (15 min)",
+    "text": "Beyond text (15 min)\n\nVision: pass an image alongside your prompt\nPDFs: pass document bytes directly\nWhen to extract text up front vs. let the model see the file"
+  },
+  {
+    "objectID": "slides/02-programming-with-llms.html#activities",
+    "href": "slides/02-programming-with-llms.html#activities",
+    "title": "Programming with LLMs",
+    "section": "Activities",
+    "text": "Activities\n\n06-vision: pass food photos and ask for recipe suggestions\n07-pdf: take a PDF recipe and turn it into clean Markdown"
+  },
+  {
+    "objectID": "slides/02-programming-with-llms.html#getting-parseable-answers-15-min",
+    "href": "slides/02-programming-with-llms.html#getting-parseable-answers-15-min",
+    "title": "Programming with LLMs",
+    "section": "Getting parseable answers (15 min)",
+    "text": "Getting parseable answers (15 min)\n\nR: ellmer::type_*()\nPython: Pydantic models with chatlas\nSchemas double as documentation for the model"
+  },
+  {
+    "objectID": "slides/02-programming-with-llms.html#activity-08-structured-output",
+    "href": "slides/02-programming-with-llms.html#activity-08-structured-output",
+    "title": "Programming with LLMs",
+    "section": "Activity (08-structured-output)",
+    "text": "Activity (08-structured-output)\n\nExtract structured fields from the recipe PDF: ingredients, steps, yield, prep time\nTip: turn on use_attribute_docstrings in Pydantic to let docstrings guide the model"
+  },
+  {
+    "objectID": "slides/02-programming-with-llms.html#scaling-out-10-min",
+    "href": "slides/02-programming-with-llms.html#scaling-out-10-min",
+    "title": "Programming with LLMs",
+    "section": "Scaling out (10 min)",
+    "text": "Scaling out (10 min)\n\nWhen one prompt becomes a hundred\nParallel API calls vs. provider batch APIs (cheaper, slower)\nWatch for rate limits"
+  },
+  {
+    "objectID": "slides/02-programming-with-llms.html#activity-09-batch",
+    "href": "slides/02-programming-with-llms.html#activity-09-batch",
+    "title": "Programming with LLMs",
+    "section": "Activity (09-batch)",
+    "text": "Activity (09-batch)\n\nRe-run the structured extraction across many recipes in parallel\nSave the JSON output so we can reuse it later"
+  },
+  {
+    "objectID": "slides/02-programming-with-llms.html#models-will-confidently-make-things-up-35-min",
+    "href": "slides/02-programming-with-llms.html#models-will-confidently-make-things-up-35-min",
+    "title": "Programming with LLMs",
+    "section": "Models will confidently make things up (35 min)",
+    "text": "Models will confidently make things up (35 min)\n\nWhat hallucination looks like\nWhy a confident answer is not a correct answer"
+  },
+  {
+    "objectID": "slides/02-programming-with-llms.html#activity-ask-about-a-plot-10-plot-interpret",
+    "href": "slides/02-programming-with-llms.html#activity-ask-about-a-plot-10-plot-interpret",
+    "title": "Programming with LLMs",
+    "section": "Activity: ask about a plot (10-plot-interpret)",
+    "text": "Activity: ask about a plot (10-plot-interpret)\n\nGenerate a plot of mpg vs. weight from mtcars\nAsk the model to interpret it\nDiscuss what it got right and where it leaned on priors"
+  },
+  {
+    "objectID": "slides/02-programming-with-llms.html#activity-ask-about-noise-11-plot-noise",
+    "href": "slides/02-programming-with-llms.html#activity-ask-about-noise-11-plot-noise",
+    "title": "Programming with LLMs",
+    "section": "Activity: ask about noise (11-plot-noise)",
+    "text": "Activity: ask about noise (11-plot-noise)\n\nReplace the plot with random noise, keep the prompt the same\nWhat does the model say?\nPart 2: pair up and try to steer the model into a “decent” interpretation of pure noise"
+  },
+  {
+    "objectID": "slides/02-programming-with-llms.html#system-prompt-best-practices",
+    "href": "slides/02-programming-with-llms.html#system-prompt-best-practices",
+    "title": "Programming with LLMs",
+    "section": "System prompt best practices",
+    "text": "System prompt best practices\n\nBe explicit about role, audience, and format\nShow, don’t just tell (few-shot examples)\nTell the model how to handle uncertainty\nActivity (12-quiz-game-prompt): write the system prompt for our quiz game show"
+  },
+  {
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "Programming with LLMs for Data Practitioners",
+    "section": "Welcome",
+    "text": "Welcome\nThese are the materials for a two-day workshop at the 50th Summer Institute of Applied Statistics (SIAS) at Brigham Young University on 17-18 June 2026, taught by Julia Silge. The workshop is split into two days:\n\nDay 1, Build on AI: programming with large language models (LLMs) from R and Python using ellmer and chatlas, covering prompts, token management, structured output, tool calling, retrieval-augmented generation (RAG), and Shiny chat interfaces.\nDay 2, Build with AI: using AI coding assistants effectively as a data practitioner, from inline completions to chat-based help to agentic, more autonomous workflows.\n\nNo prior AI background is required; the workshop is built for both newcomers and experienced data practitioners."
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "Programming with LLMs for Data Practitioners",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nAt the end of this workshop, participants will understand how to:\n\nCall LLMs from R and Python using ellmer and/or chatlas.\nDesign effective system prompts and reason about token usage, history, and cost.\nUse structured output and tool calling to make LLMs reliably interact with data and other systems.\nBuild retrieval-augmented generation (RAG) workflows and wrap LLM-powered features into Shiny apps.\nChoose between inline, chat, and agentic AI coding assistants and use each one effectively.\nMaintain control of AI-assisted code through good context, tests, and plans."
+  },
+  {
+    "objectID": "index.html#preparation",
+    "href": "index.html#preparation",
+    "title": "Programming with LLMs for Data Practitioners",
+    "section": "Preparation",
+    "text": "Preparation\nWe will be working locally during the workshop, so please come with a laptop that has the following installed (all available for free):\n\nA recent version of Python (perhaps installed using uv) and/or R\nA recent version of your IDE of choice, such as Positron, RStudio, or VS Code\nClone the workshop repo\nInstall the Python packages from requirements.txt and/or the R packages via TODO.\n\nYou will also need API credentials for at least one LLM provider; we will share details closer to the workshop."
+  },
+  {
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "Programming with LLMs for Data Practitioners",
+    "section": "Schedule",
+    "text": "Schedule\nCode files for working along are available on GitHub.\n\nTuesday, 17 June 2026: Build on AI\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 10:10\nTalking with LLMs via code\n\n\n10:10 - 10:30\nBreak\n\n\n10:30 - 11:45\nProgramming with LLMs\n\n\n11:45 - 13:30\nLunch\n\n\n13:30 - 14:40\nAugmented generation\n\n\n14:40 - 15:00\nBreak\n\n\n15:00 - 16:15\nBeyond tools\n\n\n\n\n\nWednesday, 18 June 2026: Build with AI\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 10:10\nIntro to AI coding assistants\n\n\n10:10 - 10:30\nBreak\n\n\n10:30 - 11:45\nCode completions and inline suggestions\n\n\n11:45 - 13:30\nLunch\n\n\n13:30 - 14:40\nChat-based assistance\n\n\n14:40 - 15:00\nBreak\n\n\n15:00 - 16:15\nAgentic and autonomous workflows"
+  },
+  {
+    "objectID": "index.html#instructor-bio",
+    "href": "index.html#instructor-bio",
+    "title": "Programming with LLMs for Data Practitioners",
+    "section": "Instructor bio",
+    "text": "Instructor bio\nJulia Silge is a data scientist and engineering manager at Posit PBC, where she works on open source software for data science in Python and R. She is an author, an international keynote speaker, and a real-world practitioner focusing on data analysis and machine learning. Julia loves text analysis, making beautiful charts, and communicating about technical topics with diverse audiences."
+  },
+  {
+    "objectID": "index.html#credits",
+    "href": "index.html#credits",
+    "title": "Programming with LLMs for Data Practitioners",
+    "section": "Credits",
+    "text": "Credits\nIllustrations throughout the workshop materials are from unDraw and used under their license."
+  },
+  {
+    "objectID": "slides/01-talking-with-llms.html#who-are-you",
+    "href": "slides/01-talking-with-llms.html#who-are-you",
+    "title": "Talking with LLMs via code",
+    "section": "Who are you?",
+    "text": "Who are you?\n\nYou know some R and/or Python\nYou are curious about working with LLMs from code\nYou want hands-on practice, not just slides"
+  },
+  {
+    "objectID": "slides/01-talking-with-llms.html#day-1-build-on-ai",
+    "href": "slides/01-talking-with-llms.html#day-1-build-on-ai",
+    "title": "Talking with LLMs via code",
+    "section": "Day 1: Build on AI",
+    "text": "Day 1: Build on AI\n\nTalking with LLMs via code (this session)\nProgramming with LLMs\nAugmented generation\nBeyond tools"
+  },
+  {
+    "objectID": "slides/01-talking-with-llms.html#welcome-10-min",
+    "href": "slides/01-talking-with-llms.html#welcome-10-min",
+    "title": "Talking with LLMs via code",
+    "section": "Welcome (10 min)",
+    "text": "Welcome (10 min)\n\nIntroductions\nWhat to expect from these two days\nActivity: introduce yourself to your neighbors"
+  },
+  {
+    "objectID": "slides/01-talking-with-llms.html#set-up-and-verify-api-access-10-min",
+    "href": "slides/01-talking-with-llms.html#set-up-and-verify-api-access-10-min",
+    "title": "Talking with LLMs via code",
+    "section": "Set-up and verify API access (10 min)",
+    "text": "Set-up and verify API access (10 min)\n\nHow API keys work\nWhere to put them so the workshop code can find them\nActivity (01-hello-llm): make your first API call by writing a short “I’m at SIAS 2026” social media post"
+  },
+  {
+    "objectID": "slides/01-talking-with-llms.html#think-empirically-be-pragmatic-10-min",
+    "href": "slides/01-talking-with-llms.html#think-empirically-be-pragmatic-10-min",
+    "title": "Talking with LLMs via code",
+    "section": "Think empirically, be pragmatic (10 min)",
+    "text": "Think empirically, be pragmatic (10 min)\n\nThe right mindset for working with LLMs\nModels are not deterministic; try things, iterate, compare\nExtra time here to troubleshoot setup as needed"
+  },
+  {
+    "objectID": "slides/01-talking-with-llms.html#to-get-a-response-you-send-a-message-20-min",
+    "href": "slides/01-talking-with-llms.html#to-get-a-response-you-send-a-message-20-min",
+    "title": "Talking with LLMs via code",
+    "section": "To get a response, you send a message (20 min)",
+    "text": "To get a response, you send a message (20 min)\n\nUnder the hood: an HTTP request to a provider\nMessage roles: system, user, assistant\nellmer and chatlas hide the boilerplate"
+  },
+  {
+    "objectID": "slides/01-talking-with-llms.html#activity-word-guessing-game-02-word-game",
+    "href": "slides/01-talking-with-llms.html#activity-word-guessing-game-02-word-game",
+    "title": "Talking with LLMs via code",
+    "section": "Activity: word guessing game (02-word-game)",
+    "text": "Activity: word guessing game (02-word-game)\n\nSystem prompt: You are playing a word guessing game. At each turn, guess the word and tell us what it is.\nFirst message includes a modifier (e.g. “In British English,” “In pirate,”) that steers later answers"
+  },
+  {
+    "objectID": "slides/01-talking-with-llms.html#the-conversation-is-stateless",
+    "href": "slides/01-talking-with-llms.html#the-conversation-is-stateless",
+    "title": "Talking with LLMs via code",
+    "section": "The conversation is stateless",
+    "text": "The conversation is stateless\n\nThe model has no memory between requests\nThe library replays history each turn\nDemo (clearbot): show what happens when you clear the chat"
+  },
+  {
+    "objectID": "slides/01-talking-with-llms.html#tokens-as-the-fundamental-unit-20-min",
+    "href": "slides/01-talking-with-llms.html#tokens-as-the-fundamental-unit-20-min",
+    "title": "Talking with LLMs via code",
+    "section": "Tokens as the fundamental unit (20 min)",
+    "text": "Tokens as the fundamental unit (20 min)\n\nWhat is a token?\nHow models predict the next token\nWhy this matters for cost and context length\nDemo: token possibilities visualizer"
+  },
+  {
+    "objectID": "slides/01-talking-with-llms.html#try-a-chat-ui-in-seconds-20-min",
+    "href": "slides/01-talking-with-llms.html#try-a-chat-ui-in-seconds-20-min",
+    "title": "Talking with LLMs via code",
+    "section": "Try a chat UI in seconds (20 min)",
+    "text": "Try a chat UI in seconds (20 min)\n\nlive_console() / live_browser() in ellmer\nchat.console() / chat.app() in chatlas\nActivity (03-live): launch a live chat against your own chat object"
+  },
+  {
+    "objectID": "slides/01-talking-with-llms.html#build-your-own-shiny-chat-app",
+    "href": "slides/01-talking-with-llms.html#build-your-own-shiny-chat-app",
+    "title": "Talking with LLMs via code",
+    "section": "Build your own Shiny chat app",
+    "text": "Build your own Shiny chat app\n\nShiny chat_ui() and chat_append() (R: also chat_mod_server())\nActivity (04-word-game-reverse): flip the word game so the LLM holds a secret word and gives hints; the user has to guess"
+  },
+  {
+    "objectID": "slides/03-augmented-generation.html#context-in-better-answers-out-10-min",
+    "href": "slides/03-augmented-generation.html#context-in-better-answers-out-10-min",
+    "title": "Augmented generation",
+    "section": "Context in, better answers out (10 min)",
+    "text": "Context in, better answers out (10 min)\n\n“Retrieval-Augmented Generation” without any fancy infrastructure\nStuff the relevant docs into the prompt yourself\nMost “RAG” is this idea plus automation"
+  },
+  {
+    "objectID": "slides/03-augmented-generation.html#activity-coding-assistant-13-coding-assistant",
+    "href": "slides/03-augmented-generation.html#activity-coding-assistant-13-coding-assistant",
+    "title": "Augmented generation",
+    "section": "Activity: coding assistant (13-coding-assistant)",
+    "text": "Activity: coding assistant (13-coding-assistant)\n\nAsk the LLM to write a function using a niche package (R: weathR, Python: NWS)\nFirst with no context; note what goes wrong\nThen paste the README into the prompt and compare"
+  },
+  {
+    "objectID": "slides/03-augmented-generation.html#how-rag-actually-works-30-min",
+    "href": "slides/03-augmented-generation.html#how-rag-actually-works-30-min",
+    "title": "Augmented generation",
+    "section": "How RAG actually works (30 min)",
+    "text": "How RAG actually works (30 min)\n\nChunk your documents\nCompute embeddings for each chunk\nAt query time, find the most similar chunks and add them to the prompt\nThe “retrieval” is just nearest-neighbor search"
+  },
+  {
+    "objectID": "slides/03-augmented-generation.html#activity-build-a-dynamic-rag-system-14-rag",
+    "href": "slides/03-augmented-generation.html#activity-build-a-dynamic-rag-system-14-rag",
+    "title": "Augmented generation",
+    "section": "Activity: build a dynamic RAG system (14-rag)",
+    "text": "Activity: build a dynamic RAG system (14-rag)\n\nSource documents: R for Data Science (R) or Polars Cookbook (Python)\nTools: ragnar (R), llama-index or chatlas helpers (Python)\nWire retrieval up as a tool the model can call"
+  },
+  {
+    "objectID": "slides/03-augmented-generation.html#letting-the-model-use-your-functions-20-min",
+    "href": "slides/03-augmented-generation.html#letting-the-model-use-your-functions-20-min",
+    "title": "Augmented generation",
+    "section": "Letting the model use your functions (20 min)",
+    "text": "Letting the model use your functions (20 min)\n\nThe model decides when to call; you decide what is callable\nThe shape: function name, description, JSON schema for arguments\nYou execute the function and send the result back"
+  },
+  {
+    "objectID": "slides/03-augmented-generation.html#demos",
+    "href": "slides/03-augmented-generation.html#demos",
+    "title": "Augmented generation",
+    "section": "Demos",
+    "text": "Demos\n\nManual loop (_demos/manual-tools): see every step\nAutomatic loop (_demos/tools): let the library handle the round trips"
+  },
+  {
+    "objectID": "slides/03-augmented-generation.html#activity-quiz-show-with-tools-15-quiz-game-tools",
+    "href": "slides/03-augmented-generation.html#activity-quiz-show-with-tools-15-quiz-game-tools",
+    "title": "Augmented generation",
+    "section": "Activity: quiz show with tools (15-quiz-game-tools)",
+    "text": "Activity: quiz show with tools (15-quiz-game-tools)\n\nProvide a function that plays a sound (R: beepr, Python: playsound)\nDocument it well and register it as a tool in the quiz show app\nWatch the model learn when to play which sound"
+  },
+  {
+    "objectID": "slides/03-augmented-generation.html#showing-tool-activity-to-users-30-min",
+    "href": "slides/03-augmented-generation.html#showing-tool-activity-to-users-30-min",
+    "title": "Augmented generation",
+    "section": "Showing tool activity to users (30 min)",
+    "text": "Showing tool activity to users (30 min)\nA series of progressive upgrades to the quiz show app (16-quiz-game-ui):\n\nAdd tool annotations: give each tool an icon and title\nReturn a ContentToolResult with a custom title and icon\nTrack answers and score in reactive value boxes that update from tool calls\n(Optional) Add a “finish round” tool that displays the final score"
+  },
+  {
+    "objectID": "slides/05-ai-coding-assistants.html#what-well-cover-today",
+    "href": "slides/05-ai-coding-assistants.html#what-well-cover-today",
+    "title": "Intro to AI coding assistants",
+    "section": "What we’ll cover today",
+    "text": "What we’ll cover today\n\nIntro to AI coding assistants\nCode completions and inline suggestions\nChat-based assistance\nAgentic and autonomous workflows"
+  },
+  {
+    "objectID": "slides/05-ai-coding-assistants.html#the-landscape-of-options",
+    "href": "slides/05-ai-coding-assistants.html#the-landscape-of-options",
+    "title": "Intro to AI coding assistants",
+    "section": "The landscape of options",
+    "text": "The landscape of options\nTODO"
+  },
+  {
+    "objectID": "slides/05-ai-coding-assistants.html#modes-completion-chat-agent",
+    "href": "slides/05-ai-coding-assistants.html#modes-completion-chat-agent",
+    "title": "Intro to AI coding assistants",
+    "section": "Modes: completion, chat, agent",
+    "text": "Modes: completion, chat, agent\nTODO"
+  },
+  {
+    "objectID": "slides/05-ai-coding-assistants.html#cost-considerations",
+    "href": "slides/05-ai-coding-assistants.html#cost-considerations",
+    "title": "Intro to AI coding assistants",
+    "section": "Cost considerations",
+    "text": "Cost considerations\nTODO"
+  },
+  {
+    "objectID": "slides/05-ai-coding-assistants.html#when-to-reach-for-which",
+    "href": "slides/05-ai-coding-assistants.html#when-to-reach-for-which",
+    "title": "Intro to AI coding assistants",
+    "section": "When to reach for which",
+    "text": "When to reach for which\nTODO"
+  },
+  {
+    "objectID": "slides/07-chat-assistance.html#providing-effective-context",
+    "href": "slides/07-chat-assistance.html#providing-effective-context",
+    "title": "Chat-based assistance",
+    "section": "Providing effective context",
+    "text": "Providing effective context\nTODO"
+  },
+  {
+    "objectID": "slides/07-chat-assistance.html#asking-questions-vs.-asking-for-code",
+    "href": "slides/07-chat-assistance.html#asking-questions-vs.-asking-for-code",
+    "title": "Chat-based assistance",
+    "section": "Asking questions vs. asking for code",
+    "text": "Asking questions vs. asking for code\nTODO"
+  },
+  {
+    "objectID": "slides/07-chat-assistance.html#explaining-code-you-didnt-write",
+    "href": "slides/07-chat-assistance.html#explaining-code-you-didnt-write",
+    "title": "Chat-based assistance",
+    "section": "Explaining code you didn’t write",
+    "text": "Explaining code you didn’t write\nTODO"
+  },
+  {
+    "objectID": "slides/07-chat-assistance.html#working-through-a-real-example",
+    "href": "slides/07-chat-assistance.html#working-through-a-real-example",
+    "title": "Chat-based assistance",
+    "section": "Working through a real example",
+    "text": "Working through a real example\nTODO"
+  }
+]

@@ -1,0 +1,25 @@
+.quarto/
+/.quarto/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# R / renv
+.Rproj.user/
+.Rhistory
+.RData
+renv/library/
+renv/local/
+renv/cellar/
+renv/lock/
+renv/python/
+renv/staging/
+
+# Local env / secrets
+.env
+.env.local
+
+**/*.quarto_ipynb
