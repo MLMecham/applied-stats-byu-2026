@@ -105,11 +105,18 @@
     "text": "Hopes and fears (30 min)\n\nWhere these tools seem to be going\nWhat to watch out for: cost, lock-in, evaluation, trust\nOpen discussion: what does this change about your day-to-day work?"
   },
   {
+    "objectID": "slides/02-programming-with-llms.html#day-1-build-on-ai",
+    "href": "slides/02-programming-with-llms.html#day-1-build-on-ai",
+    "title": "Programming with LLMs",
+    "section": "Day 1: Build on AI",
+    "text": "Day 1: Build on AI\n\nTalking with LLMs via code\nProgramming with LLMs (this session!)\nAugmented generation\nBeyond tools"
+  },
+  {
     "objectID": "slides/02-programming-with-llms.html#the-landscape-15-min",
     "href": "slides/02-programming-with-llms.html#the-landscape-15-min",
     "title": "Programming with LLMs",
     "section": "The landscape (15 min)",
-    "text": "The landscape (15 min)\n\nMajor providers: OpenAI, Anthropic, Google, plus local options like ollama\nTradeoffs: capability, context length, speed, cost\nNewer is not always better for your task"
+    "text": "The landscape (15 min)\n\nMajor providers: OpenAI, Anthropic, Google, plus local options like ollama\nWhat are the tradeoffs? Capability, context length, speed, cost\nNewer is not always better for your task"
   },
   {
     "objectID": "slides/02-programming-with-llms.html#your-turn",
@@ -249,7 +256,7 @@
     "href": "slides/01-talking-with-llms.html#welcome",
     "title": "Talking with LLMs via code",
     "section": "Welcome",
-    "text": "Welcome\n\nIntroductions\nWhat to expect from these two days\nBuild on AI (Day 1)\nBuild with AI (Day 2)"
+    "text": "Welcome\n\nIntroductions\nWhat to expect from these two days\n\nBuild on AI (Day 1)\nBuild with AI (Day 2)"
   },
   {
     "objectID": "slides/01-talking-with-llms.html#day-1-build-on-ai",
@@ -298,7 +305,7 @@
     "href": "slides/01-talking-with-llms.html#your-turn-2",
     "title": "Talking with LLMs via code",
     "section": "Your turn",
-    "text": "Your turn\n\n\n\nActivity\n\n\nOpen 02-word-game and play a word guessing game:\n\nSystem prompt: &gt; You are playing a word guessing game. At each turn, guess the word and tell us what it is.\nInclude a modifier in the first message (e.g. “In British English,” “In pirate,”) and watch how it steers later answers.\n\n\n\n\n\n  \n    −\n    +\n \n 10:00"
+    "text": "Your turn\n\n\n\nActivity\n\n\nOpen 02-word-game and play a word guessing game:\n\nSystem prompt:\n\n\nYou are playing a word guessing game. At each turn, guess the word and tell us what it is.\n\n\nInclude a modifier in the first message (e.g. “In British English,” “In pirate,”) and watch how it steers later answers.\n\n\n\n\n\n  \n    −\n    +\n \n 10:00"
   },
   {
     "objectID": "slides/01-talking-with-llms.html#the-conversation-is-stateless",

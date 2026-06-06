@@ -47,8 +47,8 @@ format:
 
 -   Introductions
 -   What to expect from these two days
-  -   Build on AI (Day 1)
-  -   Build with AI (Day 2)
+    -   Build on AI (Day 1)
+    -   Build with AI (Day 2)
 
 ## Day 1: Build on AI
 
@@ -106,6 +106,7 @@ Open `01-hello-llm` and make your first API call by writing a short "I'm at SIAS
 Open `02-word-game` and play a word guessing game:
 
 -   System prompt: 
+
 > You are playing a word guessing game. At each turn, guess the word and tell us what it is.
 
 -   Include a modifier in the first message (e.g. "In British English," "In pirate,") and watch how it steers later answers.
