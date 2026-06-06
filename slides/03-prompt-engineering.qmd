@@ -1,0 +1,159 @@
+---
+title: "Prompt engineering and RAG"
+subtitle: "Programming with LLMs for Data Practitioners"
+author: "Julia Silge | Posit PBC"
+footer: "<https://juliasilge.github.io/applied-stats-byu-2026/>"
+highlight-style: atom-one
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    transition: fade
+    preview-links: auto
+    width: 1280
+    height: 720
+    template-partials:
+      - title-slide.html
+    title-slide-attributes:
+      data-background-image: "../images/undraw_ai-research-assistant_cxx0.svg"
+      data-background-size: "auto 50%"
+      data-background-position: "82% 85%"
+      data-background-repeat: "no-repeat"
+---
+
+# Hello!
+
+<center>
+
+<img src="https://github.com/juliasilge.png" style="border-radius: 50%;" width="300px"/>
+
+[{{< fa brands github >}} \@juliasilge](https://github.com/juliasilge)
+
+[{{< fa brands bluesky >}} \@juliasilge.com](https://bsky.app/profile/juliasilge.com)
+
+[{{< fa link >}} juliasilge.com](https://juliasilge.com/)
+
+</center>
+
+## Day 1: Build on AI
+
+1.  Talking with LLMs via code 
+2.  Programming with LLMs 
+3.  Prompt engineering and RAG (this session!)
+4.  Beyond prompts
+
+# Prompt engineering and hallucinations {background-image="../images/undraw_ai-research-assistant_cxx0.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
+
+## Models will confidently make things up
+
+-   What hallucination looks like
+-   Why a confident answer is not a correct answer
+
+## Your turn
+
+::: {.callout-note icon=false}
+
+## Activity
+
+Open `09-plot-interpret` and ask the model about a plot:
+
+-   Generate a plot of mpg vs. weight from `mtcars`
+-   Ask the model to interpret it
+-   Discuss what it got right and where it leaned on priors
+:::
+
+{{< countdown minutes=10 >}}
+
+## Your turn
+
+::: {.callout-note icon=false}
+
+## Activity
+
+Open `10-plot-noise`:
+
+-   Replace the plot with random noise; keep the prompt the same
+-   See what the model says
+-   Pair up with a neighbor and try to steer the model into an "appropriate" interpretation of pure noise
+:::
+
+{{< countdown minutes=15 >}}
+
+## System prompt best practices
+
+-   Be explicit about role, audience, and format
+-   Show, don't just tell ("few-shot" examples)
+-   Tell the model how to handle uncertainty
+-   Read more on how [When plotting, LLMs see what they expect to see](https://posit.co/blog/introducing-bluffbench)
+
+## Your turn
+
+::: {.callout-note icon=false}
+
+## Activity
+
+Open `11-quiz-game-app` and write the system prompt for our quiz game show. The app reads your prompt from `11-quiz-game-prompt.md`; run it to play.
+:::
+
+{{< countdown minutes=15 >}}
+
+# Manual RAG {background-image="../images/undraw_ai-research-assistant_cxx0.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
+## Context in, better answers out
+
+-   "Retrieval-Augmented Generation" without any fancy infrastructure
+-   Stuff the relevant docs into the prompt yourself
+-   Most "RAG" is this idea plus automation
+
+## Your turn
+
+::: {.callout-note icon=false}
+
+## Activity
+
+Open `12-coding-assistant` and try a coding assistant on a niche package (R: `weathR`, Python: `NWS`):
+
+-   First, ask with no context and note what goes wrong.
+-   Then paste the README into the prompt and compare.
+:::
+
+{{< countdown minutes=10 >}}
+
+# RAG {background-image="../images/undraw_ai-research-assistant_cxx0.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
+## How RAG actually works
+
+-   Chunk your documents
+-   Compute embeddings for each chunk
+-   At query time, find the most similar chunks and add them to the prompt
+-   The "retrieval" is just nearest-neighbor search
+
+## Your turn
+
+::: {.callout-note icon=false}
+
+## Activity
+
+Open `13-rag` and build a dynamic RAG system:
+
+-   Source documents: R for Data Science (R) or Polars Cookbook (Python).
+-   Tools: `ragnar` (R), `llama-index` or chatlas helpers (Python).
+-   Wire retrieval up as a tool the model can call.
+:::
+
+{{< countdown minutes=20 >}}
+
+# Thanks!
+
+<center>
+
+<img src="https://github.com/juliasilge.png" style="border-radius: 50%;" width="300px"/>
+
+[{{< fa brands github >}} \@juliasilge](https://github.com/juliasilge)
+
+[{{< fa brands bluesky >}} \@juliasilge.com](https://bsky.app/profile/juliasilge.com)
+
+[{{< fa link >}} juliasilge.com](https://juliasilge.com/)
+
+</center>
+
+::: footer
+Illustrations from [unDraw](https://undraw.co/)
+:::

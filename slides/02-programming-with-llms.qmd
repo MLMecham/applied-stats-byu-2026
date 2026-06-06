@@ -38,8 +38,25 @@ format:
 
 1.  Talking with LLMs via code 
 2.  Programming with LLMs (this session!)
-3.  Augmented generation
-4.  Beyond tools
+3.  Prompt engineering and RAG
+4.  Beyond prompts
+
+## Build your own Shiny chat app
+
+-   Shiny `chat_ui()` and `chat_append()` 
+-   Shiny for R also has `chat_mod_server()`
+
+## Your turn
+
+::: {.callout-note icon=false}
+
+## Activity
+
+Open `04-word-game-reverse` and flip the word game from the last session so the LLM holds a secret word and gives hints. The user has to guess.
+:::
+
+{{< countdown minutes=10 >}}
+
 
 # Choosing a model {background-image="../images/undraw_large-language-models_m4no.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
 
@@ -129,62 +146,6 @@ Try multi-modal input:
 :::
 
 {{< countdown minutes=10 >}}
-
-# Prompt engineering and hallucinations {background-image="../images/undraw_large-language-models_m4no.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
-
-## Models will confidently make things up
-
--   What hallucination looks like
--   Why a confident answer is not a correct answer
-
-## Your turn
-
-::: {.callout-note icon=false}
-
-## Activity
-
-Open `09-plot-interpret` and ask the model about a plot:
-
--   Generate a plot of mpg vs. weight from `mtcars`
--   Ask the model to interpret it
--   Discuss what it got right and where it leaned on priors
-:::
-
-{{< countdown minutes=10 >}}
-
-## Your turn
-
-::: {.callout-note icon=false}
-
-## Activity
-
-Open `10-plot-noise`:
-
--   Replace the plot with random noise; keep the prompt the same
--   See what the model says
--   Pair up with a neighbor and try to steer the model into an "appropriate" interpretation of pure noise
-:::
-
-{{< countdown minutes=15 >}}
-
-## System prompt best practices
-
--   Be explicit about role, audience, and format
--   Show, don't just tell ("few-shot" examples)
--   Tell the model how to handle uncertainty
--   Read more on how [When plotting, LLMs see what they expect to see](https://posit.co/blog/introducing-bluffbench)
-
-## Your turn
-
-::: {.callout-note icon=false}
-
-## Activity
-
-Open `11-quiz-game-prompt` and write the system prompt for our quiz game show
-:::
-
-{{< countdown minutes=15 >}}
-
 
 # Thanks!
 

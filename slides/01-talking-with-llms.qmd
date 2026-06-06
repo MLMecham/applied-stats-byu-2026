@@ -54,8 +54,8 @@ format:
 
 1.  Talking with LLMs via code (this session!)
 2.  Programming with LLMs
-3.  Augmented generation
-4.  Beyond tools
+3.  Prompt engineering and RAG
+4.  Beyond prompts
 
 ## Your turn
 
@@ -167,22 +167,6 @@ Open `03-live` and launch a live chat against your own chat object.
 :::
 
 {{< countdown minutes=5 >}}
-
-## Build your own Shiny chat app
-
--   Shiny `chat_ui()` and `chat_append()` (R: also `chat_mod_server()`)
-
-## Your turn
-
-::: {.callout-note icon=false}
-
-## Activity
-
-Open `04-word-game-reverse` and flip the word game so the LLM holds a secret word and gives hints; the user has to guess.
-:::
-
-{{< countdown minutes=10 >}}
-
 
 # Thanks!
 
