@@ -227,9 +227,36 @@
 <ol type="1">
 <li>Talking with LLMs via code</li>
 <li>Programming with LLMs (this session!)</li>
-<li>Augmented generation</li>
-<li>Beyond tools</li>
+<li>Prompt engineering and RAG</li>
+<li>Beyond prompts</li>
 </ol>
+</section>
+<section id="build-your-own-shiny-chat-app" class="slide level2">
+<h2>Build your own Shiny chat app</h2>
+<ul>
+<li>Shiny <code>chat_ui()</code> and <code>chat_append()</code></li>
+<li>Shiny for R also has <code>chat_mod_server()</code></li>
+</ul>
+</section>
+<section id="your-turn" class="slide level2">
+<h2>Your turn</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Activity</strong></p>
+</div>
+<div class="callout-content">
+<p>Open <code>04-word-game-reverse</code> and flip the word game from the last session so the LLM holds a secret word and gives hints. The user has to guess.</p>
+</div>
+</div>
+</div>
+<div id="timer_c4054f6ee6cd15721c50b0aed05bd8a2d765e443" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
 </section></section>
 <section>
 <section id="choosing-a-model" class="title-slide slide level1 center" data-background-image="../images/undraw_large-language-models_m4no.svg" data-background-size="auto 45%" data-background-position="82% 85%" data-background-repeat="no-repeat">
@@ -280,7 +307,7 @@
 <li>When to extract text up front vs.&nbsp;let the model see the file?</li>
 </ul>
 </section>
-<section id="your-turn" class="slide level2">
+<section id="your-turn-1" class="slide level2">
 <h2>Your turn</h2>
 <div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -296,7 +323,7 @@
 </div>
 </div>
 </div>
-<div id="timer_1ff74317b192c50c1c3f9bc3c8590a88d610d701" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_c4054f6ee6cd15721c50b0aed05bd8a2d765e443" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -317,7 +344,7 @@
 <li>Schemas double as documentation for the model</li>
 </ul>
 </section>
-<section id="your-turn-1" class="slide level2">
+<section id="your-turn-2" class="slide level2">
 <h2>Your turn</h2>
 <div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -332,7 +359,7 @@
 </div>
 </div>
 </div>
-<div id="timer_1ff74317b192c50c1c3f9bc3c8590a88d610d701" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_c4054f6ee6cd15721c50b0aed05bd8a2d765e443" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -353,7 +380,7 @@
 <li>Watch for rate limits!</li>
 </ul>
 </section>
-<section id="your-turn-2" class="slide level2">
+<section id="your-turn-3" class="slide level2">
 <h2>Your turn</h2>
 <div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -368,103 +395,12 @@
 </div>
 </div>
 </div>
-<div id="timer_1ff74317b192c50c1c3f9bc3c8590a88d610d701" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_c4054f6ee6cd15721c50b0aed05bd8a2d765e443" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
  </div>
  <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-</section></section>
-<section>
-<section id="prompt-engineering-and-hallucinations" class="title-slide slide level1 center" data-background-image="../images/undraw_large-language-models_m4no.svg" data-background-size="auto 45%" data-background-position="82% 85%" data-background-repeat="no-repeat">
-<h1>Prompt engineering and hallucinations</h1>
-
-</section>
-<section id="models-will-confidently-make-things-up" class="slide level2">
-<h2>Models will confidently make things up</h2>
-<ul>
-<li>What hallucination looks like</li>
-<li>Why a confident answer is not a correct answer</li>
-</ul>
-</section>
-<section id="your-turn-3" class="slide level2">
-<h2>Your turn</h2>
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Activity</strong></p>
-</div>
-<div class="callout-content">
-<p>Open <code>09-plot-interpret</code> and ask the model about a plot:</p>
-<ul>
-<li>Generate a plot of mpg vs.&nbsp;weight from <code>mtcars</code></li>
-<li>Ask the model to interpret it</li>
-<li>Discuss what it got right and where it leaned on priors</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="timer_1ff74317b192c50c1c3f9bc3c8590a88d610d701" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-</section>
-<section id="your-turn-4" class="slide level2">
-<h2>Your turn</h2>
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Activity</strong></p>
-</div>
-<div class="callout-content">
-<p>Open <code>10-plot-noise</code>:</p>
-<ul>
-<li>Replace the plot with random noise; keep the prompt the same</li>
-<li>See what the model says</li>
-<li>Pair up with a neighbor and try to steer the model into an “appropriate” interpretation of pure noise</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="timer_1ff74317b192c50c1c3f9bc3c8590a88d610d701" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-</section>
-<section id="system-prompt-best-practices" class="slide level2">
-<h2>System prompt best practices</h2>
-<ul>
-<li>Be explicit about role, audience, and format</li>
-<li>Show, don’t just tell (“few-shot” examples)</li>
-<li>Tell the model how to handle uncertainty</li>
-<li>Read more on how <a href="https://posit.co/blog/introducing-bluffbench">When plotting, LLMs see what they expect to see</a></li>
-</ul>
-</section>
-<section id="your-turn-5" class="slide level2">
-<h2>Your turn</h2>
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Activity</strong></p>
-</div>
-<div class="callout-content">
-<p>Open <code>11-quiz-game-prompt</code> and write the system prompt for our quiz game show</p>
-</div>
-</div>
-</div>
-<div id="timer_1ff74317b192c50c1c3f9bc3c8590a88d610d701" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
  </div>
 </section></section>
 <section id="thanks" class="title-slide slide level1 center">

@@ -14,7 +14,7 @@
   <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Julia Silge | Posit PBC">
-  <title>Programming With LLMs For Data Practitioners – Augmented generation</title>
+  <title>Programming With LLMs For Data Practitioners – Prompt engineering and RAG</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -128,10 +128,10 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Augmented generation – Programming With LLMs For Data Practitioners">
+<meta property="og:title" content="Prompt engineering and RAG – Programming With LLMs For Data Practitioners">
 <meta property="og:description" content="Programming with LLMs for Data Practitioners">
 <meta property="og:site_name" content="Programming With LLMs For Data Practitioners">
-<meta name="twitter:title" content="Augmented generation – Programming With LLMs For Data Practitioners">
+<meta name="twitter:title" content="Prompt engineering and RAG – Programming With LLMs For Data Practitioners">
 <meta name="twitter:description" content="Programming with LLMs for Data Practitioners">
 <meta name="twitter:card" content="summary">
 </head>
@@ -141,30 +141,135 @@
 
 <section id="title-slide" data-background-image="../images/undraw_ai-research-assistant_cxx0.svg" data-background-position="82% 85%" data-background-repeat="no-repeat" data-background-size="auto 50%" class="quarto-title-block center">
   <div class="title-slide-inner">
-    <h1 class="title">Augmented generation</h1>
+    <h1 class="title">Prompt engineering and RAG</h1>
     <p class="subtitle">Programming with LLMs for Data Practitioners</p>
     <p class="author">Julia Silge | Posit PBC</p>
   </div>
 </section>
-<section id="augmented-generation" class="title-slide slide level1 center" data-background-image="../images/undraw_ai-research-assistant_cxx0.svg" data-background-size="auto 50%" data-background-position="82% 85%" data-background-repeat="no-repeat">
-<h1>Augmented generation</h1>
-<p>How to add knowledge to LLMs and let them act on it. We will build a simple RAG system, which leads naturally into tool calling.</p>
+<section>
+<section id="hello" class="title-slide slide level1 center">
+<h1>Hello!</h1>
+<center>
+<p><img src="https://github.com/juliasilge.png" style="border-radius: 50%;" width="300px"></p>
+<p><a href="https://github.com/juliasilge"><i class="fa-brands fa-github" aria-label="github"></i> @juliasilge</a></p>
+<p><a href="https://bsky.app/profile/juliasilge.com"><i class="fa-brands fa-bluesky" aria-label="bluesky"></i> @juliasilge.com</a></p>
+<p><a href="https://juliasilge.com/"><i class="fa-solid fa-link" aria-label="link"></i> juliasilge.com</a></p>
+</center>
 </section>
+<section id="day-1-build-on-ai" class="slide level2">
+<h2>Day 1: Build on AI</h2>
+<ol type="1">
+<li>Talking with LLMs via code</li>
+<li>Programming with LLMs</li>
+<li>Prompt engineering and RAG (this session!)</li>
+<li>Beyond prompts</li>
+</ol>
+</section></section>
+<section>
+<section id="prompt-engineering-and-hallucinations" class="title-slide slide level1 center" data-background-image="../images/undraw_ai-research-assistant_cxx0.svg" data-background-size="auto 50%" data-background-position="82% 85%" data-background-repeat="no-repeat">
+<h1>Prompt engineering and hallucinations</h1>
 
+</section>
+<section id="models-will-confidently-make-things-up" class="slide level2">
+<h2>Models will confidently make things up</h2>
+<ul>
+<li>What hallucination looks like</li>
+<li>Why a confident answer is not a correct answer</li>
+</ul>
+</section>
+<section id="your-turn" class="slide level2">
+<h2>Your turn</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Activity</strong></p>
+</div>
+<div class="callout-content">
+<p>Open <code>09-plot-interpret</code> and ask the model about a plot:</p>
+<ul>
+<li>Generate a plot of mpg vs.&nbsp;weight from <code>mtcars</code></li>
+<li>Ask the model to interpret it</li>
+<li>Discuss what it got right and where it leaned on priors</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="timer_c4054f6ee6cd15721c50b0aed05bd8a2d765e443" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+</section>
+<section id="your-turn-1" class="slide level2">
+<h2>Your turn</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Activity</strong></p>
+</div>
+<div class="callout-content">
+<p>Open <code>10-plot-noise</code>:</p>
+<ul>
+<li>Replace the plot with random noise; keep the prompt the same</li>
+<li>See what the model says</li>
+<li>Pair up with a neighbor and try to steer the model into an “appropriate” interpretation of pure noise</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="timer_c4054f6ee6cd15721c50b0aed05bd8a2d765e443" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+</section>
+<section id="system-prompt-best-practices" class="slide level2">
+<h2>System prompt best practices</h2>
+<ul>
+<li>Be explicit about role, audience, and format</li>
+<li>Show, don’t just tell (“few-shot” examples)</li>
+<li>Tell the model how to handle uncertainty</li>
+<li>Read more on how <a href="https://posit.co/blog/introducing-bluffbench">When plotting, LLMs see what they expect to see</a></li>
+</ul>
+</section>
+<section id="your-turn-2" class="slide level2">
+<h2>Your turn</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Activity</strong></p>
+</div>
+<div class="callout-content">
+<p>Open <code>11-quiz-game-app</code> and write the system prompt for our quiz game show. The app reads your prompt from <code>11-quiz-game-prompt.md</code>; run it to play.</p>
+</div>
+</div>
+</div>
+<div id="timer_c4054f6ee6cd15721c50b0aed05bd8a2d765e443" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+</section></section>
 <section>
 <section id="manual-rag" class="title-slide slide level1 center" data-background-image="../images/undraw_ai-research-assistant_cxx0.svg" data-background-size="auto 50%" data-background-position="82% 85%" data-background-repeat="no-repeat">
 <h1>Manual RAG</h1>
 
 </section>
-<section id="context-in-better-answers-out-10-min" class="slide level2">
-<h2>Context in, better answers out (10 min)</h2>
+<section id="context-in-better-answers-out" class="slide level2">
+<h2>Context in, better answers out</h2>
 <ul>
 <li>“Retrieval-Augmented Generation” without any fancy infrastructure</li>
 <li>Stuff the relevant docs into the prompt yourself</li>
 <li>Most “RAG” is this idea plus automation</li>
 </ul>
 </section>
-<section id="your-turn" class="slide level2">
+<section id="your-turn-3" class="slide level2">
 <h2>Your turn</h2>
 <div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -180,7 +285,7 @@
 </div>
 </div>
 </div>
-<div id="timer_1a1ebabb73d7b58e3fc7ced0ac76232b4220b5da" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_c4054f6ee6cd15721c50b0aed05bd8a2d765e443" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -193,8 +298,8 @@
 <h1>RAG</h1>
 
 </section>
-<section id="how-rag-actually-works-30-min" class="slide level2">
-<h2>How RAG actually works (30 min)</h2>
+<section id="how-rag-actually-works" class="slide level2">
+<h2>How RAG actually works</h2>
 <ul>
 <li>Chunk your documents</li>
 <li>Compute embeddings for each chunk</li>
@@ -202,7 +307,7 @@
 <li>The “retrieval” is just nearest-neighbor search</li>
 </ul>
 </section>
-<section id="your-turn-1" class="slide level2">
+<section id="your-turn-4" class="slide level2">
 <h2>Your turn</h2>
 <div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -219,91 +324,7 @@
 </div>
 </div>
 </div>
-<div id="timer_1a1ebabb73d7b58e3fc7ced0ac76232b4220b5da" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-</section></section>
-<section>
-<section id="tool-calling" class="title-slide slide level1 center" data-background-image="../images/undraw_ai-research-assistant_cxx0.svg" data-background-size="auto 50%" data-background-position="82% 85%" data-background-repeat="no-repeat">
-<h1>Tool calling</h1>
-
-</section>
-<section id="letting-the-model-use-your-functions-20-min" class="slide level2">
-<h2>Letting the model use your functions (20 min)</h2>
-<ul>
-<li>The model decides when to call; you decide what is callable</li>
-<li>The shape: function name, description, JSON schema for arguments</li>
-<li>You execute the function and send the result back</li>
-</ul>
-</section>
-<section id="demos" class="slide level2">
-<h2>Demos</h2>
-<ul>
-<li>Manual loop (<code>_demos/manual-tools</code>): see every step</li>
-<li>Automatic loop (<code>_demos/tools</code>): let the library handle the round trips</li>
-</ul>
-</section>
-<section id="your-turn-2" class="slide level2">
-<h2>Your turn</h2>
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Activity</strong></p>
-</div>
-<div class="callout-content">
-<p>Open <code>14-quiz-game-tools</code> and wire tool calling into the quiz show app:</p>
-<ul>
-<li>Provide a function that plays a sound (R: <code>beepr</code>, Python: <code>playsound</code>).</li>
-<li>Document it well and register it as a tool in the quiz show app.</li>
-<li>Watch the model learn when to play which sound.</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="timer_1a1ebabb73d7b58e3fc7ced0ac76232b4220b5da" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-</section></section>
-<section>
-<section id="tool-calling-ui" class="title-slide slide level1 center" data-background-image="../images/undraw_ai-research-assistant_cxx0.svg" data-background-size="auto 50%" data-background-position="82% 85%" data-background-repeat="no-repeat">
-<h1>Tool calling UI</h1>
-
-</section>
-<section id="showing-tool-activity-to-users-30-min" class="slide level2">
-<h2>Showing tool activity to users (30 min)</h2>
-<ul>
-<li>Tool annotations can give each tool an icon and title</li>
-<li><code>ContentToolResult</code> can return a custom title and icon</li>
-<li>Tool calls can update reactive state in your Shiny app</li>
-</ul>
-</section>
-<section id="your-turn-3" class="slide level2">
-<h2>Your turn</h2>
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Activity</strong></p>
-</div>
-<div class="callout-content">
-<p>Open <code>15-quiz-game-ui</code> and progressively upgrade the quiz show app:</p>
-<ul>
-<li>Add tool annotations: give each tool an icon and title.</li>
-<li>Return a <code>ContentToolResult</code> with a custom title and icon.</li>
-<li>Track answers and score in reactive value boxes that update from tool calls.</li>
-<li>(Optional) Add a “finish round” tool that displays the final score.</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="timer_1a1ebabb73d7b58e3fc7ced0ac76232b4220b5da" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_c4054f6ee6cd15721c50b0aed05bd8a2d765e443" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>

@@ -14,7 +14,7 @@
   <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Julia Silge | Posit PBC">
-  <title>Programming With LLMs For Data Practitioners – Beyond tools</title>
+  <title>Programming With LLMs For Data Practitioners – Beyond prompts</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -128,10 +128,10 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Beyond tools – Programming With LLMs For Data Practitioners">
+<meta property="og:title" content="Beyond prompts – Programming With LLMs For Data Practitioners">
 <meta property="og:description" content="Programming with LLMs for Data Practitioners">
 <meta property="og:site_name" content="Programming With LLMs For Data Practitioners">
-<meta name="twitter:title" content="Beyond tools – Programming With LLMs For Data Practitioners">
+<meta name="twitter:title" content="Beyond prompts – Programming With LLMs For Data Practitioners">
 <meta name="twitter:description" content="Programming with LLMs for Data Practitioners">
 <meta name="twitter:card" content="summary">
 </head>
@@ -141,26 +141,48 @@
 
 <section id="title-slide" data-background-image="../images/undraw_artificial-intelligence_43qa.svg" data-background-position="82% 85%" data-background-repeat="no-repeat" data-background-size="auto 55%" class="quarto-title-block center">
   <div class="title-slide-inner">
-    <h1 class="title">Beyond tools</h1>
+    <h1 class="title">Beyond prompts</h1>
     <p class="subtitle">Programming with LLMs for Data Practitioners</p>
     <p class="author">Julia Silge | Posit PBC</p>
   </div>
 </section>
-<section id="beyond-tools" class="title-slide slide level1 center" data-background-image="../images/undraw_artificial-intelligence_43qa.svg" data-background-size="auto 55%" data-background-position="82% 85%" data-background-repeat="no-repeat">
-<h1>Beyond tools</h1>
-<p>A look at higher-level patterns: querychat, MCP, and agents.</p>
-</section>
-
 <section>
-<section id="querychat" class="title-slide slide level1 center" data-background-image="../images/undraw_artificial-intelligence_43qa.svg" data-background-size="auto 55%" data-background-position="82% 85%" data-background-repeat="no-repeat">
-<h1>querychat</h1>
+<section id="hello" class="title-slide slide level1 center">
+<h1>Hello!</h1>
+<center>
+<p><img src="https://github.com/juliasilge.png" style="border-radius: 50%;" width="300px"></p>
+<p><a href="https://github.com/juliasilge"><i class="fa-brands fa-github" aria-label="github"></i> @juliasilge</a></p>
+<p><a href="https://bsky.app/profile/juliasilge.com"><i class="fa-brands fa-bluesky" aria-label="bluesky"></i> @juliasilge.com</a></p>
+<p><a href="https://juliasilge.com/"><i class="fa-solid fa-link" aria-label="link"></i> juliasilge.com</a></p>
+</center>
+</section>
+<section id="day-1-build-on-ai" class="slide level2">
+<h2>Day 1: Build on AI</h2>
+<ol type="1">
+<li>Talking with LLMs via code</li>
+<li>Programming with LLMs</li>
+<li>Prompt engineering and RAG</li>
+<li>Beyond prompts (this session!)</li>
+</ol>
+</section></section>
+<section>
+<section id="tool-calling" class="title-slide slide level1 center" data-background-image="../images/undraw_artificial-intelligence_43qa.svg" data-background-size="auto 55%" data-background-position="82% 85%" data-background-repeat="no-repeat">
+<h1>Tool calling</h1>
 
 </section>
-<section id="chatting-with-your-data-10-min" class="slide level2">
-<h2>Chatting with your data (10 min)</h2>
+<section id="letting-the-model-use-your-functions" class="slide level2">
+<h2>Letting the model use your functions</h2>
 <ul>
-<li>A drop-in Shiny module that turns a data frame into a chat-driven explorer</li>
-<li>The model writes the SQL or dplyr; the app runs it</li>
+<li>The model decides when to call; you decide what is callable</li>
+<li>The shape: function name, description, JSON schema for arguments</li>
+<li>You execute the function and send the result back</li>
+</ul>
+</section>
+<section id="demos" class="slide level2">
+<h2>Demos</h2>
+<ul>
+<li>Manual loop (<code>demo/04-manual-tools</code>): see every step</li>
+<li>Automatic loop (<code>demo/04-weather-tool</code>): let the library handle the round trips</li>
 </ul>
 </section>
 <section id="your-turn" class="slide level2">
@@ -171,16 +193,60 @@
 <p><strong>Activity</strong></p>
 </div>
 <div class="callout-content">
-<p>Open <code>16-querychat</code> and add querychat to an existing Shiny app.</p>
+<p>Open <code>14-quiz-game-tools</code> and wire tool calling into the quiz show app:</p>
+<ul>
+<li>Provide a function that plays a sound (R: <code>beepr</code>, Python: <code>playsound</code>).</li>
+<li>Document it well and register it as a tool in the quiz show app.</li>
+<li>Watch the model learn when to play which sound.</li>
+</ul>
 </div>
 </div>
 </div>
-<div id="timer_1a1ebabb73d7b58e3fc7ced0ac76232b4220b5da" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_0b7dd1c5254af8ebfa6518fbbdf7f1dbffcd8b35" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
  </div>
- <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+</section></section>
+<section>
+<section id="tool-calling-ui" class="title-slide slide level1 center" data-background-image="../images/undraw_artificial-intelligence_43qa.svg" data-background-size="auto 55%" data-background-position="82% 85%" data-background-repeat="no-repeat">
+<h1>Tool calling UI</h1>
+
+</section>
+<section id="showing-tool-activity-to-users" class="slide level2">
+<h2>Showing tool activity to users</h2>
+<ul>
+<li>Tool annotations can give each tool an icon and title</li>
+<li><code>ContentToolResult</code> can return a custom title and icon</li>
+<li>Tool calls can update reactive state in your Shiny app</li>
+</ul>
+</section>
+<section id="your-turn-1" class="slide level2">
+<h2>Your turn</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Activity</strong></p>
+</div>
+<div class="callout-content">
+<p>Open <code>15-quiz-game-ui</code> and progressively upgrade the quiz show app:</p>
+<ul>
+<li>Add tool annotations: give each tool an icon and title.</li>
+<li>Return a <code>ContentToolResult</code> with a custom title and icon.</li>
+<li>Track answers and score in reactive value boxes that update from tool calls.</li>
+<li>(Optional) Add a “finish round” tool that displays the final score.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="timer_0b7dd1c5254af8ebfa6518fbbdf7f1dbffcd8b35" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
  </div>
 </section></section>
 <section>
@@ -188,15 +254,15 @@
 <h1>MCP</h1>
 
 </section>
-<section id="model-context-protocol-10-min" class="slide level2">
-<h2>Model Context Protocol (10 min)</h2>
+<section id="model-context-protocol" class="slide level2">
+<h2>Model Context Protocol</h2>
 <ul>
 <li>A common standard for exposing tools and resources to LLM clients</li>
 <li>Why this matters: write a server once, use it from many clients</li>
 <li>MCP support is growing in Positron, VS Code, Claude Desktop, etc.</li>
 </ul>
 </section>
-<section id="your-turn-1" class="slide level2">
+<section id="your-turn-2" class="slide level2">
 <h2>Your turn</h2>
 <div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -212,7 +278,7 @@
 </div>
 </div>
 </div>
-<div id="timer_1a1ebabb73d7b58e3fc7ced0ac76232b4220b5da" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_0b7dd1c5254af8ebfa6518fbbdf7f1dbffcd8b35" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -225,21 +291,53 @@
 <h1>Agents</h1>
 
 </section>
-<section id="what-is-an-agent-30-min" class="slide level2">
-<h2>What is an agent? (30 min)</h2>
+<section id="a-glimpse-of-whats-next" class="slide level2">
+<h2>A glimpse of what’s next</h2>
 <ul>
-<li>Hadley / Simon Willison short definition: an LLM with a read tool and a write tool</li>
-<li>The “you know it when you see it” definition: autonomous, long-context, minimal intervention</li>
-<li>Demo: a working agent (databot-style) doing a real task end to end</li>
+<li>Short definition (Hadley / Simon Willison): an LLM with a read tool and a write tool</li>
+<li>Autonomous, long-context, minimal intervention</li>
+<li>This is the whole story of Day 2, we go deep on agents tomorrow</li>
 </ul>
+</section></section>
+<section>
+<section id="querychat-bonus" class="title-slide slide level1 center" data-background-image="../images/undraw_artificial-intelligence_43qa.svg" data-background-size="auto 55%" data-background-position="82% 85%" data-background-repeat="no-repeat">
+<h1>querychat (bonus)</h1>
+
+</section>
+<section id="chatting-with-your-data" class="slide level2">
+<h2>Chatting with your data</h2>
+<ul>
+<li>A drop-in Shiny module that turns a data frame into a chat-driven explorer</li>
+<li>The model writes the SQL or dplyr; the app runs it</li>
+</ul>
+</section>
+<section id="your-turn-3" class="slide level2">
+<h2>Your turn</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Activity</strong></p>
+</div>
+<div class="callout-content">
+<p><em>Bonus, if time allows.</em> Open <code>16-querychat</code> and add querychat to an existing Shiny app.</p>
+</div>
+</div>
+</div>
+<div id="timer_0b7dd1c5254af8ebfa6518fbbdf7f1dbffcd8b35" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
 </section></section>
 <section>
 <section id="the-future-of-ai" class="title-slide slide level1 center" data-background-image="../images/undraw_artificial-intelligence_43qa.svg" data-background-size="auto 55%" data-background-position="82% 85%" data-background-repeat="no-repeat">
 <h1>The future of AI</h1>
 
 </section>
-<section id="hopes-and-fears-30-min" class="slide level2">
-<h2>Hopes and fears (30 min)</h2>
+<section id="hopes-and-fears" class="slide level2">
+<h2>Hopes and fears</h2>
 <ul>
 <li>Where these tools seem to be going</li>
 <li>What to watch out for: cost, lock-in, evaluation, trust</li>
