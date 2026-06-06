@@ -83,7 +83,7 @@ Open `10-plot-noise`:
 -   Be explicit about role, audience, and format
 -   Show, don't just tell ("few-shot" examples)
 -   Tell the model how to handle uncertainty
--   Read more on how [When plotting, LLMs see what they expect to see](https://posit.co/blog/introducing-bluffbench)
+-   Read more on how [when plotting, LLMs see what they expect to see](https://posit.co/blog/introducing-bluffbench)
 
 ## Your turn
 
@@ -92,7 +92,8 @@ Open `10-plot-noise`:
 ## Activity
 
 - Open `11-quiz-game-app` and write the system prompt for our quiz game show
-- The app reads your prompt from `11-quiz-game-prompt.md` (edit with your own quiz show design)
+- The app reads your prompt from `11-quiz-game-prompt.md`
+- Edit with your own quiz show design
 - Run it to play the game!
 :::
 
@@ -134,7 +135,7 @@ Open `12-coding-assistant` and try a coding assistant on a niche package (`weath
 
 ## Demo
 
-A dynamic RAG system over the R for Data Science book: chunk, embed, and let the model retrieve relevant passages on demand.
+A dynamic RAG system over the _R for Data Science_ book: chunk, embed, and let the model retrieve relevant passages on demand.
 
 ```r
 # demo/03-rag/03-rag.qmd

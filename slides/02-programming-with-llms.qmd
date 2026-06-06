@@ -52,7 +52,10 @@ format:
 
 ## Activity
 
-Open `04-word-game-reverse` and flip the word game from the last session so the LLM holds a secret word and gives hints. The user has to guess.
+-   Open `04-word-game-reverse`
+-   Flip the word game from the last session so:
+    - the LLM holds a secret word and gives hints
+    - the user has to guess
 :::
 
 {{< countdown minutes=10 >}}
@@ -63,7 +66,8 @@ Open `04-word-game-reverse` and flip the word game from the last session so the 
 ## The landscape
 
 -   Major providers: OpenAI, Anthropic, Google, plus local options like ollama
--   What are the tradeoffs? Capability, context length, speed, cost
+-   What are the tradeoffs? 
+    -   Capability, context length, speed, cost
 -   Newer is not always better for your task
 
 ## Comparing providers
@@ -72,7 +76,7 @@ Open `04-word-game-reverse` and flip the word game from the last session so the 
 
 ## Demo
 
-We can send the same prompt sent to several providers; switching is a one-string change:
+The same prompt across several providers: compare answers, latency, and token usage.
 
 ```r
 # demo/02-models/02-models.qmd
@@ -80,7 +84,6 @@ chat("anthropic/claude-sonnet-4-6")$chat(prompt)
 chat("openai/gpt-5")$chat(prompt)
 ```
 
-Compare the answers, latency, and token usage
 :::
 
 # Multi-modal input {background-image="../images/undraw_large-language-models_m4no.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
@@ -121,7 +124,8 @@ Try multi-modal input:
 
 ## Activity
 
-- Open `07-structured-output` and extract structured fields from the recipe PDF (ingredients, steps, yield, prep time)
+- Open `07-structured-output` and extract structured fields from the recipe PDF:
+    - Ingredients, steps, yield, prep time
 - For Python, turn on `use_attribute_docstrings` in Pydantic to let docstrings guide the model
 :::
 

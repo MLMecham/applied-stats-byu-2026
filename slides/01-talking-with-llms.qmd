@@ -63,7 +63,7 @@ format:
 
 ## Activity
 
-Introduce yourself to your neighbors.
+Introduce yourself to your neighbors!
 :::
 
 {{< countdown minutes=5 >}}
@@ -79,7 +79,8 @@ Introduce yourself to your neighbors.
 
 ## Activity
 
-Open `01-hello-llm` and make your first API call by writing a short "I'm at SIAS 2026" poem or limerick.
+-   Open `01-hello-llm`
+-   Make your first API call by writing a short "I'm at SIAS 2026" poem or limerick
 :::
 
 {{< countdown minutes=5 >}}
@@ -95,7 +96,7 @@ Open `01-hello-llm` and make your first API call by writing a short "I'm at SIAS
 
 -   Under the hood, an HTTP request is sent to a provider
 -   Message roles: `system`, `user`, `assistant`
--   `ellmer` and `chatlas` hide the boilerplate
+-   ellmer and chatlas hide the boilerplate
 
 ## Your turn
 
@@ -103,13 +104,12 @@ Open `01-hello-llm` and make your first API call by writing a short "I'm at SIAS
 
 ## Activity
 
-Open `02-word-game` and play a word guessing game:
-
--   System prompt: 
+Open `02-word-game` and play a word guessing game with a system prompt like: 
 
 > You are playing a word guessing game. At each turn, guess the word and tell us what it is.
 
--   Include a modifier in the first message (e.g. "In British English," "In pirate,") and watch how it steers later answers.
+-   Include a modifier in the first message (e.g. "In British English," "In pirate,")
+-   Watch how it steers later answers
 :::
 
 {{< countdown minutes=10 >}}
@@ -124,15 +124,14 @@ Open `02-word-game` and play a word guessing game:
 
 ## Demo
 
-What happens with multi-turn conversations? What happens when you clear the chat?
+What happens across multiple turns, and what happens when you clear the chat?
 
 ```bash
-cd demo/01-clearbot
+# demo/01-clearbot/app.py
 uv run shiny run app.py
 ```
 
 :::
-
 
 # How LLMs work {background-image="../images/undraw_chat-with-ai_ir62.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
 
@@ -146,7 +145,12 @@ uv run shiny run app.py
 
 ## Demo
 
-What are the token probabilities?
+What are the per-token probabilities, and where is the model confident vs. guessing?
+
+```r
+# demo/01-token-possibilities/app.R
+shiny::runApp()
+```
 
 :::
 

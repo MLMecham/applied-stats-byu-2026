@@ -1,0 +1,23 @@
+Type: Workshop
+Package: applied.stats.byu.2026
+Title: Programming with LLMs for Data Practitioners
+Version: 0.0.0.9000
+Authors@R:
+    person("Julia", "Silge", , "julia.silge@posit.co", role = c("aut", "cre"))
+Description: Workshop materials for the 50th Summer Institute of Applied
+    Statistics (SIAS) at Brigham Young University, 17-18 June 2026.
+    Programming with LLMs from R and Python, plus AI coding assistants.
+License: CC BY-NC-SA 4.0
+Encoding: UTF-8
+Imports:
+    beepr,
+    bslib,
+    ellmer,
+    ggplot2,
+    magick,
+    querychat,
+    ragnar,
+    readr,
+    shiny,
+    shinychat,
+    weathR
