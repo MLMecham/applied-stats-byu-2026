@@ -214,7 +214,7 @@
     "href": "index.html#preparation",
     "title": "Programming with LLMs for Data Practitioners",
     "section": "Preparation",
-    "text": "Preparation\nWe will be working locally during the workshop, so please come with a laptop that has the following installed (all available for free):\n\nA recent version of Python (perhaps installed using uv) and/or R\nA recent version of Positron, or optionally if preferred, RStudio\nClone the workshop repo\nInstall the Python packages from requirements.txt and/or the R packages via TODO.\n\nYou will also need API credentials for at least one LLM provider; we will share details closer to the workshop."
+    "text": "Preparation\nWe will be working locally during the workshop, so please come with a laptop that has the following installed (all available for free):\n\nA recent version of Python (perhaps installed using uv) and/or R\n\nIf you are using Python, create a virtual environment such as via uv venv\n\nA recent version of Positron, or optionally if preferred, RStudio\nClone the workshop repo\nInstall the packages needed for the workshop:\n\nFor Python, install the packages listed in requirements.txt such as via uv pip install -r requirements.txt\nFor R, install the packages listed in DESCRIPTION such as via pak::local_install_deps()\n\n\nYou will also need API credentials for at least one LLM provider; we will share details closer to the workshop."
   },
   {
     "objectID": "index.html#schedule",
@@ -291,28 +291,28 @@
     "href": "slides/01-talking-with-llms.html#to-get-a-response-you-send-a-message",
     "title": "Talking with LLMs via code",
     "section": "To get a response, you send a message",
-    "text": "To get a response, you send a message\n\nUnder the hood: an HTTP request to a provider\nMessage roles: system, user, assistant\nellmer and chatlas hide the boilerplate"
+    "text": "To get a response, you send a message\n\nUnder the hood, an HTTP request is sent to a provider\nMessage roles: system, user, assistant\nellmer and chatlas hide the boilerplate"
   },
   {
     "objectID": "slides/01-talking-with-llms.html#your-turn-2",
     "href": "slides/01-talking-with-llms.html#your-turn-2",
     "title": "Talking with LLMs via code",
     "section": "Your turn",
-    "text": "Your turn\n\n\n\nActivity\n\n\nOpen 02-word-game and play a word guessing game:\n\nSystem prompt: You are playing a word guessing game. At each turn, guess the word and tell us what it is.\nInclude a modifier in the first message (e.g. “In British English,” “In pirate,”) and watch how it steers later answers.\n\n\n\n\n\n  \n    −\n    +\n \n 10:00"
+    "text": "Your turn\n\n\n\nActivity\n\n\nOpen 02-word-game and play a word guessing game:\n\nSystem prompt: &gt; You are playing a word guessing game. At each turn, guess the word and tell us what it is.\nInclude a modifier in the first message (e.g. “In British English,” “In pirate,”) and watch how it steers later answers.\n\n\n\n\n\n  \n    −\n    +\n \n 10:00"
   },
   {
     "objectID": "slides/01-talking-with-llms.html#the-conversation-is-stateless",
     "href": "slides/01-talking-with-llms.html#the-conversation-is-stateless",
     "title": "Talking with LLMs via code",
     "section": "The conversation is stateless",
-    "text": "The conversation is stateless\n\nThe model has no memory between requests\nThe library replays history each turn\n\n\n\n\nDemo\n\n\nWhat happens when you clear the chat?\ncd demo/01-clearbot\nuv run shiny run app.py"
+    "text": "The conversation is stateless\n\nThe model has no memory between requests\nThe library replays history each turn\n\n\n\n\nDemo\n\n\nWhat happens with multi-turn conversations? What happens when you clear the chat?\ncd demo/01-clearbot\nuv run shiny run app.py"
   },
   {
     "objectID": "slides/01-talking-with-llms.html#tokens-as-the-fundamental-unit",
     "href": "slides/01-talking-with-llms.html#tokens-as-the-fundamental-unit",
     "title": "Talking with LLMs via code",
     "section": "Tokens as the fundamental unit",
-    "text": "Tokens as the fundamental unit\n\nWhat is a token?\nHow models predict the next token\nWhy this matters for cost and context length\n\n\n\n\nDemo\n\n\nWhat are tokens?\ncd demo/01-token-possibilities\nuv run shiny run app.py"
+    "text": "Tokens as the fundamental unit\n\nWhat is a token?\nHow models predict the next token\nWhy this matters for cost and context length\n\n\n\n\nDemo\n\n\nWhat are the token probabilities?"
   },
   {
     "objectID": "slides/01-talking-with-llms.html#try-a-chat-ui-in-seconds",

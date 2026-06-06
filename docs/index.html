@@ -168,10 +168,17 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="preparation">Preparation</h2>
 <p>We will be working locally during the workshop, so please come with a laptop that has the following installed (all available for free):</p>
 <ul>
-<li>A recent version of Python (perhaps installed using <a href="https://docs.astral.sh/uv/guides/install-python/">uv</a>) and/or R</li>
+<li>A recent version of Python (perhaps installed using <a href="https://docs.astral.sh/uv/guides/install-python/">uv</a>) and/or R
+<ul>
+<li>If you are using Python, create a virtual environment such as via <code>uv venv</code></li>
+</ul></li>
 <li>A recent version of <a href="https://positron.posit.co/download">Positron</a>, or optionally if preferred, <a href="https://posit.co/download/rstudio-desktop">RStudio</a></li>
 <li>Clone the <a href="https://github.com/juliasilge/applied-stats-byu-2026">workshop repo</a></li>
-<li>Install the Python packages from <code>requirements.txt</code> and/or the R packages via TODO.</li>
+<li>Install the packages needed for the workshop:
+<ul>
+<li>For Python, install the packages listed in <code>requirements.txt</code> such as via <code>uv pip install -r requirements.txt</code></li>
+<li>For R, install the packages listed in <code>DESCRIPTION</code> such as via <code>pak::local_install_deps()</code></li>
+</ul></li>
 </ul>
 <p>You will also need API credentials for at least one LLM provider; we will share details closer to the workshop.</p>
 </section>

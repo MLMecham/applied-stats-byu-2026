@@ -47,8 +47,8 @@ format:
 
 -   Introductions
 -   What to expect from these two days
--   Build on AI (Day 1)
--   Build with AI (Day 2)
+  -   Build on AI (Day 1)
+  -   Build with AI (Day 2)
 
 ## Day 1: Build on AI
 
@@ -93,7 +93,7 @@ Open `01-hello-llm` and make your first API call by writing a short "I'm at SIAS
 # Anatomy of a conversation {background-image="../images/undraw_chat-with-ai_ir62.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
 ## To get a response, you send a message
 
--   Under the hood: an HTTP request to a provider
+-   Under the hood, an HTTP request is sent to a provider
 -   Message roles: `system`, `user`, `assistant`
 -   `ellmer` and `chatlas` hide the boilerplate
 
@@ -105,7 +105,9 @@ Open `01-hello-llm` and make your first API call by writing a short "I'm at SIAS
 
 Open `02-word-game` and play a word guessing game:
 
--   System prompt: *You are playing a word guessing game. At each turn, guess the word and tell us what it is.*
+-   System prompt: 
+> You are playing a word guessing game. At each turn, guess the word and tell us what it is.
+
 -   Include a modifier in the first message (e.g. "In British English," "In pirate,") and watch how it steers later answers.
 :::
 
@@ -121,7 +123,7 @@ Open `02-word-game` and play a word guessing game:
 
 ## Demo
 
-What happens when you clear the chat?
+What happens with multi-turn conversations? What happens when you clear the chat?
 
 ```bash
 cd demo/01-clearbot
@@ -143,12 +145,7 @@ uv run shiny run app.py
 
 ## Demo
 
-What are tokens?
-
-```bash
-cd demo/01-token-possibilities
-uv run shiny run app.py
-```
+What are the token probabilities?
 
 :::
 

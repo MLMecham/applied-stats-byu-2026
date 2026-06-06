@@ -30,9 +30,12 @@ At the end of this workshop, participants will understand how to:
 We will be working locally during the workshop, so please come with a laptop that has the following installed (all available for free):
 
 - A recent version of Python (perhaps installed using [uv](https://docs.astral.sh/uv/guides/install-python/)) and/or R
+    - If you are using Python, create a virtual environment such as via `uv venv`
 - A recent version of [Positron](https://positron.posit.co/download), or optionally if preferred, [RStudio](https://posit.co/download/rstudio-desktop)
 - Clone the [workshop repo](https://github.com/juliasilge/applied-stats-byu-2026)
-- Install the Python packages from `requirements.txt` and/or the R packages via TODO.
+- Install the packages needed for the workshop:
+    - For Python, install the packages listed in `requirements.txt` such as via `uv pip install -r requirements.txt`
+    - For R, install the packages listed in `DESCRIPTION` such as via `pak::local_install_deps()`
 
 You will also need API credentials for at least one LLM provider; we will share details closer to the workshop.
 
