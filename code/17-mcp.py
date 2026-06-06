@@ -1,5 +1,5 @@
 # 17-mcp.py
-# Slide 04: Beyond tools (MCP)
+# Deck 04: Beyond prompts (MCP)
 # Goal: connect an MCP server to chatlas and let the model use the tools it
 # exposes. Try one of: ArXiV, fetcher, git-ingest, github, context7.
 

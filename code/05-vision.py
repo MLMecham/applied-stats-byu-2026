@@ -1,5 +1,5 @@
 # 05-vision.py
-# Slide 02: Programming with LLMs (Multi-modal input)
+# Deck 02: Programming with LLMs (Multi-modal input)
 # Goal: pass an image of food and ask for recipe suggestions.
 
 # %% Import packages and load environment variable for API access

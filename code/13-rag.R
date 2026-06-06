@@ -1,5 +1,5 @@
 # 13-rag.R
-# Slide 03: Augmented generation (RAG)
+# Deck 03: Prompt engineering and RAG (RAG)
 # Goal: build a dynamic RAG system over the R for Data Science book. Chunk the
 # text, compute embeddings with ragnar, and expose retrieval as a tool.
 

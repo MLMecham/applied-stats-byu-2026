@@ -1,5 +1,5 @@
 # 15-quiz-game-ui.py
-# Slide 03: Augmented generation (Tool calling UI)
+# Deck 04: Beyond prompts (Tool calling UI)
 # Goal: progressively upgrade the quiz show app:
 #   1. add tool annotations to give play_sound an icon and title
 #   2. return a ContentToolResult with custom title and icon

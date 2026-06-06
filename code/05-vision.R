@@ -1,5 +1,5 @@
 # 05-vision.R
-# Slide 02: Programming with LLMs (Multi-modal input)
+# Deck 02: Programming with LLMs (Multi-modal input)
 # Goal: pass an image of food and ask for recipe suggestions.
 
 # %% Import package

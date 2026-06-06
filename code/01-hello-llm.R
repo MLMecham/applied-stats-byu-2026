@@ -1,5 +1,5 @@
 # 01-hello-llm.R
-# Slide 01: Talking with LLMs via code (Set-up and verify API access)
+# Deck 01: Talking with LLMs via code (Set-up and verify API access)
 # Goal: verify API access by writing a short poem about SIAS 2026.
 
 # %% Import package

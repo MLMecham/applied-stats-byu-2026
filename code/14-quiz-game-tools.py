@@ -1,5 +1,5 @@
 # 14-quiz-game-tools.py
-# Slide 03: Augmented generation (Tool calling)
+# Deck 04: Beyond prompts (Tool calling)
 # Goal: Shiny quiz show app. We provide a function that plays a sound via
 # playsound; document it well and register it as a tool the model can call.
 

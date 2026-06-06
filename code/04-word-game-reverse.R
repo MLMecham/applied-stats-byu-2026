@@ -1,5 +1,5 @@
 # 04-word-game-reverse.R
-# Slide 01: Talking with LLMs via code (Shinychat basics)
+# Deck 02: Programming with LLMs (Build your own Shiny chat app)
 # Goal: a Shiny chat app where the LLM holds a secret word in its system prompt
 # and gives hints; the user has to guess.
 

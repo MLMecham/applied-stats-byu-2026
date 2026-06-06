@@ -1,5 +1,5 @@
 # 01-hello-llm.py
-# Slide 01: Talking with LLMs via code (Set-up and verify API access)
+# Deck 01: Talking with LLMs via code (Set-up and verify API access)
 
 # %% Import packages and load environment variable for API access
 

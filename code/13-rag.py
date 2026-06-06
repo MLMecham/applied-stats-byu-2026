@@ -1,5 +1,5 @@
 # 13-rag.py
-# Slide 03: Augmented generation (RAG)
+# Deck 03: Prompt engineering and RAG (RAG)
 # Goal: build a dynamic RAG system over the Polars Cookbook. Chunk the text,
 # compute embeddings, and expose retrieval as a tool the model can call.
 
