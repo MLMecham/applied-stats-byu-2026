@@ -246,11 +246,18 @@
 <p><strong>Activity</strong></p>
 </div>
 <div class="callout-content">
-<p>Open <code>04-word-game-reverse</code> and flip the word game from the last session so the LLM holds a secret word and gives hints. The user has to guess.</p>
+<ul>
+<li>Open <code>04-word-game-reverse</code></li>
+<li>Flip the word game from the last session so:
+<ul>
+<li>the LLM holds a secret word and gives hints</li>
+<li>the user has to guess</li>
+</ul></li>
+</ul>
 </div>
 </div>
 </div>
-<div id="timer_c2a056950ef6a70cba5e0ee15e5b50ff29e1f61c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_d9f29c49419133ae1bac4bf32c40d99cbe84b98c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -267,7 +274,10 @@
 <h2>The landscape</h2>
 <ul>
 <li>Major providers: OpenAI, Anthropic, Google, plus local options like ollama</li>
-<li>What are the tradeoffs? Capability, context length, speed, cost</li>
+<li>What are the tradeoffs?
+<ul>
+<li>Capability, context length, speed, cost</li>
+</ul></li>
 <li>Newer is not always better for your task</li>
 </ul>
 </section>
@@ -279,11 +289,10 @@
 <p><strong>Demo</strong></p>
 </div>
 <div class="callout-content">
-<p>We can send the same prompt sent to several providers; switching is a one-string change:</p>
+<p>The same prompt across several providers: compare answers, latency, and token usage.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># demo/02-models/02-models.qmd</span></span>
 <span id="cb1-2"><a></a><span class="fu">chat</span>(<span class="st">"anthropic/claude-sonnet-4-6"</span>)<span class="sc">$</span><span class="fu">chat</span>(prompt)</span>
 <span id="cb1-3"><a></a><span class="fu">chat</span>(<span class="st">"openai/gpt-5"</span>)<span class="sc">$</span><span class="fu">chat</span>(prompt)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Compare the answers, latency, and token usage</p>
 </div>
 </div>
 </div>
@@ -323,7 +332,7 @@
 </div>
 </div>
 </div>
-<div id="timer_c2a056950ef6a70cba5e0ee15e5b50ff29e1f61c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_d9f29c49419133ae1bac4bf32c40d99cbe84b98c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -353,13 +362,16 @@
 </div>
 <div class="callout-content">
 <ul>
-<li>Open <code>07-structured-output</code> and extract structured fields from the recipe PDF (ingredients, steps, yield, prep time)</li>
+<li>Open <code>07-structured-output</code> and extract structured fields from the recipe PDF:
+<ul>
+<li>Ingredients, steps, yield, prep time</li>
+</ul></li>
 <li>For Python, turn on <code>use_attribute_docstrings</code> in Pydantic to let docstrings guide the model</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="timer_c2a056950ef6a70cba5e0ee15e5b50ff29e1f61c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_d9f29c49419133ae1bac4bf32c40d99cbe84b98c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -395,7 +407,7 @@
 </div>
 </div>
 </div>
-<div id="timer_c2a056950ef6a70cba5e0ee15e5b50ff29e1f61c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_d9f29c49419133ae1bac4bf32c40d99cbe84b98c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>

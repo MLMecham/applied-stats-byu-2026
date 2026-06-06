@@ -263,11 +263,11 @@
 <p><strong>Activity</strong></p>
 </div>
 <div class="callout-content">
-<p>Introduce yourself to your neighbors.</p>
+<p>Introduce yourself to your neighbors!</p>
 </div>
 </div>
 </div>
-<div id="timer_c2a056950ef6a70cba5e0ee15e5b50ff29e1f61c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_d9f29c49419133ae1bac4bf32c40d99cbe84b98c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -290,11 +290,14 @@
 <p><strong>Activity</strong></p>
 </div>
 <div class="callout-content">
-<p>Open <code>01-hello-llm</code> and make your first API call by writing a short “I’m at SIAS 2026” poem or limerick.</p>
+<ul>
+<li>Open <code>01-hello-llm</code></li>
+<li>Make your first API call by writing a short “I’m at SIAS 2026” poem or limerick</li>
+</ul>
 </div>
 </div>
 </div>
-<div id="timer_c2a056950ef6a70cba5e0ee15e5b50ff29e1f61c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_d9f29c49419133ae1bac4bf32c40d99cbe84b98c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -319,7 +322,7 @@
 <ul>
 <li>Under the hood, an HTTP request is sent to a provider</li>
 <li>Message roles: <code>system</code>, <code>user</code>, <code>assistant</code></li>
-<li><code>ellmer</code> and <code>chatlas</code> hide the boilerplate</li>
+<li>ellmer and chatlas hide the boilerplate</li>
 </ul>
 </section>
 <section id="your-turn-2" class="slide level2">
@@ -330,20 +333,18 @@
 <p><strong>Activity</strong></p>
 </div>
 <div class="callout-content">
-<p>Open <code>02-word-game</code> and play a word guessing game:</p>
-<ul>
-<li>System prompt:</li>
-</ul>
+<p>Open <code>02-word-game</code> and play a word guessing game with a system prompt like:</p>
 <blockquote>
 <p>You are playing a word guessing game. At each turn, guess the word and tell us what it is.</p>
 </blockquote>
 <ul>
-<li>Include a modifier in the first message (e.g.&nbsp;“In British English,” “In pirate,”) and watch how it steers later answers.</li>
+<li>Include a modifier in the first message (e.g.&nbsp;“In British English,” “In pirate,”)</li>
+<li>Watch how it steers later answers</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="timer_c2a056950ef6a70cba5e0ee15e5b50ff29e1f61c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_d9f29c49419133ae1bac4bf32c40d99cbe84b98c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -363,8 +364,8 @@
 <p><strong>Demo</strong></p>
 </div>
 <div class="callout-content">
-<p>What happens with multi-turn conversations? What happens when you clear the chat?</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="bu">cd</span> demo/01-clearbot</span>
+<p>What happens across multiple turns, and what happens when you clear the chat?</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="co"># demo/01-clearbot/app.py</span></span>
 <span id="cb1-2"><a></a><span class="ex">uv</span> run shiny run app.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
@@ -388,7 +389,9 @@
 <p><strong>Demo</strong></p>
 </div>
 <div class="callout-content">
-<p>What are the token probabilities?</p>
+<p>What are the per-token probabilities, and where is the model confident vs.&nbsp;guessing?</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># demo/01-token-possibilities/app.R</span></span>
+<span id="cb2-2"><a></a>shiny<span class="sc">::</span><span class="fu">runApp</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -417,7 +420,7 @@
 </div>
 </div>
 </div>
-<div id="timer_c2a056950ef6a70cba5e0ee15e5b50ff29e1f61c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_d9f29c49419133ae1bac4bf32c40d99cbe84b98c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>

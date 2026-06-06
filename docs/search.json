@@ -74,21 +74,21 @@
     "href": "slides/04-beyond-prompts.html#letting-the-model-use-your-functions",
     "title": "Beyond prompts",
     "section": "Letting the model use your functions",
-    "text": "Letting the model use your functions\n\nThe model decides when to call but you decide what is callable\nThe shape: function name, description, JSON schema for arguments\nYou execute the function and send the result back"
+    "text": "Letting the model use your functions\n\nThe model decides when to call but you decide what is callable\nThe shape:\n\nFunction name, description, JSON schema for arguments\n\nYou execute the function and send the result back"
   },
   {
     "objectID": "slides/04-beyond-prompts.html#tool-calling-1",
     "href": "slides/04-beyond-prompts.html#tool-calling-1",
     "title": "Beyond prompts",
     "section": "Tool calling",
-    "text": "Tool calling\n\n\n\nDemo\n\n\nTODO for 04-manual-tools"
+    "text": "Tool calling\n\n\n\nDemo\n\n\nThe manual tool-calling loop: see every request, tool call, and result.\n# demo/04-manual-tools/04-manual-tools-app.R\nshiny::runApp()"
   },
   {
     "objectID": "slides/04-beyond-prompts.html#tool-calling-2",
     "href": "slides/04-beyond-prompts.html#tool-calling-2",
     "title": "Beyond prompts",
     "section": "Tool calling",
-    "text": "Tool calling\n\n\n\nDemo\n\n\nAutomatic loop (demo/04-weather-tool): let the library handle the round trips"
+    "text": "Tool calling\n\n\n\nDemo\n\n\nThe automatic tool-calling loop: the library handles the round trips for you.\n# demo/04-weather-tool/04-weather-tool-app.R\nshiny::runApp()"
   },
   {
     "objectID": "slides/04-beyond-prompts.html#your-turn",
@@ -158,21 +158,21 @@
     "href": "slides/02-programming-with-llms.html#your-turn",
     "title": "Programming with LLMs",
     "section": "Your turn",
-    "text": "Your turn\n\n\n\nActivity\n\n\nOpen 04-word-game-reverse and flip the word game from the last session so the LLM holds a secret word and gives hints. The user has to guess.\n\n\n\n\n  \n    −\n    +\n \n 10:00"
+    "text": "Your turn\n\n\n\nActivity\n\n\n\nOpen 04-word-game-reverse\nFlip the word game from the last session so:\n\nthe LLM holds a secret word and gives hints\nthe user has to guess\n\n\n\n\n\n\n  \n    −\n    +\n \n 10:00"
   },
   {
     "objectID": "slides/02-programming-with-llms.html#the-landscape",
     "href": "slides/02-programming-with-llms.html#the-landscape",
     "title": "Programming with LLMs",
     "section": "The landscape",
-    "text": "The landscape\n\nMajor providers: OpenAI, Anthropic, Google, plus local options like ollama\nWhat are the tradeoffs? Capability, context length, speed, cost\nNewer is not always better for your task"
+    "text": "The landscape\n\nMajor providers: OpenAI, Anthropic, Google, plus local options like ollama\nWhat are the tradeoffs?\n\nCapability, context length, speed, cost\n\nNewer is not always better for your task"
   },
   {
     "objectID": "slides/02-programming-with-llms.html#comparing-providers",
     "href": "slides/02-programming-with-llms.html#comparing-providers",
     "title": "Programming with LLMs",
     "section": "Comparing providers",
-    "text": "Comparing providers\n\n\n\nDemo\n\n\nWe can send the same prompt sent to several providers; switching is a one-string change:\n# demo/02-models/02-models.qmd\nchat(\"anthropic/claude-sonnet-4-6\")$chat(prompt)\nchat(\"openai/gpt-5\")$chat(prompt)\nCompare the answers, latency, and token usage"
+    "text": "Comparing providers\n\n\n\nDemo\n\n\nThe same prompt across several providers: compare answers, latency, and token usage.\n# demo/02-models/02-models.qmd\nchat(\"anthropic/claude-sonnet-4-6\")$chat(prompt)\nchat(\"openai/gpt-5\")$chat(prompt)"
   },
   {
     "objectID": "slides/02-programming-with-llms.html#beyond-text",
@@ -200,7 +200,7 @@
     "href": "slides/02-programming-with-llms.html#your-turn-2",
     "title": "Programming with LLMs",
     "section": "Your turn",
-    "text": "Your turn\n\n\n\nActivity\n\n\n\nOpen 07-structured-output and extract structured fields from the recipe PDF (ingredients, steps, yield, prep time)\nFor Python, turn on use_attribute_docstrings in Pydantic to let docstrings guide the model\n\n\n\n\n\n  \n    −\n    +\n \n 15:00"
+    "text": "Your turn\n\n\n\nActivity\n\n\n\nOpen 07-structured-output and extract structured fields from the recipe PDF:\n\nIngredients, steps, yield, prep time\n\nFor Python, turn on use_attribute_docstrings in Pydantic to let docstrings guide the model\n\n\n\n\n\n  \n    −\n    +\n \n 15:00"
   },
   {
     "objectID": "slides/02-programming-with-llms.html#scaling-out",
@@ -284,7 +284,7 @@
     "href": "slides/01-talking-with-llms.html#your-turn",
     "title": "Talking with LLMs via code",
     "section": "Your turn",
-    "text": "Your turn\n\n\n\nActivity\n\n\nIntroduce yourself to your neighbors.\n\n\n\n\n  \n    −\n    +\n \n 05:00"
+    "text": "Your turn\n\n\n\nActivity\n\n\nIntroduce yourself to your neighbors!\n\n\n\n\n  \n    −\n    +\n \n 05:00"
   },
   {
     "objectID": "slides/01-talking-with-llms.html#set-up-and-verify-api-access",
@@ -298,7 +298,7 @@
     "href": "slides/01-talking-with-llms.html#your-turn-1",
     "title": "Talking with LLMs via code",
     "section": "Your turn",
-    "text": "Your turn\n\n\n\nActivity\n\n\nOpen 01-hello-llm and make your first API call by writing a short “I’m at SIAS 2026” poem or limerick.\n\n\n\n\n  \n    −\n    +\n \n 05:00"
+    "text": "Your turn\n\n\n\nActivity\n\n\n\nOpen 01-hello-llm\nMake your first API call by writing a short “I’m at SIAS 2026” poem or limerick\n\n\n\n\n\n  \n    −\n    +\n \n 05:00"
   },
   {
     "objectID": "slides/01-talking-with-llms.html#think-empirically-be-pragmatic",
@@ -319,21 +319,21 @@
     "href": "slides/01-talking-with-llms.html#your-turn-2",
     "title": "Talking with LLMs via code",
     "section": "Your turn",
-    "text": "Your turn\n\n\n\nActivity\n\n\nOpen 02-word-game and play a word guessing game:\n\nSystem prompt:\n\n\nYou are playing a word guessing game. At each turn, guess the word and tell us what it is.\n\n\nInclude a modifier in the first message (e.g. “In British English,” “In pirate,”) and watch how it steers later answers.\n\n\n\n\n\n  \n    −\n    +\n \n 10:00"
+    "text": "Your turn\n\n\n\nActivity\n\n\nOpen 02-word-game and play a word guessing game with a system prompt like:\n\nYou are playing a word guessing game. At each turn, guess the word and tell us what it is.\n\n\nInclude a modifier in the first message (e.g. “In British English,” “In pirate,”)\nWatch how it steers later answers\n\n\n\n\n\n  \n    −\n    +\n \n 10:00"
   },
   {
     "objectID": "slides/01-talking-with-llms.html#the-conversation-is-stateless",
     "href": "slides/01-talking-with-llms.html#the-conversation-is-stateless",
     "title": "Talking with LLMs via code",
     "section": "The conversation is stateless",
-    "text": "The conversation is stateless\n\nThe model has no memory between requests\nThe library replays history each turn\n\n\n\n\nDemo\n\n\nWhat happens with multi-turn conversations? What happens when you clear the chat?\ncd demo/01-clearbot\nuv run shiny run app.py"
+    "text": "The conversation is stateless\n\nThe model has no memory between requests\nThe library replays history each turn\n\n\n\n\nDemo\n\n\nWhat happens across multiple turns, and what happens when you clear the chat?\n# demo/01-clearbot/app.py\nuv run shiny run app.py"
   },
   {
     "objectID": "slides/01-talking-with-llms.html#tokens-as-the-fundamental-unit",
     "href": "slides/01-talking-with-llms.html#tokens-as-the-fundamental-unit",
     "title": "Talking with LLMs via code",
     "section": "Tokens as the fundamental unit",
-    "text": "Tokens as the fundamental unit\n\nWhat is a token?\nHow models predict the next token\nWhy this matters for cost and context length\n\n\n\n\nDemo\n\n\nWhat are the token probabilities?"
+    "text": "Tokens as the fundamental unit\n\nWhat is a token?\nHow models predict the next token\nWhy this matters for cost and context length\n\n\n\n\nDemo\n\n\nWhat are the per-token probabilities, and where is the model confident vs. guessing?\n# demo/01-token-possibilities/app.R\nshiny::runApp()"
   },
   {
     "objectID": "slides/01-talking-with-llms.html#try-a-chat-ui-in-seconds",
@@ -382,14 +382,14 @@
     "href": "slides/03-prompt-engineering.html#system-prompt-best-practices",
     "title": "Prompt engineering and RAG",
     "section": "System prompt best practices",
-    "text": "System prompt best practices\n\nBe explicit about role, audience, and format\nShow, don’t just tell (“few-shot” examples)\nTell the model how to handle uncertainty\nRead more on how When plotting, LLMs see what they expect to see"
+    "text": "System prompt best practices\n\nBe explicit about role, audience, and format\nShow, don’t just tell (“few-shot” examples)\nTell the model how to handle uncertainty\nRead more on how when plotting, LLMs see what they expect to see"
   },
   {
     "objectID": "slides/03-prompt-engineering.html#your-turn-2",
     "href": "slides/03-prompt-engineering.html#your-turn-2",
     "title": "Prompt engineering and RAG",
     "section": "Your turn",
-    "text": "Your turn\n\n\n\nActivity\n\n\n\nOpen 11-quiz-game-app and write the system prompt for our quiz game show\nThe app reads your prompt from 11-quiz-game-prompt.md (edit with your own quiz show design)\nRun it to play the game!\n\n\n\n\n\n  \n    −\n    +\n \n 10:00"
+    "text": "Your turn\n\n\n\nActivity\n\n\n\nOpen 11-quiz-game-app and write the system prompt for our quiz game show\nThe app reads your prompt from 11-quiz-game-prompt.md\nEdit with your own quiz show design\nRun it to play the game!\n\n\n\n\n\n  \n    −\n    +\n \n 10:00"
   },
   {
     "objectID": "slides/03-prompt-engineering.html#context-in-better-answers-out",
