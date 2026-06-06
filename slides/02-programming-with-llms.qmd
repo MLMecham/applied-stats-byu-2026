@@ -20,37 +20,61 @@ format:
       data-background-repeat: "no-repeat"
 ---
 
-# Programming with LLMs {background-image="../images/undraw_large-language-models_m4no.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
+# Hello!
 
-A deeper look at what you can do with LLMs from code that you can't easily do in a chat UI.
+<center>
+
+<img src="https://github.com/juliasilge.png" style="border-radius: 50%;" width="300px"/>
+
+[{{< fa brands github >}} \@juliasilge](https://github.com/juliasilge)
+
+[{{< fa brands bluesky >}} \@juliasilge.com](https://bsky.app/profile/juliasilge.com)
+
+[{{< fa link >}} juliasilge.com](https://juliasilge.com/)
+
+</center>
+
+## Day 1: Build on AI
+
+1.  Talking with LLMs via code 
+2.  Programming with LLMs (this session!)
+3.  Augmented generation
+4.  Beyond tools
 
 # Choosing a model {background-image="../images/undraw_large-language-models_m4no.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
-## The landscape (15 min)
+
+## The landscape
 
 -   Major providers: OpenAI, Anthropic, Google, plus local options like ollama
--   Tradeoffs: capability, context length, speed, cost
+-   What are the tradeoffs? Capability, context length, speed, cost
 -   Newer is not always better for your task
 
-## Your turn
+## Comparing providers
 
 ::: {.callout-note icon=false}
 
-## Activity
+## Demo
 
-Open `05-models` and send the same prompt to several providers:
+We can send the same prompt sent to several providers; switching is a one-string change:
 
--   Change one string to switch providers: `chat_openai()` vs. `chat_anthropic()`, etc.
--   Compare answers, latency, and token usage.
+```r
+# demo/02-models/02-models.qmd
+chat("anthropic/claude-sonnet-4-6")$chat(prompt)
+chat("openai/gpt-5")$chat(prompt)
+```
+
+Compare the answers, latency, and token usage
 :::
 
-{{< countdown minutes=10 >}}
-
 # Multi-modal input {background-image="../images/undraw_large-language-models_m4no.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
-## Beyond text (15 min)
 
--   Vision: pass an image alongside your prompt
--   PDFs: pass document bytes directly
--   When to extract text up front vs. let the model see the file
+## Beyond text
+
+-   Vision 👀
+    - Pass an image alongside your prompt
+-   PDFs 📄
+    - Pass document bytes directly
+-   When to extract text up front vs. let the model see the file?
 
 ## Your turn
 
@@ -58,16 +82,17 @@ Open `05-models` and send the same prompt to several providers:
 
 ## Activity
 
-Try a multi-modal input:
+Try multi-modal input:
 
--   Open `06-vision` and pass food photos to ask for recipe suggestions.
--   Open `07-pdf` and take a PDF recipe and turn it into clean Markdown.
+-   Open `05-vision` and pass food photos to ask for recipe suggestions
+-   Open `06-pdf` and take a PDF recipe and turn it into clean Markdown
 :::
 
 {{< countdown minutes=10 >}}
 
 # Structured output {background-image="../images/undraw_large-language-models_m4no.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
-## Getting parseable answers (15 min)
+
+## Getting parseable answers
 
 -   R: `ellmer::type_*()`
 -   Python: Pydantic models with `chatlas`
@@ -79,19 +104,19 @@ Try a multi-modal input:
 
 ## Activity
 
-Open `08-structured-output` and extract structured fields from the recipe PDF (ingredients, steps, yield, prep time).
-
-Tip: turn on `use_attribute_docstrings` in Pydantic to let docstrings guide the model.
+- Open `07-structured-output` and extract structured fields from the recipe PDF (ingredients, steps, yield, prep time)
+- For Python, turn on `use_attribute_docstrings` in Pydantic to let docstrings guide the model
 :::
 
 {{< countdown minutes=15 >}}
 
 # Parallel and batch calls {background-image="../images/undraw_large-language-models_m4no.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
-## Scaling out (10 min)
+
+## Scaling out
 
 -   When one prompt becomes a hundred
 -   Parallel API calls vs. provider batch APIs (cheaper, slower)
--   Watch for rate limits
+-   Watch for rate limits!
 
 ## Your turn
 
@@ -99,13 +124,15 @@ Tip: turn on `use_attribute_docstrings` in Pydantic to let docstrings guide the 
 
 ## Activity
 
-Open `09-batch` and re-run the structured extraction across many recipes in parallel. Save the JSON output so we can reuse it later.
+- Open `08-batch` and re-run the structured extraction across many recipes in parallel
+- Save the JSON output so we can reuse it later
 :::
 
 {{< countdown minutes=10 >}}
 
 # Prompt engineering and hallucinations {background-image="../images/undraw_large-language-models_m4no.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
-## Models will confidently make things up (35 min)
+
+## Models will confidently make things up
 
 -   What hallucination looks like
 -   Why a confident answer is not a correct answer
@@ -116,11 +143,11 @@ Open `09-batch` and re-run the structured extraction across many recipes in para
 
 ## Activity
 
-Open `10-plot-interpret` and ask the model about a plot:
+Open `09-plot-interpret` and ask the model about a plot:
 
--   Generate a plot of mpg vs. weight from `mtcars`.
--   Ask the model to interpret it.
--   Discuss what it got right and where it leaned on priors.
+-   Generate a plot of mpg vs. weight from `mtcars`
+-   Ask the model to interpret it
+-   Discuss what it got right and where it leaned on priors
 :::
 
 {{< countdown minutes=10 >}}
@@ -131,11 +158,11 @@ Open `10-plot-interpret` and ask the model about a plot:
 
 ## Activity
 
-Open `11-plot-noise`:
+Open `10-plot-noise`:
 
--   Replace the plot with random noise; keep the prompt the same.
--   See what the model says.
--   Part 2: pair up and try to steer the model into a "decent" interpretation of pure noise.
+-   Replace the plot with random noise; keep the prompt the same
+-   See what the model says
+-   Pair up with a neighbor and try to steer the model into an "appropriate" interpretation of pure noise
 :::
 
 {{< countdown minutes=15 >}}
@@ -143,8 +170,9 @@ Open `11-plot-noise`:
 ## System prompt best practices
 
 -   Be explicit about role, audience, and format
--   Show, don't just tell (few-shot examples)
+-   Show, don't just tell ("few-shot" examples)
 -   Tell the model how to handle uncertainty
+-   Read more on how [When plotting, LLMs see what they expect to see](https://posit.co/blog/introducing-bluffbench)
 
 ## Your turn
 
@@ -152,7 +180,7 @@ Open `11-plot-noise`:
 
 ## Activity
 
-Open `12-quiz-game-prompt` and write the system prompt for our quiz game show.
+Open `11-quiz-game-prompt` and write the system prompt for our quiz game show
 :::
 
 {{< countdown minutes=15 >}}

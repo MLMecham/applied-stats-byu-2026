@@ -36,7 +36,7 @@ A look at higher-level patterns: querychat, MCP, and agents.
 
 ## Activity
 
-Open `17-querychat` and add querychat to an existing Shiny app.
+Open `16-querychat` and add querychat to an existing Shiny app.
 :::
 
 {{< countdown minutes=10 >}}
@@ -54,7 +54,7 @@ Open `17-querychat` and add querychat to an existing Shiny app.
 
 ## Activity
 
-Open `18-mcp` and connect an MCP server to ellmer or chatlas:
+Open `17-mcp` and connect an MCP server to ellmer or chatlas:
 
 -   Options to try: ArXiV, fetcher, git-ingest, github, context7.
 -   Notice: the model now has access to tools you did not write.

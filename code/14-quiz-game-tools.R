@@ -1,4 +1,4 @@
-# 15-quiz-game-tools.R
+# 14-quiz-game-tools.R
 # Slide 03: Augmented generation (Tool calling)
 # Goal: Shiny quiz show app. We provide a function that plays a sound via
 # beepr; document it well and register it as a tool the model can call.

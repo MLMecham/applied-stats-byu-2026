@@ -37,7 +37,7 @@ How to add knowledge to LLMs and let them act on it. We will build a simple RAG 
 
 ## Activity
 
-Open `13-coding-assistant` and try a coding assistant on a niche package (R: `weathR`, Python: `NWS`):
+Open `12-coding-assistant` and try a coding assistant on a niche package (R: `weathR`, Python: `NWS`):
 
 -   First, ask with no context and note what goes wrong.
 -   Then paste the README into the prompt and compare.
@@ -59,7 +59,7 @@ Open `13-coding-assistant` and try a coding assistant on a niche package (R: `we
 
 ## Activity
 
-Open `14-rag` and build a dynamic RAG system:
+Open `13-rag` and build a dynamic RAG system:
 
 -   Source documents: R for Data Science (R) or Polars Cookbook (Python).
 -   Tools: `ragnar` (R), `llama-index` or chatlas helpers (Python).
@@ -86,7 +86,7 @@ Open `14-rag` and build a dynamic RAG system:
 
 ## Activity
 
-Open `15-quiz-game-tools` and wire tool calling into the quiz show app:
+Open `14-quiz-game-tools` and wire tool calling into the quiz show app:
 
 -   Provide a function that plays a sound (R: `beepr`, Python: `playsound`).
 -   Document it well and register it as a tool in the quiz show app.
@@ -108,7 +108,7 @@ Open `15-quiz-game-tools` and wire tool calling into the quiz show app:
 
 ## Activity
 
-Open `16-quiz-game-ui` and progressively upgrade the quiz show app:
+Open `15-quiz-game-ui` and progressively upgrade the quiz show app:
 
 -   Add tool annotations: give each tool an icon and title.
 -   Return a `ContentToolResult` with a custom title and icon.

@@ -1,4 +1,4 @@
-# 07-pdf.py
+# 06-pdf.py
 # Slide 02: Programming with LLMs (Multi-modal input)
 # Goal: pass a PDF recipe and turn it into clean Markdown.
 

@@ -1,4 +1,4 @@
-# 14-rag.R
+# 13-rag.R
 # Slide 03: Augmented generation (RAG)
 # Goal: build a dynamic RAG system over the R for Data Science book. Chunk the
 # text, compute embeddings with ragnar, and expose retrieval as a tool.

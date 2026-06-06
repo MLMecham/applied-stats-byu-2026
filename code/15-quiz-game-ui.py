@@ -1,13 +1,11 @@
-# 16-quiz-game-ui.R
+# 15-quiz-game-ui.py
 # Slide 03: Augmented generation (Tool calling UI)
 # Goal: progressively upgrade the quiz show app:
 #   1. add tool annotations to give play_sound an icon and title
 #   2. return a ContentToolResult with custom title and icon
 #   3. track answers and score in reactive value boxes that update from tools
 
-library(shiny)
-library(shinychat)
-library(ellmer)
-library(bslib)
+from shiny import App, ui, reactive
+import chatlas
 
-# TODO: build on 15-quiz-game-tools.R and add the three upgrades above
+# TODO: build on 15-quiz-game-tools.py and add the three upgrades above

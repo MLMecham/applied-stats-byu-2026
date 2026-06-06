@@ -1,4 +1,4 @@
-# 08-structured-output.R
+# 07-structured-output.R
 # Slide 02: Programming with LLMs (Structured output)
 # Goal: extract structured fields (ingredients, steps, yield, prep time) from a
 # recipe PDF using ellmer::type_*().

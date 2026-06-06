@@ -1,4 +1,4 @@
-# 11-plot-noise.R
+# 10-plot-noise.R
 # Slide 02: Programming with LLMs (Prompt engineering and hallucinations)
 # Goal: replace the mpg vs weight plot with random noise. Send the same prompt
 # and see what the model says. Then work with a partner to coax the model into

@@ -1,4 +1,4 @@
-# 08-structured-output.py
+# 07-structured-output.py
 # Slide 02: Programming with LLMs (Structured output)
 # Goal: extract structured fields (ingredients, steps, yield, prep time) from a
 # recipe PDF using a Pydantic model with chatlas.
