@@ -8,7 +8,7 @@ library(ellmer)
 chat <- chat_anthropic()
 
 # %% Converse with the chatbot in your console
-live_console(___)
+live_console(chat)
 
 # %% After a bit, exit the chat and try chatting in a Shiny app.
-live_browser(___)
+live_browser(chat)

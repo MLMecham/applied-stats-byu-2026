@@ -10,7 +10,7 @@ dotenv.load_dotenv()
 chat = chatlas.ChatAnthropic()
 
 # %% Converse with the chatbot in your console
-___.console()
+chat.console()
 
 # %% After a bit, exit the chat and try chatting in a Shiny app.
-___.app()
+chat.app()
