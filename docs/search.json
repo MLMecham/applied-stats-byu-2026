@@ -74,21 +74,14 @@
     "href": "slides/04-beyond-prompts.html#letting-the-model-use-your-functions",
     "title": "Beyond prompts",
     "section": "Letting the model use your functions",
-    "text": "Letting the model use your functions\n\nThe model decides when to call but you decide what is callable\nThe shape:\n\nFunction name, description, JSON schema for arguments\n\nYou execute the function and send the result back"
+    "text": "Letting the model use your functions\n\nThe model decides when to call but you decide what is callable\nThe shape:\n\nFunction name, description, JSON schema for arguments\n\nYou allow the model to execute the function on your behalf and send the result back\n\n\n\n\nDemo\n\n\nThe manual tool-calling loop: see every request, tool call, and result\n# demo/04-manual-tools/04-manual-tools-app.R\nshiny::runApp()"
   },
   {
-    "objectID": "slides/04-beyond-prompts.html#tool-calling-1",
-    "href": "slides/04-beyond-prompts.html#tool-calling-1",
+    "objectID": "slides/04-beyond-prompts.html#letting-the-model-use-your-functions-1",
+    "href": "slides/04-beyond-prompts.html#letting-the-model-use-your-functions-1",
     "title": "Beyond prompts",
-    "section": "Tool calling",
-    "text": "Tool calling\n\n\n\nDemo\n\n\nThe manual tool-calling loop: see every request, tool call, and result.\n# demo/04-manual-tools/04-manual-tools-app.R\nshiny::runApp()"
-  },
-  {
-    "objectID": "slides/04-beyond-prompts.html#tool-calling-2",
-    "href": "slides/04-beyond-prompts.html#tool-calling-2",
-    "title": "Beyond prompts",
-    "section": "Tool calling",
-    "text": "Tool calling\n\n\n\nDemo\n\n\nThe automatic tool-calling loop: the library handles the round trips for you.\n# demo/04-weather-tool/04-weather-tool-app.R\nshiny::runApp()"
+    "section": "Letting the model use your functions",
+    "text": "Letting the model use your functions\n\nThe model decides when to call but you decide what is callable\nThe shape:\n\nFunction name, description, JSON schema for arguments\n\nYou allow the model to execute the function on your behalf and send the result back\n\n\n\n\nDemo\n\n\nThe automatic tool-calling loop: the library handles the round trips for you\n# demo/04-weather-tool/04-weather-tool-app.R\nshiny::runApp()"
   },
   {
     "objectID": "slides/04-beyond-prompts.html#your-turn",
@@ -109,7 +102,7 @@
     "href": "slides/04-beyond-prompts.html#your-turn-1",
     "title": "Beyond prompts",
     "section": "Your turn",
-    "text": "Your turn\n\n\n\nActivity\n\n\nOpen 15-quiz-game-ui and progressively upgrade the quiz show app:\n\nAdd tool annotations: give each tool an icon and title\nReturn a ContentToolResult with a custom title and icon\nTrack answers and score in reactive value boxes that update from tool calls\n(Optional) Add a “finish round” tool that displays the final score\n\n\n\n\n\n  \n    −\n    +\n \n 20:00"
+    "text": "Your turn\n\n\n\nActivity\n\n\nOpen 15-quiz-game-ui and progressively upgrade the quiz show app:\n\nAdd tool annotations: give each tool an icon and title\nReturn a ContentToolResult with a custom title and icon\nTrack answers and score in reactive value boxes that update from tool calls\n(Optional) Add a “finish round” tool that displays the final score\n\n\n\n\n\n  \n    −\n    +\n \n 15:00"
   },
   {
     "objectID": "slides/04-beyond-prompts.html#a-preview-of-day-2",
@@ -165,14 +158,7 @@
     "href": "slides/02-programming-with-llms.html#the-landscape",
     "title": "Programming with LLMs",
     "section": "The landscape",
-    "text": "The landscape\n\nMajor providers: OpenAI, Anthropic, Google, plus local options like ollama\nWhat are the tradeoffs?\n\nCapability, context length, speed, cost\n\nNewer is not always better for your task"
-  },
-  {
-    "objectID": "slides/02-programming-with-llms.html#comparing-providers",
-    "href": "slides/02-programming-with-llms.html#comparing-providers",
-    "title": "Programming with LLMs",
-    "section": "Comparing providers",
-    "text": "Comparing providers\n\n\n\nDemo\n\n\nThe same prompt across several providers: compare answers, latency, and token usage.\n# demo/02-models/02-models.qmd\nchat(\"anthropic/claude-sonnet-4-6\")$chat(prompt)\nchat(\"openai/gpt-5\")$chat(prompt)"
+    "text": "The landscape\n\nMajor providers: OpenAI, Anthropic, Google, plus local options like ollama\nWhat are the tradeoffs?\n\nCapability, context length, speed, cost\n\nNewer is not always better for your task\n\n\n\n\nDemo\n\n\nThe same prompt across several providers: compare answers, latency, and token usage.\n# demo/02-models/02-models.qmd\nchat(\"anthropic/claude-sonnet-4-6\")$chat(prompt)\nchat(\"openai/gpt-5\")$chat(prompt)"
   },
   {
     "objectID": "slides/02-programming-with-llms.html#beyond-text",
@@ -410,14 +396,7 @@
     "href": "slides/03-prompt-engineering.html#how-rag-actually-works",
     "title": "Prompt engineering and RAG",
     "section": "How RAG actually works",
-    "text": "How RAG actually works\n\nChunk your documents\nCompute embeddings for each chunk\nAt query time, find the most similar chunks and add them to the prompt\nThe “retrieval” is just nearest-neighbor search"
-  },
-  {
-    "objectID": "slides/03-prompt-engineering.html#demo",
-    "href": "slides/03-prompt-engineering.html#demo",
-    "title": "Prompt engineering and RAG",
-    "section": "Demo",
-    "text": "Demo\n\n\n\nDemo\n\n\nA dynamic RAG system over the R for Data Science book: chunk, embed, and let the model retrieve relevant passages on demand.\n# demo/03-rag/03-rag.qmd\nragnar_register_tool_retrieve(chat, store, top_k = 10)\nlive_browser(chat)"
+    "text": "How RAG actually works\n\nChunk your documents\nCompute embeddings for each chunk\nAt query time, find the most similar chunks and add them to the prompt\nThe “retrieval” is just nearest-neighbor search\n\n\n\n\nDemo\n\n\nA dynamic RAG system over the R for Data Science book: chunk, embed, and let the model retrieve relevant passages on demand.\n# demo/03-rag/03-rag.qmd\nragnar_register_tool_retrieve(chat, store, top_k = 10)\nlive_browser(chat)"
   },
   {
     "objectID": "slides/05-ai-coding-assistants.html#what-well-cover-today",

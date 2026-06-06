@@ -244,33 +244,38 @@
 <ul>
 <li>Function name, description, JSON schema for arguments</li>
 </ul></li>
-<li>You execute the function and send the result back</li>
+<li>You allow the model to execute the function on your behalf and send the result back</li>
 </ul>
-</section>
-<section id="tool-calling-1" class="slide level2">
-<h2>Tool calling</h2>
 <div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <p><strong>Demo</strong></p>
 </div>
 <div class="callout-content">
-<p>The manual tool-calling loop: see every request, tool call, and result.</p>
+<p>The manual tool-calling loop: see every request, tool call, and result</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># demo/04-manual-tools/04-manual-tools-app.R</span></span>
 <span id="cb1-2"><a></a>shiny<span class="sc">::</span><span class="fu">runApp</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 </section>
-<section id="tool-calling-2" class="slide level2">
-<h2>Tool calling</h2>
+<section id="letting-the-model-use-your-functions-1" class="slide level2">
+<h2>Letting the model use your functions</h2>
+<ul>
+<li>The model decides when to call but <strong>you</strong> decide what is callable</li>
+<li>The shape:
+<ul>
+<li>Function name, description, JSON schema for arguments</li>
+</ul></li>
+<li>You allow the model to execute the function on your behalf and send the result back</li>
+</ul>
 <div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <p><strong>Demo</strong></p>
 </div>
 <div class="callout-content">
-<p>The automatic tool-calling loop: the library handles the round trips for you.</p>
+<p>The automatic tool-calling loop: the library handles the round trips for you</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># demo/04-weather-tool/04-weather-tool-app.R</span></span>
 <span id="cb2-2"><a></a>shiny<span class="sc">::</span><span class="fu">runApp</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -294,7 +299,7 @@
 </div>
 </div>
 </div>
-<div id="timer_740f9597a81b68ceb3d67e9de0cd94105fc893ae" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_32740a48a6c84659e165592b7c4dfb9ad240754e" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -333,12 +338,12 @@
 </div>
 </div>
 </div>
-<div id="timer_740f9597a81b68ceb3d67e9de0cd94105fc893ae" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_32740a48a6c84659e165592b7c4dfb9ad240754e" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
  </div>
- <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
  </div>
 </section></section>
 <section>
@@ -384,7 +389,7 @@
 </div>
 </div>
 </div>
-<div id="timer_740f9597a81b68ceb3d67e9de0cd94105fc893ae" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_32740a48a6c84659e165592b7c4dfb9ad240754e" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>

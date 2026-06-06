@@ -70,8 +70,6 @@ format:
     -   Capability, context length, speed, cost
 -   Newer is not always better for your task
 
-## Comparing providers
-
 ::: {.callout-note icon=false}
 
 ## Demo

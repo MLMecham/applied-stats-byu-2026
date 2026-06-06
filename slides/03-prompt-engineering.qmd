@@ -122,14 +122,13 @@ Open `12-coding-assistant` and try a coding assistant on a niche package (`weath
 {{< countdown minutes=10 >}}
 
 # RAG {background-image="../images/undraw_ai-research-assistant_cxx0.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
+
 ## How RAG actually works
 
 -   Chunk your documents
 -   Compute embeddings for each chunk
 -   At query time, find the most similar chunks and add them to the prompt
 -   The "retrieval" is just nearest-neighbor search
-
-## Demo
 
 ::: {.callout-note icon=false}
 
