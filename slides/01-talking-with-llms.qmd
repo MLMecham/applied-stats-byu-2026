@@ -40,18 +40,22 @@ format:
 -   You are curious about working with LLMs from code
 -   You want hands-on practice, not just slides
 
-## Day 1: Build on AI
-
-1.  Talking with LLMs via code (this session)
-2.  Programming with LLMs
-3.  Augmented generation
-4.  Beyond tools
 
 # Welcome and getting started {background-image="../images/undraw_chat-with-ai_ir62.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
-## Welcome (10 min)
+
+## Welcome
 
 -   Introductions
 -   What to expect from these two days
+-   Build on AI (Day 1)
+-   Build with AI (Day 2)
+
+## Day 1: Build on AI
+
+1.  Talking with LLMs via code (this session!)
+2.  Programming with LLMs
+3.  Augmented generation
+4.  Beyond tools
 
 ## Your turn
 
@@ -64,7 +68,7 @@ Introduce yourself to your neighbors.
 
 {{< countdown minutes=5 >}}
 
-## Set-up and verify API access (10 min)
+## Set-up and verify API access
 
 -   How API keys work
 -   Where to put them so the workshop code can find them
@@ -75,19 +79,19 @@ Introduce yourself to your neighbors.
 
 ## Activity
 
-Open `01-hello-llm` and make your first API call by writing a short "I'm at SIAS 2026" social media post.
+Open `01-hello-llm` and make your first API call by writing a short "I'm at SIAS 2026" poem or limerick.
 :::
 
 {{< countdown minutes=5 >}}
 
-## Think empirically, be pragmatic (10 min)
+## Think empirically, be pragmatic
 
 -   The right mindset for working with LLMs
--   Models are not deterministic; try things, iterate, compare
--   Extra time here to troubleshoot setup as needed
+-   Models are not deterministic! Try things, iterate, compare
+
 
 # Anatomy of a conversation {background-image="../images/undraw_chat-with-ai_ir62.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
-## To get a response, you send a message (20 min)
+## To get a response, you send a message
 
 -   Under the hood: an HTTP request to a provider
 -   Message roles: `system`, `user`, `assistant`
@@ -111,18 +115,46 @@ Open `02-word-game` and play a word guessing game:
 
 -   The model has no memory between requests
 -   The library replays history each turn
--   Demo (`clearbot`): show what happens when you clear the chat
+
+
+::: {.callout-note icon=false}
+
+## Demo
+
+What happens when you clear the chat?
+
+```bash
+cd demo/01-clearbot
+uv run shiny run app.py
+```
+
+:::
+
 
 # How LLMs work {background-image="../images/undraw_chat-with-ai_ir62.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
-## Tokens as the fundamental unit (20 min)
+
+## Tokens as the fundamental unit
 
 -   What is a token?
 -   How models predict the next token
 -   Why this matters for cost and context length
--   Demo: token possibilities visualizer
+
+::: {.callout-note icon=false}
+
+## Demo
+
+What are tokens?
+
+```bash
+cd demo/01-token-possibilities
+uv run shiny run app.py
+```
+
+:::
 
 # Shinychat basics {background-image="../images/undraw_chat-with-ai_ir62.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
-## Try a chat UI in seconds (20 min)
+
+## Try a chat UI in seconds
 
 -   `live_console()` / `live_browser()` in ellmer
 -   `chat.console()` / `chat.app()` in chatlas
@@ -151,7 +183,7 @@ Open `03-live` and launch a live chat against your own chat object.
 Open `04-word-game-reverse` and flip the word game so the LLM holds a secret word and gives hints; the user has to guess.
 :::
 
-{{< countdown minutes=15 >}}
+{{< countdown minutes=10 >}}
 
 
 # Thanks!
