@@ -7,6 +7,8 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-6d40f8af7092f34acea1908532066003.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
+<link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.38">
@@ -33,6 +35,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #383a42;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #383a42; } /* Normal */
+    code span.al { color: #95da4c; background-color: #4d1f24; font-weight: bold; } /* Alert */
+    code span.an { color: #50a14f; } /* Annotation */
+    code span.at { color: #a626a4; } /* Attribute */
+    code span.bn { color: #986801; } /* BaseN */
+    code span.bu { color: #a626a4; } /* BuiltIn */
+    code span.cf { color: #a626a4; } /* ControlFlow */
+    code span.ch { color: #50a14f; } /* Char */
+    code span.cn { color: #986801; } /* Constant */
+    code span.co { color: #a0a1a7; font-style: italic; } /* Comment */
+    code span.cv { color: #e45649; font-style: italic; } /* CommentVar */
+    code span.do { color: #e45649; } /* Documentation */
+    code span.dt { color: #a626a4; } /* DataType */
+    code span.dv { color: #986801; } /* DecVal */
+    code span.er { color: #f44747; text-decoration: underline; } /* Error */
+    code span.ex { color: #4078f2; font-weight: bold; } /* Extension */
+    code span.fl { color: #986801; } /* Float */
+    code span.fu { color: #4078f2; } /* Function */
+    code span.im { color: #50a14f; } /* Import */
+    code span.in { color: #c45b00; } /* Information */
+    code span.kw { color: #a626a4; } /* Keyword */
+    code span.op { color: #a626a4; } /* Operator */
+    code span.ot { color: #27ae60; } /* Other */
+    code span.pp { color: #a626a4; } /* Preprocessor */
+    code span.re { color: #2980b9; background-color: #153042; } /* RegionMarker */
+    code span.sc { color: #0184bc; } /* SpecialChar */
+    code span.ss { color: #da4453; } /* SpecialString */
+    code span.st { color: #50a14f; } /* String */
+    code span.va { color: #e45649; } /* Variable */
+    code span.vs { color: #da4453; } /* VerbatimString */
+    code span.wa { color: #da4453; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f432be95a1c2a150a3fc6e45c38f75ee.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -145,39 +213,210 @@
   </div>
 </section>
 <section>
-<section id="agents-and-plans" class="title-slide slide level1 center" data-background-image="../images/undraw_ai-agent_pdkp.svg" data-background-size="auto 45%" data-background-position="82% 85%" data-background-repeat="no-repeat">
-<h1>Agents and plans</h1>
+<section id="hello" class="title-slide slide level1 center">
+<h1>Hello!</h1>
+<center>
+<p><img src="https://github.com/juliasilge.png" style="border-radius: 50%;" width="300px"></p>
+<p><a href="https://github.com/juliasilge"><i class="fa-brands fa-github" aria-label="github"></i> @juliasilge</a></p>
+<p><a href="https://bsky.app/profile/juliasilge.com"><i class="fa-brands fa-bluesky" aria-label="bluesky"></i> @juliasilge.com</a></p>
+<p><a href="https://juliasilge.com/"><i class="fa-solid fa-link" aria-label="link"></i> juliasilge.com</a></p>
+</center>
+</section>
+<section id="day-2-build-with-ai" class="slide level2">
+<h2>Day 2: Build with AI</h2>
+<ol type="1">
+<li>Intro to AI coding assistants</li>
+<li>Working in your editor</li>
+<li>Steering and extending</li>
+<li>Agentic workflows (this session!)</li>
+</ol>
+</section>
+<section id="the-top-of-the-ladder" class="slide level2">
+<h2>The top of the ladder</h2>
+<ul>
+<li>We climbed from web chat to an assistant that plans and uses tools</li>
+<li>Now we hand it more rope and let it work more autonomously</li>
+<li>And yesterday’s question comes back: <em>how do you know it is doing the right thing?</em></li>
+</ul>
+</section></section>
+<section>
+<section id="the-terminal-agent" class="title-slide slide level1 center" data-background-image="../images/undraw_ai-agent_pdkp.svg" data-background-size="auto 45%" data-background-position="82% 85%" data-background-repeat="no-repeat">
+<h1>The terminal agent</h1>
 
 </section>
-<section id="what-is-an-agent" class="slide level2">
-<h2>What is an agent?</h2>
-<p>TODO</p>
-</section>
-<section id="planning-before-doing" class="slide level2">
-<h2>Planning before doing</h2>
-<p>TODO</p>
-</section>
-<section id="tests-as-guardrails" class="slide level2">
-<h2>Tests as guardrails</h2>
-<p>TODO</p>
-</section>
-<section id="maintaining-control" class="slide level2">
-<h2>Maintaining control</h2>
-<p>TODO</p>
-</section>
-<section id="where-to-go-from-here" class="slide level2">
-<h2>Where to go from here</h2>
-<p>TODO</p>
-</section></section>
-<section id="wrap-up" class="title-slide slide level1 center" data-background-image="../images/undraw_ai-agent_pdkp.svg" data-background-size="auto 45%" data-background-position="82% 85%" data-background-repeat="no-repeat">
-<h1>Wrap-up</h1>
+<section id="same-model-more-hands-off" class="slide level2">
+<h2>Same model, more hands-off</h2>
 <ul>
-<li>Feedback survey</li>
-<li>Resources to keep building</li>
-<li>Thanks!</li>
+<li><code>pa</code> is Posit Assistant in the terminal</li>
+<li>Interactive, or <strong>headless</strong>: give it a task and walk away</li>
+<li>The most autonomous surface: no editor, just a goal and tools</li>
+</ul>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Demo</strong></p>
+</div>
+<div class="callout-content">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">pa</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Watch the loop! It reads, acts, checks the result, and keeps going.</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="how-much-rope" class="title-slide slide level1 center" data-background-image="../images/undraw_ai-agent_pdkp.svg" data-background-size="auto 45%" data-background-position="82% 85%" data-background-repeat="no-repeat">
+<h1>How much rope?</h1>
+
+</section>
+<section id="the-autonomy-dial" class="slide level2">
+<h2>The autonomy dial</h2>
+<ul>
+<li><code>/restricted</code>: confirm <strong>every</strong> tool call</li>
+<li>default: ask before risky actions</li>
+<li><code>/sandbox</code>: isolate shell commands</li>
+<li><code>/yolo</code>: run without asking</li>
 </ul>
 </section>
+<section id="where-should-you-sit" class="slide level2">
+<h2>Where should you sit?</h2>
+<ul>
+<li>Read tools are cheap to allow while <strong>write</strong> and <strong>shell</strong> actions are where to be careful</li>
+<li>Match autonomy to the stakes: how reversible is a mistake?</li>
+<li>High for throwaway exploration, low when it can overwrite or publish</li>
+<li>This is the answer to yesterday’s question:
+<ul>
+<li><em>You</em> choose how much it can do without you</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="staying-in-control" class="title-slide slide level1 center" data-background-image="../images/undraw_ai-agent_pdkp.svg" data-background-size="auto 45%" data-background-position="82% 85%" data-background-repeat="no-repeat">
+<h1>Staying in control</h1>
 
+</section>
+<section id="be-the-reviewer" class="slide level2">
+<h2>Be the reviewer</h2>
+<ul>
+<li>An agent is only useful if it can act, but <strong>you</strong> decide if it acted <em>right</em></li>
+<li>Check its claims against the data
+<ul>
+<li>Do the counts add up? Does the map use the reprojection?</li>
+</ul></li>
+<li>Tests and validation are guardrails
+<ul>
+<li>They catch the agent, and they catch you</li>
+<li>Ask the agent to write them, and use them!</li>
+</ul></li>
+<li>This is the antidote to “never really learn”
+<ul>
+<li>Stay in the loop, read the plan, review the code</li>
+</ul></li>
+</ul>
+</section>
+<section id="reproducible-by-default" class="slide level2">
+<h2>Reproducible by default</h2>
+<ul>
+<li><code>/report</code> turns the whole conversation into a Quarto document</li>
+<li>Code is the most auditable way to explore data with AI</li>
+<li>Your exploration is reproducible, not a black box</li>
+</ul>
+</section></section>
+<section>
+<section id="let-it-build" class="title-slide slide level1 center" data-background-image="../images/undraw_ai-agent_pdkp.svg" data-background-size="auto 45%" data-background-position="82% 85%" data-background-repeat="no-repeat">
+<h1>Let it build</h1>
+
+</section>
+<section id="discover-then-build" class="slide level2">
+<h2>Discover, then build</h2>
+<ul>
+<li>The payoff of the whole day! Give the agent a goal and let it deliver</li>
+<li>Bring everything you set up: the plan, the memory, the codebook, the reprojection</li>
+</ul>
+</section>
+<section id="your-turn" class="slide level2">
+<h2>Your turn</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Activity</strong></p>
+</div>
+<div class="callout-content">
+<p>Build a crash safety report with the agent:</p>
+<ul>
+<li>Give it a goal, like <em>“a short report on when and where severe crashes happen in Utah”</em></li>
+<li>Let it plan and work more autonomously than before</li>
+<li><strong>Review it:</strong> spot-check a claim against the data, and confirm any map used the reprojection</li>
+<li>Save it with <code>/report</code> so your work is reproducible</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="timer_3d63255861f704cd74799d53988f7f1205275f9e" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+</section></section>
+<section>
+<section id="wrap-up" class="title-slide slide level1 center" data-background-image="../images/undraw_ai-agent_pdkp.svg" data-background-size="auto 45%" data-background-position="82% 85%" data-background-repeat="no-repeat">
+<h1>Wrap-up</h1>
+
+</section>
+<section id="what-we-built-today" class="slide level2">
+<h2>What we built today</h2>
+<ul>
+<li>From web chat to in-editor help to an agent that plans, uses tools, and builds</li>
+<li>One crash dataset, one assistant, the whole climb from assisted to autonomous</li>
+<li>The skill that matters most is staying in control
+<ul>
+<li>Use context, plans, tests, review</li>
+</ul></li>
+</ul>
+</section>
+<section id="sitting-with-the-tension-still" class="slide level2">
+<h2>Sitting with the tension, still</h2>
+<ul>
+<li>We considered the promise <em>and</em> the harm at the same time on Day 1, and that has not changed</li>
+<li>These tools are powerful, and you now have ways to use them on your terms</li>
+<li>Keep learning by staying in the loop, not by handing it the wheel</li>
+</ul>
+</section>
+<section id="your-turn-1" class="slide level2">
+<h2>Your turn</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Activity</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>What is the first thing you will try when you get home?</li>
+<li>What is one worry you still have?</li>
+<li>Share with a neighbor, then we will hear a few</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="timer_3d63255861f704cd74799d53988f7f1205275f9e" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+</section>
+<section id="keep-building" class="slide level2">
+<h2>Keep building</h2>
+<ul>
+<li><a href="https://posit-dev.github.io/assistant/">Posit Assistant documentation</a></li>
+<li><a href="https://ellmer.tidyverse.org/">ellmer</a> and <a href="https://posit-dev.github.io/chatlas/">chatlas</a> from Day 1</li>
+<li>Hadley Wickham: <a href="https://tidydesign.substack.com/p/what-is-an-agent">“What is an Agent?”</a> and <a href="https://tidydesign.substack.com/p/returning-to-life">“Returning to Life!”</a></li>
+<li>The <a href="https://github.com/juliasilge/applied-stats-byu-2026">workshop repo</a> to revisit anytime</li>
+</ul>
+<p>Thank you for spending two days building on AI and with AI!</p>
+</section></section>
 <section id="thanks" class="title-slide slide level1 center">
 <h1>Thanks!</h1>
 <center>

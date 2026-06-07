@@ -148,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
 <p>These are the materials for a two-day workshop at the <a href="https://statistics.byu.edu/sias">50th Summer Institute of Applied Statistics (SIAS)</a> at <a href="https://statistics.byu.edu/">Brigham Young University</a> on 17-18 June 2026, taught by <a href="https://juliasilge.com/">Julia Silge</a>. The workshop is split into two days:</p>
 <ul>
 <li><p><strong>Day 1, Build on AI:</strong> programming with large language models (LLMs) from R and Python using <a href="https://ellmer.tidyverse.org/">ellmer</a> and <a href="https://posit-dev.github.io/chatlas/">chatlas</a>, covering prompts, token management, structured output, tool calling, retrieval-augmented generation (RAG), and Shiny chat interfaces.</p></li>
-<li><p><strong>Day 2, Build with AI:</strong> using AI coding assistants effectively as a data practitioner, from inline completions to chat-based help to agentic, more autonomous workflows.</p></li>
+<li><p><strong>Day 2, Build with AI:</strong> using AI coding assistants effectively as a data practitioner, centered on <a href="https://posit-dev.github.io/assistant/">Posit Assistant</a>. Working from a real dataset, we climb from in-editor help (completions, chat, debugging) to steering an agent (plans, project memory, skills, and MCP) to autonomous, reproducible workflows.</p></li>
 </ul>
 <p>No prior AI background is required; the workshop is built for both newcomers and experienced data practitioners.</p>
 </section>
@@ -168,19 +168,25 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="preparation">Preparation</h2>
 <p>We will be working locally during the workshop, so please come with a laptop that has the following installed (all available for free):</p>
 <ul>
-<li>A recent version of Python (perhaps installed using <a href="https://docs.astral.sh/uv/guides/install-python/">uv</a>) and/or R
-<ul>
-<li>If you are using Python, create a virtual environment such as via <code>uv venv</code></li>
-</ul></li>
 <li>A recent version of <a href="https://positron.posit.co/download">Positron</a>, or optionally if preferred, <a href="https://posit.co/download/rstudio-desktop">RStudio</a></li>
-<li>Clone the <a href="https://github.com/juliasilge/applied-stats-byu-2026">workshop repo</a></li>
+<li>A recent version of Python and/or R
+<ul>
+<li>For Python, create a virtual environment for the workshop such as via <code>uv venv</code></li>
+</ul></li>
+<li>Clone the <a href="https://github.com/juliasilge/applied-stats-byu-2026">workshop repo</a> to the laptop you will bring to the workshop</li>
+<li><a href="https://posit-dev.github.io/assistant/">Posit Assistant</a>, which is included in recent Positron builds and the RStudio dailies</li>
+<li><a href="https://docs.astral.sh/uv/">uv</a>
+<ul>
+<li>This is the easiest way to install and manage Python</li>
+<li>We’ll use this tool on Day 2 to run a small local MCP server for the assistant, so try to get it installed even if you are only planning on using R for data analysis</li>
+</ul></li>
 <li>Install the packages needed for the workshop:
 <ul>
-<li>For Python, install the packages listed in <code>requirements.txt</code> such as via <code>uv pip install -r requirements.txt</code></li>
-<li>For R, install the packages listed in <code>DESCRIPTION</code> such as via <code>pak::local_install_deps()</code></li>
+<li>For Python, install the packages listed in <code>requirements.txt</code> such as with <code>uv pip install -r requirements.txt</code></li>
+<li>For R, install the packages listed in <code>DESCRIPTION</code> such as with <code>pak::local_install_deps()</code></li>
 </ul></li>
 </ul>
-<p>You will also need API credentials for at least one LLM provider; we will share details closer to the workshop.</p>
+<p>You will also need API credentials for at least one LLM provider; we will make an API key available for folks who do not have one.</p>
 </section>
 <section id="schedule" class="level2">
 <h2 class="anchored" data-anchor-id="schedule">Schedule</h2>
@@ -262,7 +268,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td style="text-align: left;">15:00 - 16:15</td>
-<td style="text-align: left;"><a href="slides/08-agentic-workflows.html">Agentic and autonomous workflows</a></td>
+<td style="text-align: left;"><a href="slides/08-agentic-workflows.html">Agentic workflows</a></td>
 </tr>
 </tbody>
 </table>
@@ -275,6 +281,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="credits" class="level2">
 <h2 class="anchored" data-anchor-id="credits">Credits</h2>
 <p>Illustrations throughout the workshop materials are from <a href="https://undraw.co/">unDraw</a> and used under their <a href="https://undraw.co/license">license</a>.</p>
+<p>The Utah crash dataset is from the <a href="https://opendata.utah.gov/Transportation/Utah-Crash-Data-2020/herb-zqda/">Utah Open Data Portal</a>.</p>
+<p>Demos build on work by <a href="https://github.com/gadenbuie">Garrick Aden-Buie</a> and are MIT licensed.</p>
 
 
 </section>

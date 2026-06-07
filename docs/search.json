@@ -1,38 +1,94 @@
 [
   {
-    "objectID": "slides/08-agentic-workflows.html#what-is-an-agent",
-    "href": "slides/08-agentic-workflows.html#what-is-an-agent",
+    "objectID": "slides/08-agentic-workflows.html#day-2-build-with-ai",
+    "href": "slides/08-agentic-workflows.html#day-2-build-with-ai",
     "title": "Agentic workflows",
-    "section": "What is an agent?",
-    "text": "What is an agent?\nTODO"
+    "section": "Day 2: Build with AI",
+    "text": "Day 2: Build with AI\n\nIntro to AI coding assistants\nWorking in your editor\nSteering and extending\nAgentic workflows (this session!)"
   },
   {
-    "objectID": "slides/08-agentic-workflows.html#planning-before-doing",
-    "href": "slides/08-agentic-workflows.html#planning-before-doing",
+    "objectID": "slides/08-agentic-workflows.html#the-top-of-the-ladder",
+    "href": "slides/08-agentic-workflows.html#the-top-of-the-ladder",
     "title": "Agentic workflows",
-    "section": "Planning before doing",
-    "text": "Planning before doing\nTODO"
+    "section": "The top of the ladder",
+    "text": "The top of the ladder\n\nWe climbed from web chat to an assistant that plans and uses tools\nNow we hand it more rope and let it work more autonomously\nAnd yesterday’s question comes back: how do you know it is doing the right thing?"
   },
   {
-    "objectID": "slides/08-agentic-workflows.html#tests-as-guardrails",
-    "href": "slides/08-agentic-workflows.html#tests-as-guardrails",
+    "objectID": "slides/08-agentic-workflows.html#same-model-more-hands-off",
+    "href": "slides/08-agentic-workflows.html#same-model-more-hands-off",
     "title": "Agentic workflows",
-    "section": "Tests as guardrails",
-    "text": "Tests as guardrails\nTODO"
+    "section": "Same model, more hands-off",
+    "text": "Same model, more hands-off\n\npa is Posit Assistant in the terminal\nInteractive, or headless: give it a task and walk away\nThe most autonomous surface: no editor, just a goal and tools\n\n\n\n\nDemo\n\n\npa\nWatch the loop! It reads, acts, checks the result, and keeps going."
   },
   {
-    "objectID": "slides/08-agentic-workflows.html#maintaining-control",
-    "href": "slides/08-agentic-workflows.html#maintaining-control",
+    "objectID": "slides/08-agentic-workflows.html#the-autonomy-dial",
+    "href": "slides/08-agentic-workflows.html#the-autonomy-dial",
     "title": "Agentic workflows",
-    "section": "Maintaining control",
-    "text": "Maintaining control\nTODO"
+    "section": "The autonomy dial",
+    "text": "The autonomy dial\n\n/restricted: confirm every tool call\ndefault: ask before risky actions\n/sandbox: isolate shell commands\n/yolo: run without asking"
   },
   {
-    "objectID": "slides/08-agentic-workflows.html#where-to-go-from-here",
-    "href": "slides/08-agentic-workflows.html#where-to-go-from-here",
+    "objectID": "slides/08-agentic-workflows.html#where-should-you-sit",
+    "href": "slides/08-agentic-workflows.html#where-should-you-sit",
     "title": "Agentic workflows",
-    "section": "Where to go from here",
-    "text": "Where to go from here\nTODO"
+    "section": "Where should you sit?",
+    "text": "Where should you sit?\n\nRead tools are cheap to allow while write and shell actions are where to be careful\nMatch autonomy to the stakes: how reversible is a mistake?\nHigh for throwaway exploration, low when it can overwrite or publish\nThis is the answer to yesterday’s question:\n\nYou choose how much it can do without you"
+  },
+  {
+    "objectID": "slides/08-agentic-workflows.html#be-the-reviewer",
+    "href": "slides/08-agentic-workflows.html#be-the-reviewer",
+    "title": "Agentic workflows",
+    "section": "Be the reviewer",
+    "text": "Be the reviewer\n\nAn agent is only useful if it can act, but you decide if it acted right\nCheck its claims against the data\n\nDo the counts add up? Does the map use the reprojection?\n\nTests and validation are guardrails\n\nThey catch the agent, and they catch you\nAsk the agent to write them, and use them!\n\nThis is the antidote to “never really learn”\n\nStay in the loop, read the plan, review the code"
+  },
+  {
+    "objectID": "slides/08-agentic-workflows.html#reproducible-by-default",
+    "href": "slides/08-agentic-workflows.html#reproducible-by-default",
+    "title": "Agentic workflows",
+    "section": "Reproducible by default",
+    "text": "Reproducible by default\n\n/report turns the whole conversation into a Quarto document\nCode is the most auditable way to explore data with AI\nYour exploration is reproducible, not a black box"
+  },
+  {
+    "objectID": "slides/08-agentic-workflows.html#discover-then-build",
+    "href": "slides/08-agentic-workflows.html#discover-then-build",
+    "title": "Agentic workflows",
+    "section": "Discover, then build",
+    "text": "Discover, then build\n\nThe payoff of the whole day! Give the agent a goal and let it deliver\nBring everything you set up: the plan, the memory, the codebook, the reprojection"
+  },
+  {
+    "objectID": "slides/08-agentic-workflows.html#your-turn",
+    "href": "slides/08-agentic-workflows.html#your-turn",
+    "title": "Agentic workflows",
+    "section": "Your turn",
+    "text": "Your turn\n\n\n\nActivity\n\n\nBuild a crash safety report with the agent:\n\nGive it a goal, like “a short report on when and where severe crashes happen in Utah”\nLet it plan and work more autonomously than before\nReview it: spot-check a claim against the data, and confirm any map used the reprojection\nSave it with /report so your work is reproducible\n\n\n\n\n\n  \n    −\n    +\n \n 20:00"
+  },
+  {
+    "objectID": "slides/08-agentic-workflows.html#what-we-built-today",
+    "href": "slides/08-agentic-workflows.html#what-we-built-today",
+    "title": "Agentic workflows",
+    "section": "What we built today",
+    "text": "What we built today\n\nFrom web chat to in-editor help to an agent that plans, uses tools, and builds\nOne crash dataset, one assistant, the whole climb from assisted to autonomous\nThe skill that matters most is staying in control\n\nUse context, plans, tests, review"
+  },
+  {
+    "objectID": "slides/08-agentic-workflows.html#sitting-with-the-tension-still",
+    "href": "slides/08-agentic-workflows.html#sitting-with-the-tension-still",
+    "title": "Agentic workflows",
+    "section": "Sitting with the tension, still",
+    "text": "Sitting with the tension, still\n\nWe considered the promise and the harm at the same time on Day 1, and that has not changed\nThese tools are powerful, and you now have ways to use them on your terms\nKeep learning by staying in the loop, not by handing it the wheel"
+  },
+  {
+    "objectID": "slides/08-agentic-workflows.html#your-turn-1",
+    "href": "slides/08-agentic-workflows.html#your-turn-1",
+    "title": "Agentic workflows",
+    "section": "Your turn",
+    "text": "Your turn\n\n\n\nActivity\n\n\n\nWhat is the first thing you will try when you get home?\nWhat is one worry you still have?\nShare with a neighbor, then we will hear a few\n\n\n\n\n\n  \n    −\n    +\n \n 10:00"
+  },
+  {
+    "objectID": "slides/08-agentic-workflows.html#keep-building",
+    "href": "slides/08-agentic-workflows.html#keep-building",
+    "title": "Agentic workflows",
+    "section": "Keep building",
+    "text": "Keep building\n\nPosit Assistant documentation\nellmer and chatlas from Day 1\nHadley Wickham: “What is an Agent?” and “Returning to Life!”\nThe workshop repo to revisit anytime\n\nThank you for spending two days building on AI and with AI!"
   },
   {
     "objectID": "slides/06-working-in-editor.html#day-2-build-with-ai",
@@ -312,7 +368,7 @@
     "href": "index.html#welcome",
     "title": "Programming with LLMs for Data Practitioners",
     "section": "Welcome",
-    "text": "Welcome\nThese are the materials for a two-day workshop at the 50th Summer Institute of Applied Statistics (SIAS) at Brigham Young University on 17-18 June 2026, taught by Julia Silge. The workshop is split into two days:\n\nDay 1, Build on AI: programming with large language models (LLMs) from R and Python using ellmer and chatlas, covering prompts, token management, structured output, tool calling, retrieval-augmented generation (RAG), and Shiny chat interfaces.\nDay 2, Build with AI: using AI coding assistants effectively as a data practitioner, from inline completions to chat-based help to agentic, more autonomous workflows.\n\nNo prior AI background is required; the workshop is built for both newcomers and experienced data practitioners."
+    "text": "Welcome\nThese are the materials for a two-day workshop at the 50th Summer Institute of Applied Statistics (SIAS) at Brigham Young University on 17-18 June 2026, taught by Julia Silge. The workshop is split into two days:\n\nDay 1, Build on AI: programming with large language models (LLMs) from R and Python using ellmer and chatlas, covering prompts, token management, structured output, tool calling, retrieval-augmented generation (RAG), and Shiny chat interfaces.\nDay 2, Build with AI: using AI coding assistants effectively as a data practitioner, centered on Posit Assistant. Working from a real dataset, we climb from in-editor help (completions, chat, debugging) to steering an agent (plans, project memory, skills, and MCP) to autonomous, reproducible workflows.\n\nNo prior AI background is required; the workshop is built for both newcomers and experienced data practitioners."
   },
   {
     "objectID": "index.html#learning-objectives",
@@ -326,14 +382,14 @@
     "href": "index.html#preparation",
     "title": "Programming with LLMs for Data Practitioners",
     "section": "Preparation",
-    "text": "Preparation\nWe will be working locally during the workshop, so please come with a laptop that has the following installed (all available for free):\n\nA recent version of Python (perhaps installed using uv) and/or R\n\nIf you are using Python, create a virtual environment such as via uv venv\n\nA recent version of Positron, or optionally if preferred, RStudio\nClone the workshop repo\nInstall the packages needed for the workshop:\n\nFor Python, install the packages listed in requirements.txt such as via uv pip install -r requirements.txt\nFor R, install the packages listed in DESCRIPTION such as via pak::local_install_deps()\n\n\nYou will also need API credentials for at least one LLM provider; we will share details closer to the workshop."
+    "text": "Preparation\nWe will be working locally during the workshop, so please come with a laptop that has the following installed (all available for free):\n\nA recent version of Positron, or optionally if preferred, RStudio\nA recent version of Python and/or R\n\nFor Python, create a virtual environment for the workshop such as via uv venv\n\nClone the workshop repo to the laptop you will bring to the workshop\nPosit Assistant, which is included in recent Positron builds and the RStudio dailies\nuv\n\nThis is the easiest way to install and manage Python\nWe’ll use this tool on Day 2 to run a small local MCP server for the assistant, so try to get it installed even if you are only planning on using R for data analysis\n\nInstall the packages needed for the workshop:\n\nFor Python, install the packages listed in requirements.txt such as with uv pip install -r requirements.txt\nFor R, install the packages listed in DESCRIPTION such as with pak::local_install_deps()\n\n\nYou will also need API credentials for at least one LLM provider; we will make an API key available for folks who do not have one."
   },
   {
     "objectID": "index.html#schedule",
     "href": "index.html#schedule",
     "title": "Programming with LLMs for Data Practitioners",
     "section": "Schedule",
-    "text": "Schedule\nCode files for working along are available on GitHub.\n\nTuesday, 17 June 2026: Build on AI\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 10:10\nTalking with LLMs via code\n\n\n10:10 - 10:30\nBreak\n\n\n10:30 - 11:45\nProgramming with LLMs\n\n\n11:45 - 13:30\nLunch\n\n\n13:30 - 14:40\nPrompt engineering and RAG\n\n\n14:40 - 15:00\nBreak\n\n\n15:00 - 16:15\nBeyond prompts\n\n\n\n\n\nWednesday, 18 June 2026: Build with AI\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 10:10\nIntro to AI coding assistants\n\n\n10:10 - 10:30\nBreak\n\n\n10:30 - 11:45\nWorking in your editor\n\n\n11:45 - 13:30\nLunch\n\n\n13:30 - 14:40\nSteering and extending\n\n\n14:40 - 15:00\nBreak\n\n\n15:00 - 16:15\nAgentic and autonomous workflows"
+    "text": "Schedule\nCode files for working along are available on GitHub.\n\nTuesday, 17 June 2026: Build on AI\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 10:10\nTalking with LLMs via code\n\n\n10:10 - 10:30\nBreak\n\n\n10:30 - 11:45\nProgramming with LLMs\n\n\n11:45 - 13:30\nLunch\n\n\n13:30 - 14:40\nPrompt engineering and RAG\n\n\n14:40 - 15:00\nBreak\n\n\n15:00 - 16:15\nBeyond prompts\n\n\n\n\n\nWednesday, 18 June 2026: Build with AI\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 10:10\nIntro to AI coding assistants\n\n\n10:10 - 10:30\nBreak\n\n\n10:30 - 11:45\nWorking in your editor\n\n\n11:45 - 13:30\nLunch\n\n\n13:30 - 14:40\nSteering and extending\n\n\n14:40 - 15:00\nBreak\n\n\n15:00 - 16:15\nAgentic workflows"
   },
   {
     "objectID": "index.html#instructor-bio",
@@ -347,7 +403,7 @@
     "href": "index.html#credits",
     "title": "Programming with LLMs for Data Practitioners",
     "section": "Credits",
-    "text": "Credits\nIllustrations throughout the workshop materials are from unDraw and used under their license."
+    "text": "Credits\nIllustrations throughout the workshop materials are from unDraw and used under their license.\nThe Utah crash dataset is from the Utah Open Data Portal.\nDemos build on work by Garrick Aden-Buie and are MIT licensed."
   },
   {
     "objectID": "slides/01-talking-with-llms.html#who-are-you",
@@ -683,7 +739,7 @@
     "href": "slides/07-steering-extending.html#set-up-our-mcp-server",
     "title": "Steering and extending",
     "section": "Set up our MCP server",
-    "text": "Set up our MCP server\n\n\n\nDemo\n\n\nWire up the crash MCP server that ships in the repo (mcp/crash-server.py):\n\nAdd it to your assistant config, one uv command, no Python setup needed\nRestart and confirm the utah-crash tools appear"
+    "text": "Set up our MCP server\n\n\n\nDemo\n\n\nWire up the crash MCP server that ships in the repo (mcp/crash-server.py):\n\nAdd it to your assistant config\nMCP server requires uv but no complex Python setup\nRestart and confirm the utah-crash tools appear"
   },
   {
     "objectID": "slides/07-steering-extending.html#your-turn-3",
