@@ -333,7 +333,7 @@
     "href": "index.html#schedule",
     "title": "Programming with LLMs for Data Practitioners",
     "section": "Schedule",
-    "text": "Schedule\nCode files for working along are available on GitHub.\n\nTuesday, 17 June 2026: Build on AI\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 10:10\nTalking with LLMs via code\n\n\n10:10 - 10:30\nBreak\n\n\n10:30 - 11:45\nProgramming with LLMs\n\n\n11:45 - 13:30\nLunch\n\n\n13:30 - 14:40\nPrompt engineering and RAG\n\n\n14:40 - 15:00\nBreak\n\n\n15:00 - 16:15\nBeyond prompts\n\n\n\n\n\nWednesday, 18 June 2026: Build with AI\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 10:10\nIntro to AI coding assistants\n\n\n10:10 - 10:30\nBreak\n\n\n10:30 - 11:45\nWorking in your editor\n\n\n11:45 - 13:30\nLunch\n\n\n13:30 - 14:40\nChat-based assistance\n\n\n14:40 - 15:00\nBreak\n\n\n15:00 - 16:15\nAgentic and autonomous workflows"
+    "text": "Schedule\nCode files for working along are available on GitHub.\n\nTuesday, 17 June 2026: Build on AI\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 10:10\nTalking with LLMs via code\n\n\n10:10 - 10:30\nBreak\n\n\n10:30 - 11:45\nProgramming with LLMs\n\n\n11:45 - 13:30\nLunch\n\n\n13:30 - 14:40\nPrompt engineering and RAG\n\n\n14:40 - 15:00\nBreak\n\n\n15:00 - 16:15\nBeyond prompts\n\n\n\n\n\nWednesday, 18 June 2026: Build with AI\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 10:10\nIntro to AI coding assistants\n\n\n10:10 - 10:30\nBreak\n\n\n10:30 - 11:45\nWorking in your editor\n\n\n11:45 - 13:30\nLunch\n\n\n13:30 - 14:40\nSteering and extending\n\n\n14:40 - 15:00\nBreak\n\n\n15:00 - 16:15\nAgentic and autonomous workflows"
   },
   {
     "objectID": "index.html#instructor-bio",
@@ -616,31 +616,87 @@
     "text": "The rest of today\n\nWorking in your editor:\n\nCompletions, chat, explore and debug\n\nSteering and extending:\n\nPlans, memory, skills, and MCP\n\nAgentic workflows:\n\nMore autonomy, with guardrails and reproducible output\n\nFrom assisted to autonomous, one crash dataset the whole way"
   },
   {
-    "objectID": "slides/07-chat-assistance.html#providing-effective-context",
-    "href": "slides/07-chat-assistance.html#providing-effective-context",
-    "title": "Chat-based assistance",
-    "section": "Providing effective context",
-    "text": "Providing effective context\nTODO"
+    "objectID": "slides/07-steering-extending.html#day-2-build-with-ai",
+    "href": "slides/07-steering-extending.html#day-2-build-with-ai",
+    "title": "Steering and extending",
+    "section": "Day 2: Build with AI",
+    "text": "Day 2: Build with AI\n\nIntro to AI coding assistants\nWorking in your editor\nSteering and extending (this session!)\nAgentic workflows"
   },
   {
-    "objectID": "slides/07-chat-assistance.html#asking-questions-vs.-asking-for-code",
-    "href": "slides/07-chat-assistance.html#asking-questions-vs.-asking-for-code",
-    "title": "Chat-based assistance",
-    "section": "Asking questions vs. asking for code",
-    "text": "Asking questions vs. asking for code\nTODO"
+    "objectID": "slides/07-steering-extending.html#from-asking-to-steering",
+    "href": "slides/07-steering-extending.html#from-asking-to-steering",
+    "title": "Steering and extending",
+    "section": "From asking to steering",
+    "text": "From asking to steering\n\nBefore lunch: ask a question, get an answer, fix an error\nThis session: give the agent structure so it works the way you do\nPlans, memory, skills, and new tools"
   },
   {
-    "objectID": "slides/07-chat-assistance.html#explaining-code-you-didnt-write",
-    "href": "slides/07-chat-assistance.html#explaining-code-you-didnt-write",
-    "title": "Chat-based assistance",
-    "section": "Explaining code you didn’t write",
-    "text": "Explaining code you didn’t write\nTODO"
+    "objectID": "slides/07-steering-extending.html#think-first-edit-second",
+    "href": "slides/07-steering-extending.html#think-first-edit-second",
+    "title": "Steering and extending",
+    "section": "Think first, edit second",
+    "text": "Think first, edit second\n\nFor anything bigger than a one-liner, let the assistant itself plan before it writes any code\n/plan proposes an approach and waits for your approval\nYou catch a wrong direction before the edits, not after"
   },
   {
-    "objectID": "slides/07-chat-assistance.html#working-through-a-real-example",
-    "href": "slides/07-chat-assistance.html#working-through-a-real-example",
-    "title": "Chat-based assistance",
-    "section": "Working through a real example",
-    "text": "Working through a real example\nTODO"
+    "objectID": "slides/07-steering-extending.html#your-turn",
+    "href": "slides/07-steering-extending.html#your-turn",
+    "title": "Steering and extending",
+    "section": "Your turn",
+    "text": "Your turn\n\n\n\nActivity\n\n\nUse plan mode on a bigger crash question:\n\nTry something like: “Analyze how risk factors relate to crash severity”\nRead the plan and push back or refine it\nApprove it, then let the assistant carry it out\n\n\n\n\n\n  \n    −\n    +\n \n 10:00"
+  },
+  {
+    "objectID": "slides/07-steering-extending.html#stop-re-explaining-your-data",
+    "href": "slides/07-steering-extending.html#stop-re-explaining-your-data",
+    "title": "Steering and extending",
+    "section": "Stop re-explaining your data",
+    "text": "Stop re-explaining your data\n\nThe assistant re-learns your project every session\nA memory file (AGENTS.md) gives it durable context that loads automatically\nFor the crash data, it should know:\n\nWhat the severity codes 1 to 5 mean\nThat the coordinates are UTM, not latitude and longitude\nYour preferred packages and plotting style"
+  },
+  {
+    "objectID": "slides/07-steering-extending.html#your-turn-1",
+    "href": "slides/07-steering-extending.html#your-turn-1",
+    "title": "Steering and extending",
+    "section": "Your turn",
+    "text": "Your turn\n\n\n\nActivity\n\n\nBuild a memory file for the crash project:\n\nAsk the assistant to explore the data and write an AGENTS.md\nCheck it! Look at what it knows about severity codes, the UTM coordinate note, key columns\nUse /savememory to refine it, then start a fresh chat and watch it remember\n\n\n\n\n\n  \n    −\n    +\n \n 10:00"
+  },
+  {
+    "objectID": "slides/07-steering-extending.html#reusable-expertise-loaded-on-demand",
+    "href": "slides/07-steering-extending.html#reusable-expertise-loaded-on-demand",
+    "title": "Steering and extending",
+    "section": "Reusable expertise, loaded on demand",
+    "text": "Reusable expertise, loaded on demand\n\nSkills are bundles of instructions the assistant loads when they are relevant\nBuilt in: shiny-bslib, predictive-modeling, quarto-authoring, and more\nYou can write your own SKILL.md for your team’s patterns\nThey are literally just markdown!\nLet’s look at the one I built for estimating timing for this workshop"
+  },
+  {
+    "objectID": "slides/07-steering-extending.html#your-turn-2",
+    "href": "slides/07-steering-extending.html#your-turn-2",
+    "title": "Steering and extending",
+    "section": "Your turn",
+    "text": "Your turn\n\n\n\nActivity\n\n\nPick one built-in skill and put it to work on the crash data:\n\nshiny-bslib: ask for a small dashboard\nquarto-authoring: ask for a short report\npredictive-modeling-python: ask it to model crash severity\n\nWatch the skill load on its own. You do not have to call it by name!\n\n\n\n\n  \n    −\n    +\n \n 08:00"
+  },
+  {
+    "objectID": "slides/07-steering-extending.html#extending-the-agent",
+    "href": "slides/07-steering-extending.html#extending-the-agent",
+    "title": "Steering and extending",
+    "section": "Extending the agent",
+    "text": "Extending the agent\n\nModel Context Protocol: a standard way to give the agent new tools and data\nInstall or write a server once, use it from any MCP client\nPeople have mixed experiences! Every server’s tools sit in context and cost tokens every turn\nSkills load only when relevant, so prefer a skill to teach the model, MCP for a real new tool or data source\nWith that caveat, let’s wire one in and see"
+  },
+  {
+    "objectID": "slides/07-steering-extending.html#set-up-our-mcp-server",
+    "href": "slides/07-steering-extending.html#set-up-our-mcp-server",
+    "title": "Steering and extending",
+    "section": "Set up our MCP server",
+    "text": "Set up our MCP server\n\n\n\nDemo\n\n\nWire up the crash MCP server that ships in the repo (mcp/crash-server.py):\n\nAdd it to your assistant config, one uv command, no Python setup needed\nRestart and confirm the utah-crash tools appear"
+  },
+  {
+    "objectID": "slides/07-steering-extending.html#your-turn-3",
+    "href": "slides/07-steering-extending.html#your-turn-3",
+    "title": "Steering and extending",
+    "section": "Your turn",
+    "text": "Your turn\n\n\n\nActivity\n\n\nAsk something that uses the new tools:\n\nTry: “Plot the 10 deadliest crash locations on a map”\n\nIt reprojects UTM to lat/long\n\nOr: “What does crash severity 4 mean here?”\n\nIt reads the codebook\n\nNotice it now knows things about this dataset that it could not have guessed\n\n\n\n\n\n  \n    −\n    +\n \n 12:00"
+  },
+  {
+    "objectID": "slides/07-steering-extending.html#long-sessions-finite-context",
+    "href": "slides/07-steering-extending.html#long-sessions-finite-context",
+    "title": "Steering and extending",
+    "section": "Long sessions, finite context",
+    "text": "Long sessions, finite context\n\n/context shows how full the context window is\n/compact summarizes earlier turns so you can keep going\n/new starts fresh when you switch to a different task"
   }
 ]

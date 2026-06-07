@@ -1,5 +1,5 @@
 ---
-title: "Chat-based assistance"
+title: "Steering and extending"
 subtitle: "Programming with LLMs for Data Practitioners"
 author: "Julia Silge | Posit PBC"
 footer: "<https://juliasilge.github.io/applied-stats-byu-2026/>"
@@ -20,23 +20,155 @@ format:
       data-background-repeat: "no-repeat"
 ---
 
-# Asking good questions {background-image="../images/undraw_ai-answers_uxgx.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
-## Providing effective context
+# Hello!
 
-TODO
+<center>
 
-## Asking questions vs. asking for code
+<img src="https://github.com/juliasilge.png" style="border-radius: 50%;" width="300px"/>
 
-TODO
+[{{< fa brands github >}} \@juliasilge](https://github.com/juliasilge)
 
-## Explaining code you didn't write
+[{{< fa brands bluesky >}} \@juliasilge.com](https://bsky.app/profile/juliasilge.com)
 
-TODO
+[{{< fa link >}} juliasilge.com](https://juliasilge.com/)
 
-## Working through a real example
+</center>
 
-TODO
+## Day 2: Build with AI
 
+1.  Intro to AI coding assistants
+2.  Working in your editor
+3.  Steering and extending (this session!)
+4.  Agentic workflows
+
+## From asking to steering
+
+-   Before lunch: ask a question, get an answer, fix an error
+-   This session: give the agent structure so it works the way you do
+-   Plans, memory, skills, and new tools
+
+# Plan before doing {background-image="../images/undraw_ai-answers_uxgx.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
+
+## Think first, edit second
+
+-   For anything bigger than a one-liner, let the assistant itself plan before it writes any code
+-   `/plan` proposes an approach and waits for your approval
+-   You catch a wrong direction before the edits, not after
+
+## Your turn
+
+::: {.callout-note icon=false}
+
+## Activity
+
+Use plan mode on a bigger crash question:
+
+-   Try something like: *"Analyze how risk factors relate to crash severity"*
+-   Read the plan and push back or refine it
+-   Approve it, then let the assistant carry it out
+:::
+
+{{< countdown minutes=10 >}}
+
+# Memory and project context {background-image="../images/undraw_ai-answers_uxgx.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
+
+## Stop re-explaining your data
+
+-   The assistant re-learns your project every session
+-   A memory file (`AGENTS.md`) gives it durable context that loads automatically
+-   For the crash data, it should know:
+    -   What the severity codes 1 to 5 mean
+    -   That the coordinates are UTM, not latitude and longitude
+    -   Your preferred packages and plotting style
+
+## Your turn
+
+::: {.callout-note icon=false}
+
+## Activity
+
+Build a memory file for the crash project:
+
+-   Ask the assistant to explore the data and write an `AGENTS.md`
+-   Check it! Look at what it knows about severity codes, the UTM coordinate note, key columns
+-   Use `/savememory` to refine it, then start a fresh chat and watch it remember
+:::
+
+{{< countdown minutes=10 >}}
+
+# Skills {background-image="../images/undraw_ai-answers_uxgx.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
+
+## Reusable expertise, loaded on demand
+
+-   Skills are bundles of instructions the assistant loads when they are relevant
+-   Built in: `shiny-bslib`, `predictive-modeling`, `quarto-authoring`, and more
+-   You can write your own `SKILL.md` for your team's patterns
+-   They are literally just markdown! 
+-   Let's look at the one I built for estimating timing for this workshop
+
+## Your turn
+
+::: {.callout-note icon=false}
+
+## Activity
+
+Pick *one* built-in skill and put it to work on the crash data:
+
+-   `shiny-bslib`: ask for a small dashboard
+-   `quarto-authoring`: ask for a short report
+-   `predictive-modeling-python`: ask it to model crash severity
+
+Watch the skill load on its own. You do not have to call it by name!
+:::
+
+{{< countdown minutes=8 >}}
+
+# Tools via MCP {background-image="../images/undraw_ai-answers_uxgx.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
+
+## Extending the agent
+
+-   **Model Context Protocol:** a standard way to give the agent new tools and data
+-   Install or write a server once, use it from any MCP client
+-   People have mixed experiences! Every server's tools sit in context and cost tokens *every* turn
+-   Skills load only when relevant, so prefer a skill to *teach* the model, MCP for a real new *tool* or data source
+-   With that caveat, let's wire one in and see
+
+## Set up our MCP server
+
+::: {.callout-note icon=false}
+
+## Demo
+
+Wire up the crash MCP server that ships in the repo (`mcp/crash-server.py`):
+
+-   Add it to your assistant config, one `uv` command, no Python setup needed
+-   Restart and confirm the `utah-crash` tools appear
+:::
+
+## Your turn
+
+::: {.callout-note icon=false}
+
+## Activity
+
+Ask something that uses the new tools:
+
+-   Try: *"Plot the 10 deadliest crash locations on a map"*
+    - It reprojects UTM to lat/long
+-   Or: *"What does crash severity 4 mean here?"*
+    - It reads the codebook
+-   Notice it now knows things about **this** dataset that it could not have guessed
+:::
+
+{{< countdown minutes=12 >}}
+
+# Managing context {background-image="../images/undraw_ai-answers_uxgx.svg" background-size="auto 50%" background-position="82% 85%" background-repeat="no-repeat"}
+
+## Long sessions, finite context
+
+-   `/context` shows how full the context window is
+-   `/compact` summarizes earlier turns so you can keep going
+-   `/new` starts fresh when you switch to a different task
 
 # Thanks!
 
@@ -53,5 +185,5 @@ TODO
 </center>
 
 ::: footer
-Illustrations from [unDraw](https://undraw.co/) 
+Illustrations from [unDraw](https://undraw.co/)
 :::

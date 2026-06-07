@@ -7,12 +7,14 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-6d40f8af7092f34acea1908532066003.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
+<link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Julia Silge | Posit PBC">
-  <title>Programming With LLMs For Data Practitioners – Chat-based assistance</title>
+  <title>Programming With LLMs For Data Practitioners – Steering and extending</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -126,10 +128,10 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Chat-based assistance – Programming With LLMs For Data Practitioners">
+<meta property="og:title" content="Steering and extending – Programming With LLMs For Data Practitioners">
 <meta property="og:description" content="Programming with LLMs for Data Practitioners">
 <meta property="og:site_name" content="Programming With LLMs For Data Practitioners">
-<meta name="twitter:title" content="Chat-based assistance – Programming With LLMs For Data Practitioners">
+<meta name="twitter:title" content="Steering and extending – Programming With LLMs For Data Practitioners">
 <meta name="twitter:description" content="Programming with LLMs for Data Practitioners">
 <meta name="twitter:card" content="summary">
 </head>
@@ -139,31 +141,235 @@
 
 <section id="title-slide" data-background-image="../images/undraw_ai-answers_uxgx.svg" data-background-position="82% 85%" data-background-repeat="no-repeat" data-background-size="auto 50%" class="quarto-title-block center">
   <div class="title-slide-inner">
-    <h1 class="title">Chat-based assistance</h1>
+    <h1 class="title">Steering and extending</h1>
     <p class="subtitle">Programming with LLMs for Data Practitioners</p>
     <p class="author">Julia Silge | Posit PBC</p>
   </div>
 </section>
 <section>
-<section id="asking-good-questions" class="title-slide slide level1 center" data-background-image="../images/undraw_ai-answers_uxgx.svg" data-background-size="auto 50%" data-background-position="82% 85%" data-background-repeat="no-repeat">
-<h1>Asking good questions</h1>
+<section id="hello" class="title-slide slide level1 center">
+<h1>Hello!</h1>
+<center>
+<p><img src="https://github.com/juliasilge.png" style="border-radius: 50%;" width="300px"></p>
+<p><a href="https://github.com/juliasilge"><i class="fa-brands fa-github" aria-label="github"></i> @juliasilge</a></p>
+<p><a href="https://bsky.app/profile/juliasilge.com"><i class="fa-brands fa-bluesky" aria-label="bluesky"></i> @juliasilge.com</a></p>
+<p><a href="https://juliasilge.com/"><i class="fa-solid fa-link" aria-label="link"></i> juliasilge.com</a></p>
+</center>
+</section>
+<section id="day-2-build-with-ai" class="slide level2">
+<h2>Day 2: Build with AI</h2>
+<ol type="1">
+<li>Intro to AI coding assistants</li>
+<li>Working in your editor</li>
+<li>Steering and extending (this session!)</li>
+<li>Agentic workflows</li>
+</ol>
+</section>
+<section id="from-asking-to-steering" class="slide level2">
+<h2>From asking to steering</h2>
+<ul>
+<li>Before lunch: ask a question, get an answer, fix an error</li>
+<li>This session: give the agent structure so it works the way you do</li>
+<li>Plans, memory, skills, and new tools</li>
+</ul>
+</section></section>
+<section>
+<section id="plan-before-doing" class="title-slide slide level1 center" data-background-image="../images/undraw_ai-answers_uxgx.svg" data-background-size="auto 50%" data-background-position="82% 85%" data-background-repeat="no-repeat">
+<h1>Plan before doing</h1>
 
 </section>
-<section id="providing-effective-context" class="slide level2">
-<h2>Providing effective context</h2>
-<p>TODO</p>
+<section id="think-first-edit-second" class="slide level2">
+<h2>Think first, edit second</h2>
+<ul>
+<li>For anything bigger than a one-liner, let the assistant itself plan before it writes any code</li>
+<li><code>/plan</code> proposes an approach and waits for your approval</li>
+<li>You catch a wrong direction before the edits, not after</li>
+</ul>
 </section>
-<section id="asking-questions-vs.-asking-for-code" class="slide level2">
-<h2>Asking questions vs.&nbsp;asking for code</h2>
-<p>TODO</p>
+<section id="your-turn" class="slide level2">
+<h2>Your turn</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Activity</strong></p>
+</div>
+<div class="callout-content">
+<p>Use plan mode on a bigger crash question:</p>
+<ul>
+<li>Try something like: <em>“Analyze how risk factors relate to crash severity”</em></li>
+<li>Read the plan and push back or refine it</li>
+<li>Approve it, then let the assistant carry it out</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="timer_a447a54eb14a0596f0d101b0da4bf7a3cf7a2f69" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+</section></section>
+<section>
+<section id="memory-and-project-context" class="title-slide slide level1 center" data-background-image="../images/undraw_ai-answers_uxgx.svg" data-background-size="auto 50%" data-background-position="82% 85%" data-background-repeat="no-repeat">
+<h1>Memory and project context</h1>
+
 </section>
-<section id="explaining-code-you-didnt-write" class="slide level2">
-<h2>Explaining code you didn’t write</h2>
-<p>TODO</p>
+<section id="stop-re-explaining-your-data" class="slide level2">
+<h2>Stop re-explaining your data</h2>
+<ul>
+<li>The assistant re-learns your project every session</li>
+<li>A memory file (<code>AGENTS.md</code>) gives it durable context that loads automatically</li>
+<li>For the crash data, it should know:
+<ul>
+<li>What the severity codes 1 to 5 mean</li>
+<li>That the coordinates are UTM, not latitude and longitude</li>
+<li>Your preferred packages and plotting style</li>
+</ul></li>
+</ul>
 </section>
-<section id="working-through-a-real-example" class="slide level2">
-<h2>Working through a real example</h2>
-<p>TODO</p>
+<section id="your-turn-1" class="slide level2">
+<h2>Your turn</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Activity</strong></p>
+</div>
+<div class="callout-content">
+<p>Build a memory file for the crash project:</p>
+<ul>
+<li>Ask the assistant to explore the data and write an <code>AGENTS.md</code></li>
+<li>Check it! Look at what it knows about severity codes, the UTM coordinate note, key columns</li>
+<li>Use <code>/savememory</code> to refine it, then start a fresh chat and watch it remember</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="timer_a447a54eb14a0596f0d101b0da4bf7a3cf7a2f69" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+</section></section>
+<section>
+<section id="skills" class="title-slide slide level1 center" data-background-image="../images/undraw_ai-answers_uxgx.svg" data-background-size="auto 50%" data-background-position="82% 85%" data-background-repeat="no-repeat">
+<h1>Skills</h1>
+
+</section>
+<section id="reusable-expertise-loaded-on-demand" class="slide level2">
+<h2>Reusable expertise, loaded on demand</h2>
+<ul>
+<li>Skills are bundles of instructions the assistant loads when they are relevant</li>
+<li>Built in: <code>shiny-bslib</code>, <code>predictive-modeling</code>, <code>quarto-authoring</code>, and more</li>
+<li>You can write your own <code>SKILL.md</code> for your team’s patterns</li>
+<li>They are literally just markdown!</li>
+<li>Let’s look at the one I built for estimating timing for this workshop</li>
+</ul>
+</section>
+<section id="your-turn-2" class="slide level2">
+<h2>Your turn</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Activity</strong></p>
+</div>
+<div class="callout-content">
+<p>Pick <em>one</em> built-in skill and put it to work on the crash data:</p>
+<ul>
+<li><code>shiny-bslib</code>: ask for a small dashboard</li>
+<li><code>quarto-authoring</code>: ask for a short report</li>
+<li><code>predictive-modeling-python</code>: ask it to model crash severity</li>
+</ul>
+<p>Watch the skill load on its own. You do not have to call it by name!</p>
+</div>
+</div>
+</div>
+<div id="timer_a447a54eb14a0596f0d101b0da4bf7a3cf7a2f69" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">08</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+</section></section>
+<section>
+<section id="tools-via-mcp" class="title-slide slide level1 center" data-background-image="../images/undraw_ai-answers_uxgx.svg" data-background-size="auto 50%" data-background-position="82% 85%" data-background-repeat="no-repeat">
+<h1>Tools via MCP</h1>
+
+</section>
+<section id="extending-the-agent" class="slide level2">
+<h2>Extending the agent</h2>
+<ul>
+<li><strong>Model Context Protocol:</strong> a standard way to give the agent new tools and data</li>
+<li>Install or write a server once, use it from any MCP client</li>
+<li>People have mixed experiences! Every server’s tools sit in context and cost tokens <em>every</em> turn</li>
+<li>Skills load only when relevant, so prefer a skill to <em>teach</em> the model, MCP for a real new <em>tool</em> or data source</li>
+<li>With that caveat, let’s wire one in and see</li>
+</ul>
+</section>
+<section id="set-up-our-mcp-server" class="slide level2">
+<h2>Set up our MCP server</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Demo</strong></p>
+</div>
+<div class="callout-content">
+<p>Wire up the crash MCP server that ships in the repo (<code>mcp/crash-server.py</code>):</p>
+<ul>
+<li>Add it to your assistant config, one <code>uv</code> command, no Python setup needed</li>
+<li>Restart and confirm the <code>utah-crash</code> tools appear</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="your-turn-3" class="slide level2">
+<h2>Your turn</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Activity</strong></p>
+</div>
+<div class="callout-content">
+<p>Ask something that uses the new tools:</p>
+<ul>
+<li>Try: <em>“Plot the 10 deadliest crash locations on a map”</em>
+<ul>
+<li>It reprojects UTM to lat/long</li>
+</ul></li>
+<li>Or: <em>“What does crash severity 4 mean here?”</em>
+<ul>
+<li>It reads the codebook</li>
+</ul></li>
+<li>Notice it now knows things about <strong>this</strong> dataset that it could not have guessed</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="timer_a447a54eb14a0596f0d101b0da4bf7a3cf7a2f69" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">12</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+</section></section>
+<section>
+<section id="managing-context" class="title-slide slide level1 center" data-background-image="../images/undraw_ai-answers_uxgx.svg" data-background-size="auto 50%" data-background-position="82% 85%" data-background-repeat="no-repeat">
+<h1>Managing context</h1>
+
+</section>
+<section id="long-sessions-finite-context" class="slide level2">
+<h2>Long sessions, finite context</h2>
+<ul>
+<li><code>/context</code> shows how full the context window is</li>
+<li><code>/compact</code> summarizes earlier turns so you can keep going</li>
+<li><code>/new</code> starts fresh when you switch to a different task</li>
+</ul>
 </section></section>
 <section id="thanks" class="title-slide slide level1 center">
 <h1>Thanks!</h1>
