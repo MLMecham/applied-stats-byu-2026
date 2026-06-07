@@ -1,4 +1,4 @@
-# 16-debug-crashes.py
+# 15-debug-crashes.py
 # Deck 06: Working in your editor (Debug and fix)
 # Goal: a short crash analysis with several planted bugs. Run each cell in
 # order. When you hit an error, ask Posit Assistant "what went wrong and how do
