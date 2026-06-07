@@ -186,7 +186,7 @@
     "href": "slides/06-working-in-editor.html#your-turn-1",
     "title": "Working in your editor",
     "section": "Your turn",
-    "text": "Your turn\n\n\n\nActivity\n\n\nOpen 16-debug-crashes and run it from the top:\n\nWhen it errors, do not fix it yourself! Ask Posit Assistant “what went wrong?”\nApply the fix, run again, and repeat\nThere is more than one bug, so keep going until it runs clean\n\n\n\n\n\n  \n    −\n    +\n \n 15:00"
+    "text": "Your turn\n\n\n\nActivity\n\n\nOpen 15-debug-crashes and run it from the top:\n\nWhen it errors, do not fix it yourself! Ask Posit Assistant “what went wrong?”\nApply the fix, run again, and repeat\nThere is more than one bug, so keep going until it runs clean\n\n\n\n\n\n  \n    −\n    +\n \n 15:00"
   },
   {
     "objectID": "slides/06-working-in-editor.html#now-you-take-the-wheel",
@@ -238,6 +238,13 @@
     "text": "Your turn\n\n\n\nActivity\n\n\nOpen 14-quiz-game-ui and progressively upgrade the quiz show app:\n\nAdd tool annotations: give each tool an icon and title\nReturn a ContentToolResult with a custom title and icon\nTrack answers and score in reactive value boxes that update from tool calls\n(Optional) Add a “finish round” tool that displays the final score\n\n\n\n\n\n  \n    −\n    +\n \n 15:00"
   },
   {
+    "objectID": "slides/04-beyond-prompts.html#chatting-with-your-data",
+    "href": "slides/04-beyond-prompts.html#chatting-with-your-data",
+    "title": "Beyond prompts",
+    "section": "Chatting with your data",
+    "text": "Chatting with your data\n\nA drop-in Shiny module that turns a data frame into a chat-driven explorer\nThe model writes the SQL or dplyr, and the app runs it!\nExplore querychat on your own"
+  },
+  {
     "objectID": "slides/04-beyond-prompts.html#a-preview-of-day-2",
     "href": "slides/04-beyond-prompts.html#a-preview-of-day-2",
     "title": "Beyond prompts",
@@ -245,25 +252,11 @@
     "text": "A preview of Day 2\n\nModel Context Protocol: a common standard for exposing tools and resources to LLM clients\n\nWrite a server once, use it from many clients (Positron, VS Code, Claude Desktop, …)\n\nAgent: an LLM with a read tool and a write tool\n\nAutonomous, long-context, minimal intervention\n\nWe pick both of these up tomorrow, wiring MCP servers into an AI coding assistant and understanding agents"
   },
   {
-    "objectID": "slides/04-beyond-prompts.html#chatting-with-your-data",
-    "href": "slides/04-beyond-prompts.html#chatting-with-your-data",
-    "title": "Beyond prompts",
-    "section": "Chatting with your data",
-    "text": "Chatting with your data\n\nA drop-in Shiny module that turns a data frame into a chat-driven explorer\nThe model writes the SQL or dplyr, and the app runs it!"
-  },
-  {
-    "objectID": "slides/04-beyond-prompts.html#your-turn-2",
-    "href": "slides/04-beyond-prompts.html#your-turn-2",
-    "title": "Beyond prompts",
-    "section": "Your turn",
-    "text": "Your turn\n\n\n\nActivity\n\n\nOpen 15-querychat and add querychat to an existing Shiny app.\n\n\n\n\n  \n    −\n    +\n \n 10:00"
-  },
-  {
     "objectID": "slides/04-beyond-prompts.html#sitting-with-the-tension",
     "href": "slides/04-beyond-prompts.html#sitting-with-the-tension",
     "title": "Beyond prompts",
     "section": "Sitting with the tension",
-    "text": "Sitting with the tension\n\nI personally am neither an AI booster nor an AI doomer\nHold the promise and the harm at once\nA thoughtful take from Hadley Wickham: “Returning to Life!”"
+    "text": "Sitting with the tension\n\nI personally consider myself neither an AI booster nor an AI doomer\nHold the promise and the harm at once\nA thoughtful take from Hadley Wickham: “Returning to Life!”"
   },
   {
     "objectID": "slides/04-beyond-prompts.html#hopes",
@@ -280,8 +273,8 @@
     "text": "Fears\n\nEnvironmental cost: data-center energy and water\nCopyright: industrial-scale training on others’ work\nWealth concentration toward a few companies\n“Never really learn”: shallow engagement where skills don’t grow\nAccess: premium tools need US dollars, unlike open source tools"
   },
   {
-    "objectID": "slides/04-beyond-prompts.html#your-turn-3",
-    "href": "slides/04-beyond-prompts.html#your-turn-3",
+    "objectID": "slides/04-beyond-prompts.html#your-turn-2",
+    "href": "slides/04-beyond-prompts.html#your-turn-2",
     "title": "Beyond prompts",
     "section": "Your turn",
     "text": "Your turn\n\n\n\nActivity\n\n\n\nWhat is your biggest hope and biggest fear about working with AI?\nDiscuss with a neighbor\n\n\n\n\n\n  \n    −\n    +\n \n 05:00"
@@ -438,7 +431,7 @@
     "href": "slides/01-talking-with-llms.html#set-up-and-verify-api-access",
     "title": "Talking with LLMs via code",
     "section": "Set-up and verify API access",
-    "text": "Set-up and verify API access\n\nHow API keys work\nWhere to put them so the workshop code can find them"
+    "text": "Set-up and verify API access\n\nHow API keys work\nWhere to put them so the workshop code can find them\nPut your Anthropic API key in either .env (Python) or .Renviron (R) in the working directory:\n\nANTHROPIC_API_KEY=your_api_key_here"
   },
   {
     "objectID": "slides/01-talking-with-llms.html#your-turn-1",
