@@ -10,7 +10,7 @@ These are the materials for a two-day workshop at the [50th Summer Institute of 
 
 - **Day 1, Build on AI:** programming with large language models (LLMs) from R and Python using [ellmer](https://ellmer.tidyverse.org/) and [chatlas](https://posit-dev.github.io/chatlas/), covering prompts, token management, structured output, tool calling, retrieval-augmented generation (RAG), and Shiny chat interfaces.
 
-- **Day 2, Build with AI:** using AI coding assistants effectively as a data practitioner, from inline completions to chat-based help to agentic, more autonomous workflows.
+- **Day 2, Build with AI:** using AI coding assistants effectively as a data practitioner, centered on [Posit Assistant](https://posit-dev.github.io/assistant/). Working from a real dataset, we climb from in-editor help (completions, chat, debugging) to steering an agent (plans, project memory, skills, and MCP) to autonomous, reproducible workflows.
 
 No prior AI background is required; the workshop is built for both newcomers and experienced data practitioners.
 
@@ -29,15 +29,19 @@ At the end of this workshop, participants will understand how to:
 
 We will be working locally during the workshop, so please come with a laptop that has the following installed (all available for free):
 
-- A recent version of Python (perhaps installed using [uv](https://docs.astral.sh/uv/guides/install-python/)) and/or R
-    - If you are using Python, create a virtual environment such as via `uv venv`
 - A recent version of [Positron](https://positron.posit.co/download), or optionally if preferred, [RStudio](https://posit.co/download/rstudio-desktop)
-- Clone the [workshop repo](https://github.com/juliasilge/applied-stats-byu-2026)
+- A recent version of Python and/or R
+    - For Python, create a virtual environment for the workshop such as via `uv venv`
+- Clone the [workshop repo](https://github.com/juliasilge/applied-stats-byu-2026) to the laptop you will bring to the workshop
+- [Posit Assistant](https://posit-dev.github.io/assistant/), which is included in recent Positron builds and the RStudio dailies
+- [uv](https://docs.astral.sh/uv/)
+    - This is the easiest way to install and manage Python
+    - We'll use this tool on Day 2 to run a small local MCP server for the assistant, so try to get it installed even if you are only planning on using R for data analysis
 - Install the packages needed for the workshop:
-    - For Python, install the packages listed in `requirements.txt` such as via `uv pip install -r requirements.txt`
-    - For R, install the packages listed in `DESCRIPTION` such as via `pak::local_install_deps()`
+    - For Python, install the packages listed in `requirements.txt` such as with `uv pip install -r requirements.txt`
+    - For R, install the packages listed in `DESCRIPTION` such as with `pak::local_install_deps()`
 
-You will also need API credentials for at least one LLM provider; we will share details closer to the workshop.
+You will also need API credentials for at least one LLM provider; we will make an API key available for folks who do not have one.
 
 ## Schedule
 
@@ -65,7 +69,7 @@ Code files for working along [are available on GitHub](https://github.com/julias
 | 11:45 - 13:30 | *Lunch*                                                              |
 | 13:30 - 14:40 | [Steering and extending](slides/07-steering-extending.html)                    |
 | 14:40 - 15:00 | *Break*                                                             |
-| 15:00 - 16:15 | [Agentic and autonomous workflows](slides/08-agentic-workflows.html)       |
+| 15:00 - 16:15 | [Agentic workflows](slides/08-agentic-workflows.html)       |
 
 ## Instructor bio
 
@@ -74,3 +78,7 @@ Julia Silge is a data scientist and engineering manager at [Posit PBC](https://p
 ## Credits
 
 Illustrations throughout the workshop materials are from [unDraw](https://undraw.co/) and used under their [license](https://undraw.co/license).
+
+The Utah crash dataset is from the [Utah Open Data Portal](https://opendata.utah.gov/Transportation/Utah-Crash-Data-2020/herb-zqda/). 
+
+Demos build on work by [Garrick Aden-Buie](https://github.com/gadenbuie) and are MIT licensed.

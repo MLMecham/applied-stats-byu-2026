@@ -141,7 +141,8 @@ Watch the skill load on its own. You do not have to call it by name!
 
 Wire up the crash MCP server that ships in the repo (`mcp/crash-server.py`):
 
--   Add it to your assistant config, one `uv` command, no Python setup needed
+-   Add it to your assistant config
+-   MCP server requires `uv` but no complex Python setup
 -   Restart and confirm the `utah-crash` tools appear
 :::
 

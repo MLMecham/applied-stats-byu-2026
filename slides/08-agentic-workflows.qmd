@@ -20,34 +20,147 @@ format:
       data-background-repeat: "no-repeat"
 ---
 
-# Agents and plans {background-image="../images/undraw_ai-agent_pdkp.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
-## What is an agent?
+# Hello!
 
-TODO
+<center>
 
-## Planning before doing
+<img src="https://github.com/juliasilge.png" style="border-radius: 50%;" width="300px"/>
 
-TODO
+[{{< fa brands github >}} \@juliasilge](https://github.com/juliasilge)
 
-## Tests as guardrails
+[{{< fa brands bluesky >}} \@juliasilge.com](https://bsky.app/profile/juliasilge.com)
 
-TODO
+[{{< fa link >}} juliasilge.com](https://juliasilge.com/)
 
-## Maintaining control
+</center>
 
-TODO
+## Day 2: Build with AI
 
-## Where to go from here
+1.  Intro to AI coding assistants
+2.  Working in your editor
+3.  Steering and extending
+4.  Agentic workflows (this session!)
 
-TODO
+## The top of the ladder
 
+-   We climbed from web chat to an assistant that plans and uses tools
+-   Now we hand it more rope and let it work more autonomously
+-   And yesterday's question comes back: *how do you know it is doing the right thing?*
+
+# The terminal agent {background-image="../images/undraw_ai-agent_pdkp.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
+
+## Same model, more hands-off
+
+-   `pa` is Posit Assistant in the terminal
+-   Interactive, or **headless**: give it a task and walk away
+-   The most autonomous surface: no editor, just a goal and tools
+
+::: {.callout-note icon=false}
+
+## Demo
+
+```bash
+pa
+```
+
+Watch the loop! It reads, acts, checks the result, and keeps going.
+:::
+
+# How much rope? {background-image="../images/undraw_ai-agent_pdkp.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
+
+## The autonomy dial
+
+-   `/restricted`: confirm **every** tool call
+-   default: ask before risky actions
+-   `/sandbox`: isolate shell commands
+-   `/yolo`: run without asking
+
+## Where should you sit?
+
+-   Read tools are cheap to allow while **write** and **shell** actions are where to be careful
+-   Match autonomy to the stakes: how reversible is a mistake?
+-   High for throwaway exploration, low when it can overwrite or publish
+-   This is the answer to yesterday's question:
+    - *You* choose how much it can do without you
+
+# Staying in control {background-image="../images/undraw_ai-agent_pdkp.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
+
+## Be the reviewer
+
+-   An agent is only useful if it can act, but **you** decide if it acted *right*
+-   Check its claims against the data
+    - Do the counts add up? Does the map use the reprojection?
+-   Tests and validation are guardrails
+    - They catch the agent, and they catch you
+    - Ask the agent to write them, and use them!
+-   This is the antidote to "never really learn"
+    - Stay in the loop, read the plan, review the code
+
+## Reproducible by default
+
+-   `/report` turns the whole conversation into a Quarto document
+-   Code is the most auditable way to explore data with AI
+-   Your exploration is reproducible, not a black box
+
+# Let it build {background-image="../images/undraw_ai-agent_pdkp.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
+
+## Discover, then build
+
+-   The payoff of the whole day! Give the agent a goal and let it deliver
+-   Bring everything you set up: the plan, the memory, the codebook, the reprojection
+
+## Your turn
+
+::: {.callout-note icon=false}
+
+## Activity
+
+Build a crash safety report with the agent:
+
+-   Give it a goal, like *"a short report on when and where severe crashes happen in Utah"*
+-   Let it plan and work more autonomously than before
+-   **Review it:** spot-check a claim against the data, and confirm any map used the reprojection
+-   Save it with `/report` so your work is reproducible
+:::
+
+{{< countdown minutes=20 >}}
 
 # Wrap-up {background-image="../images/undraw_ai-agent_pdkp.svg" background-size="auto 45%" background-position="82% 85%" background-repeat="no-repeat"}
 
--   Feedback survey
--   Resources to keep building
--   Thanks!
+## What we built today
 
+-   From web chat to in-editor help to an agent that plans, uses tools, and builds
+-   One crash dataset, one assistant, the whole climb from assisted to autonomous
+-   The skill that matters most is staying in control
+    - Use context, plans, tests, review
+
+## Sitting with the tension, still
+
+-   We considered the promise *and* the harm at the same time on Day 1, and that has not changed
+-   These tools are powerful, and you now have ways to use them on your terms
+-   Keep learning by staying in the loop, not by handing it the wheel
+
+## Your turn
+
+::: {.callout-note icon=false}
+
+## Activity
+
+-   What is the first thing you will try when you get home?
+-   What is one worry you still have?
+-   Share with a neighbor, then we will hear a few
+:::
+
+{{< countdown minutes=10 >}}
+
+## Keep building
+
+-   [Posit Assistant documentation](https://posit-dev.github.io/assistant/)
+-   [ellmer](https://ellmer.tidyverse.org/) and [chatlas](https://posit-dev.github.io/chatlas/) from Day 1
+-   Hadley Wickham: ["What is an Agent?"](https://tidydesign.substack.com/p/what-is-an-agent) and ["Returning to Life!"](https://tidydesign.substack.com/p/returning-to-life)
+-   The [workshop repo](https://github.com/juliasilge/applied-stats-byu-2026) to revisit anytime
+
+Thank you for spending two days building on AI and with AI!
 
 # Thanks!
 
@@ -64,5 +177,5 @@ TODO
 </center>
 
 ::: footer
-Illustrations from [unDraw](https://undraw.co/) 
+Illustrations from [unDraw](https://undraw.co/)
 :::
