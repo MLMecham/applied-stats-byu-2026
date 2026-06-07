@@ -24,22 +24,32 @@ warm the cache.
 
 ## Wiring it into Posit Assistant
 
-Add this to your project `.positai/settings.json` (run Posit Assistant from the
-workshop repo so the relative path resolves):
+This is already configured in the repo's `.positai/settings.json`:
 
 ```json
 {
   "mcpServers": {
     "utah-crash": {
       "type": "local",
-      "command": ["uv", "run", "mcp/crash-server.py"]
+      "command": ["{env:HOME}/.local/bin/uv", "run",
+                  "https://raw.githubusercontent.com/juliasilge/applied-stats-byu-2026/main/mcp/crash-server.py"]
     }
   }
 }
 ```
 
-Restart Posit Assistant and confirm the `utah-crash` tools appear. Then ask
-something that uses them, for example:
+A few notes on why it looks like that:
+
+- **`uv run` takes the raw GitHub URL**, not a local path. Posit Assistant spawns
+  MCP servers with its own working directory (not your workspace), so a relative
+  path like `mcp/crash-server.py` fails with "No such file or directory." The URL
+  has no path or working-directory dependency, so it works for everyone.
+- **`{env:HOME}/.local/bin/uv`** is the standard `uv` install location. A
+  Finder-launched Positron does not have `~/.local/bin` on its `PATH`, so naming
+  `uv` alone can fail to spawn. Posit Assistant expands `{env:VAR}` in command args.
+
+Restart Posit Assistant and confirm the `utah-crash` tools appear in the Session
+HUD's MCP section. Then ask something that uses them, for example:
 
 - *"What does crash severity 4 mean in this data?"* (uses `crash_codebook`)
 - *"Plot the 10 deadliest crash locations on a map"* (uses `reproject`)
