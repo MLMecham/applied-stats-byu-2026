@@ -25,6 +25,8 @@ website:
             text: "ellmer"
           - href: https://posit-dev.github.io/chatlas/
             text: "chatlas"
+          - href: https://posit-dev.github.io/assistant/
+            text: "Posit Assistant"  
           - href: https://posit.co/products/ai/
             text: "Posit AI"  
 
@@ -43,4 +45,5 @@ format:
     theme:
       - zephyr
       - footer.scss
+    highlight-style: atom-one   
     toc: false
