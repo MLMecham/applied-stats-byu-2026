@@ -2,7 +2,18 @@
   "mcpServers": {
     "utah-crash": {
       "type": "local",
-      "command": ["{env:HOME}/.local/bin/uv", "run", "https://raw.githubusercontent.com/juliasilge/applied-stats-byu-2026/main/mcp/crash-server.py"]
+      "command": [
+        "{env:LOCALAPPDATA}\\Programs\\Python\\Python313\\Scripts\\uv.exe",
+        "run",
+        "https://raw.githubusercontent.com/juliasilge/applied-stats-byu-2026/main/mcp/crash-server.py"
+      ]
+    },
+    "eda-mcp": {
+      "type": "local",
+      "command": [
+        "{env:LOCALAPPDATA}\\Programs\\Python\\Python313\\Scripts\\uvx.exe",
+        "eda-mcp"
+      ]
     }
   }
 }
