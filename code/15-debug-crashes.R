@@ -11,11 +11,11 @@ crashes <- read_parquet(here::here("data/utah-crash-data-2020.parquet"))
 
 # %% Which counties have the most crashes?
 crashes |>
-  count(COUNTY, sort = TRUE)
+  count(COUNTY_NAME, sort = TRUE)
 
 # %% Convert milepoints from miles to kilometers
 crashes |>
-  mutate(milepoint_km = MILEPOINT * 1.60934) |>
+  mutate(milepoint_km = as.numeric(MILEPOINT) * 1.60934) |>
   select(CRASH_ID, MILEPOINT, milepoint_km)
 
 # %% How do crashes vary by hour of day?
@@ -23,6 +23,9 @@ crashes_by_hour <- crashes |>
   mutate(hour = hour(CRASH_DATETIME)) |>
   count(hour)
 
-ggplot(crash_by_hour, aes(x = hour, y = n)) +
+ggplot(crashes_by_hour, aes(x = hour, y = n)) +
   geom_col() +
   labs(x = "Hour of day", y = "Number of crashes")
+
+path = pathlib(__filepath__)
+.parent / "data"
