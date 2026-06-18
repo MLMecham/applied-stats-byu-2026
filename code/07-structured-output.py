@@ -68,15 +68,30 @@ class Ingredient(BaseModel):
     )
 
 
+class Step(BaseModel):
+    instruction: str = Field(..., description="A single step in the recipe")
+    deliciousness_score: int = Field(
+        ...,
+        description="How delicious the dish would be if we stopped cooking at this step, on a scale of 1-10",
+    )
+    deliciousness_change: str = Field(
+        ...,
+        description="A short explanation of how and why the deliciousness score changed from the previous step",
+    )
+
+
 class Recipe(BaseModel):
     title: str
     description: str
     ingredients: List[Ingredient]
-    instructions: List[str] = Field(..., description="Step-by-step instructions")
+    instructions: List[Step] = Field(..., description="Step-by-step instructions")
+
 
 # %% Pass the recipe text and the Pydantic model to get structured output
 chat = chatlas.ChatAnthropic()
-recipe = chat.chat_structured(txt_cheesecake.read_text(), data_model=Recipe)
+recipe = chat.chat_structured(
+    txt_cheesecake.read_text(encoding="utf-8"), data_model=Recipe
+)
 
 # %% We get an instance of the Pydantic model, so you can access fields directly
 recipe.title

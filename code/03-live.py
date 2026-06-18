@@ -6,6 +6,7 @@
 # %% Import packages and create chat
 import chatlas
 import dotenv
+
 dotenv.load_dotenv()
 chat = chatlas.ChatAnthropic()
 
@@ -14,3 +15,5 @@ chat.console()
 
 # %% After a bit, exit the chat and try chatting in a Shiny app.
 chat.app()
+# %%
+print("hello")

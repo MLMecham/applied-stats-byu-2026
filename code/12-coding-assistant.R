@@ -11,21 +11,11 @@ library(ellmer)
 # package to complete the task?
 #
 # **Step 2:** Now, let's add some context. Head over to GitHub repo for {weathR}
-# (link in `docs.R.md`). Copy the project description from the `README.md` and
-# paste it into the `docs.py.md` file.
+# (link in `12-coding-assistant-docs-rstats.md`). Copy the project description
+# from the `README.md` and paste it into `12-coding-assistant-docs-rstats.md`.
 #
 # **Step 3:** Uncomment the extra lines to include these docs in the prompt and
 # try again.
-
-chat <- chat(
-  "anthropic/claude-3-5-sonnet-20241022",
-  echo = "output",
-  system_prompt = brio::read_file(
-    here::here(
-      "_solutions/15_coding-assistant/docs.R.md"
-    )
-  )
-)
 
 chat$chat(
   # Task prompt

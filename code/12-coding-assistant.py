@@ -16,24 +16,25 @@ dotenv.load_dotenv()
 # package to complete the task?
 #
 # **Step 2:** Now, let's add some context. Head over to the GitHub Repo for NWS
-# (link in `docs.py.md`). Copy the project description from the `README.me` and
-# paste it into `docs.py.md`.
+# (link in `12-coding-assistant-docs-py.md`). Copy the project description from
+# the `README.md` and paste it into `12-coding-assistant-docs-py.md`.
 #
 # **Step 3:** Uncomment the extra lines to include these docs in the prompt and
 # try again.
 
 # %% task
-chat = chatlas.ChatAuto("anthropic/claude-3-5-sonnet-20241022")
+chat = chatlas.ChatAuto("anthropic/claude-sonnet-4-6")
 
 chat.chat(
-    # Extra context from package docs
-    here("_solutions/15_coding-assistant/docs.py.md").read_text(),
+    # Step 3: uncomment to add the package docs as context
+    # here("code/12-coding-assistant-docs-py.md").read_text(encoding="utf-8"),
     # Task prompt
     "Write a simple function that takes latitude and longitude as inputs "
     "and returns the weather forecast for that location using the NWS "
     "package. Keep the function concise and simple and don't include error "
     "handling or data re-formatting. Include a short docstring, including "
-    "including examples for NYC and Atlanta, GA.",
+    "examples for NYC and Atlanta, GA."
+    "No new packages",
 )
 
 
@@ -41,5 +42,24 @@ chat.chat(
 # Put the result from the model in code block below to try it out.
 
 # %% results
-import NWS as weather
-# ...
+import requests
+
+
+def get_weather_forecast(lat: float, lon: float) -> dict:
+    """
+        Returns the weather forecast for a given latitude and longitude using
+    the NWS API.
+
+        Examples:
+            NYC:     get_weather_forecast(40.7128, -74.0060)
+            Atlanta: get_weather_forecast(33.7490, -84.3880)
+    """
+    points_url = f"https://api.weather.gov/points/{lat},{lon}"
+    forecast_url = requests.get(points_url).json()["properties"]["forecast"]
+
+    return requests.get(forecast_url).json()["properties"]["periods"]
+
+
+# %%
+
+print(get_weather_forecast(40.7128, -74.0060))

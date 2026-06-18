@@ -16,6 +16,65 @@ from shiny import App, reactive, render, ui
 
 dotenv.load_dotenv()
 
+# Goku power-up effect ---------------------------------------------------------
+# Drop your own files in code/www/: goku.jpg (a .gif animates even better) and
+# powerup.mp3. Or swap these src values for any URL you like.
+GOKU_IMG = "/goku.jpg"
+POWERUP_SOUND = "/powerup.mp3"
+
+powerup_css = ui.tags.style("""
+#powerup-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none; opacity: 0;
+}
+#powerup-overlay .aura {
+  position: absolute; width: 60vmin; height: 60vmin; border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(255,238,130,0.95) 0%, rgba(255,196,0,0.55) 40%, rgba(255,140,0,0) 70%);
+  filter: blur(8px);
+}
+#powerup-overlay img {
+  position: relative; width: min(360px, 60vw);
+  filter: drop-shadow(0 0 20px gold);
+}
+#powerup-overlay.powerup-animate { animation: pu-flash 2s ease-out; }
+#powerup-overlay.powerup-animate .aura { animation: pu-aura 2s ease-out; }
+#powerup-overlay.powerup-animate img {
+  animation: pu-zoom 2s ease-out, pu-shake 90ms linear 0s 14;
+}
+@keyframes pu-flash { 0%{opacity:0;} 12%{opacity:1;} 78%{opacity:1;} 100%{opacity:0;} }
+@keyframes pu-zoom { 0%{transform:scale(.2);} 45%{transform:scale(1.15);} 100%{transform:scale(1);} }
+@keyframes pu-aura {
+  0%{transform:scale(.2);opacity:0;} 40%{transform:scale(1.2);opacity:1;} 100%{transform:scale(1.6);opacity:0;}
+}
+@keyframes pu-shake { 0%,100%{margin-left:0;} 25%{margin-left:-10px;} 75%{margin-left:10px;} }
+""")
+
+powerup_js = ui.tags.script("""
+Shiny.addCustomMessageHandler("powerup", function(message) {
+  var overlay = document.getElementById("powerup-overlay");
+  var audio = document.getElementById("powerup-audio");
+  if (!overlay) return;
+  // Restart the animation even if it just fired.
+  overlay.classList.remove("powerup-animate");
+  void overlay.offsetWidth;
+  overlay.classList.add("powerup-animate");
+  overlay.addEventListener("animationend", function handler() {
+    overlay.classList.remove("powerup-animate");
+    overlay.removeEventListener("animationend", handler);
+  });
+  if (audio) { try { audio.currentTime = 0; audio.play(); } catch (e) {} }
+});
+""")
+
+powerup_overlay = ui.tags.div(
+    ui.tags.div(class_="aura"),
+    ui.tags.img(src=GOKU_IMG, alt="Power up!"),
+    id="powerup-overlay",
+)
+powerup_audio = ui.tags.audio(id="powerup-audio", src=POWERUP_SOUND, preload="auto")
+
 # UI ---------------------------------------------------------------------------
 
 app_ui = ui.page_sidebar(
@@ -36,6 +95,7 @@ app_ui = ui.page_sidebar(
         fillable=True,
         width=400,
     ),
+    ui.head_content(powerup_css, powerup_js),
     ui.navset_card_underline(
         ui.nav_panel(
             "Quiz Game",
@@ -46,6 +106,8 @@ app_ui = ui.page_sidebar(
             ui.output_data_frame("tbl_score"),
         ),
     ),
+    powerup_overlay,
+    powerup_audio,
     title="Quiz Game",
     fillable=True,
 )
@@ -66,7 +128,7 @@ def server(input, output, session):
     client = chatlas.ChatAnthropic(
         model="claude-sonnet-4-6",
         system_prompt=f"""
-{here("code/11-quiz-game-prompt.md").read_text()}
+{here("code/11-quiz-game-prompt.md").read_text(encoding="utf-8")}
 
 After every question, use the "Update Score" tool to keep track of the user's
 score. Be sure to call the tool after you have graded the user's final answer to
@@ -75,6 +137,14 @@ the question.
     )
 
     scores = reactive.value[list[QuestionAnswer]]([])
+    # Bumped on each correct answer; the effect below fires the Goku power-up.
+    powerup = reactive.value(0)
+
+    @reactive.effect
+    async def _powerup():
+        n = powerup()
+        if n > 0:
+            await session.send_custom_message("powerup", {"n": n})
 
     @render.data_frame
     def tbl_score():
@@ -122,6 +192,10 @@ the question.
         val_scores = [*val_scores, answer]
         scores.set(val_scores)
 
+        # Fire the power-up animation + sound on a correct answer.
+        if is_correct:
+            powerup.set(powerup.get() + 1)
+
         correct = len([d for d in val_scores if d["is_correct"]])
         incorrect = len(val_scores) - correct
         return {"correct": correct, "incorrect": incorrect}
@@ -144,4 +218,4 @@ the question.
         chat_ui.update_user_input(value="Let's play the quiz game!", submit=True)
 
 
-app = App(app_ui, server)
+app = App(app_ui, server, static_assets=str(here("code/www")))

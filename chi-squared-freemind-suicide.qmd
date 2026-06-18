@@ -1,0 +1,221 @@
+---
+title: "Chi-Squared Test"
+format:
+  html:
+    toc: true
+    toc-title: "Contents"
+    code-fold: true
+execute:
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+#| echo: false
+
+library(tidyverse)
+library(ggthemes)
+library(knitr)
+
+# Reconstruct observed contingency table from GSS 2021
+my_table <- matrix(
+  c(23, 78,
+    35, 213,
+    42, 371,
+    23, 182,
+     3,  68),
+  nrow = 5, byrow = TRUE,
+  dimnames = list(
+    FreeMind = c("Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"),
+    DishonorableSuicide = c("Yes", "No")
+  )
+)
+
+chi_test    <- chisq.test(my_table)
+expected    <- chi_test$expected
+std_resid   <- chi_test$stdres
+
+freemind_levels <- c("Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree")
+
+data_long <- as.data.frame(my_table) |>
+  rename(FreeMind = FreeMind, DishonorableSuicide = DishonorableSuicide, Count = Freq) |>
+  mutate(FreeMind = factor(FreeMind, levels = freemind_levels))
+```
+
+## Background
+
+::: {.callout-warning}
+This analysis includes sensitive and potentially distressing topics related to mental health and suicide.
+:::
+
+Data taken from GSS Data Explorer 2021 from the **FREEMIND** and **SUICIDE2G** categories.
+
+- **FREEMIND**: *To understand the world, we must free our minds from old traditions and beliefs.* Possible answers were: Strongly Disagree, Disagree, Neutral, Agree, or Strongly Agree.
+
+- **SUICIDE2G**: *Do you think a person has the right to end his or her own life if this person has dishonored his or her family?* Possible answers were: Yes or No.
+
+## Question
+
+Is there a significant association between a person's agreement with the statement *"To understand the world, we must free our minds from old traditions and beliefs"* (FREEMIND) and their belief about whether a person has the right to die by suicide after dishonoring their family (SUICIDE2G)?
+
+The hypotheses are defined as:
+
+$$H_0: \text{Free mindedness and views on suicide after dishonoring one's family are independent.}$$
+
+$$H_a: \text{Free mindedness and views on suicide after dishonoring one's family are associated.}$$
+
+The level of significance for this study is set at $\alpha = 0.05$.
+
+## Analysis
+
+Running the Chi-Squared test below yields a test statistic of **17.45** and a p-value of **0.001582**. This means that Freemindedness and views on suicide after dishonoring one's family are associated. The tables and charts below try to identify how the two factors are associated.
+
+```{r}
+#| label: tbl-chi
+#| tbl-cap: "Pearson's Chi-squared test"
+#| echo: false
+
+tibble(
+  Test       = "Pearson's Chi-squared",
+  Statistic  = round(chi_test$statistic, 2),
+  df         = chi_test$parameter,
+  `P Value`  = round(chi_test$p.value, 6)
+) |>
+  kable(align = "lrrr")
+```
+
+### Table Counts
+
+```{r}
+#| label: tbl-observed
+#| tbl-cap: "Observed Table Values"
+#| echo: false
+
+as.data.frame.matrix(my_table) |>
+  kable()
+```
+
+### Expected Results
+
+```{r}
+#| label: fig-expected
+#| fig-cap: "Expected counts under independence"
+#| echo: false
+
+as.data.frame(expected) |>
+  rename(FreeMind = FreeMind, DishonorableSuicide = DishonorableSuicide, Expected = Freq) |>
+  mutate(FreeMind = factor(FreeMind, levels = rev(freemind_levels))) |>
+  ggplot(aes(x = DishonorableSuicide, y = FreeMind, fill = Expected)) +
+  geom_tile(color = "white") +
+  geom_text(aes(label = round(Expected, 1)), size = 4, fontface = "bold") +
+  scale_fill_gradient(low = "#F7F7F7", high = "#1A759F") +
+  labs(
+    title = "Expected Counts Under Independence",
+    x = "Dishonorable Suicide",
+    y = "Free Mind",
+    fill = "Expected\nCount"
+  ) +
+  theme_fivethirtyeight() +
+  theme(
+    axis.title.x = element_text(margin = margin(t = 15)),
+    axis.title.y = element_text(margin = margin(r = 15))
+  )
+```
+
+### Residuals
+
+```{r}
+#| label: fig-residuals
+#| fig-cap: "Standardized residuals — values beyond ±2 indicate meaningful deviation from independence"
+#| echo: false
+
+as.data.frame(std_resid) |>
+  rename(FreeMind = FreeMind, DishonorableSuicide = DishonorableSuicide, StdResid = Freq) |>
+  mutate(FreeMind = factor(FreeMind, levels = rev(freemind_levels))) |>
+  ggplot(aes(x = DishonorableSuicide, y = FreeMind, fill = StdResid)) +
+  geom_tile(color = "white") +
+  geom_text(aes(label = round(StdResid, 2)), size = 4, fontface = "bold") +
+  scale_fill_gradient2(
+    low = "#1A759F", mid = "white", high = "#D73027",
+    midpoint = 0, limits = c(-4, 4), oob = scales::squish
+  ) +
+  labs(
+    title = "Standardized Residuals",
+    subtitle = "Red = more than expected  |  Blue = fewer than expected",
+    x = "Dishonorable Suicide",
+    y = "Free Mind",
+    fill = "Std.\nResidual"
+  ) +
+  theme_fivethirtyeight() +
+  theme(
+    axis.title.x = element_text(margin = margin(t = 15)),
+    axis.title.y = element_text(margin = margin(r = 15))
+  )
+```
+
+This is the base counts of the two factors. It is noted that far fewer people, regardless of Free minded level, accept suicide for dishonoring one's family. It is likely because even for the most free minded individuals, accepting or promoting suicide remains a culturally taboo topic.
+
+### Counts Graph
+
+```{r}
+#| label: fig-counts
+#| fig-cap: "Observed counts by Free Mind level and Dishonorable Suicide response"
+
+ggplot(data_long, aes(x = fct_rev(FreeMind), y = Count, fill = DishonorableSuicide)) +
+  geom_col(position = "dodge", color = "black") +
+  labs(
+    title = "Free Mind individuals have a high rate of accepting \ndishonorable Suicide",
+    x = "Free Mind",
+    y = "Count",
+    fill = "Dishonorable Suicide"
+  ) +
+  theme_fivethirtyeight() +
+  scale_fill_manual(values = c("#D73027", "#1A759F")) +
+  theme(
+    axis.title.x = element_text(margin = margin(t = 15)),
+    axis.title.y = element_text(margin = margin(r = 15)),
+    legend.position = "top",
+    legend.justification = "right"
+  )
+```
+
+### Percentage Breakdown
+
+```{r}
+#| label: fig-pct
+#| fig-cap: "Row percentages — share of Yes/No responses within each Free Mind level"
+#| echo: false
+
+data_long |>
+  group_by(FreeMind) |>
+  mutate(Pct = Count / sum(Count) * 100) |>
+  ungroup() |>
+  mutate(FreeMind = factor(FreeMind, levels = rev(freemind_levels))) |>
+  ggplot(aes(x = DishonorableSuicide, y = FreeMind, fill = Pct)) +
+  geom_tile(color = "white") +
+  geom_text(aes(label = paste0(round(Pct, 1), "%")), size = 4, fontface = "bold") +
+  scale_fill_gradient(low = "#F7F7F7", high = "#E76F51") +
+  labs(
+    title = "Percentage Breakdown Within Each Free Mind Level",
+    subtitle = "What share of each group answered Yes or No?",
+    x = "Dishonorable Suicide",
+    y = "Free Mind",
+    fill = "% of\nGroup"
+  ) +
+  theme_fivethirtyeight() +
+  theme(
+    axis.title.x = element_text(margin = margin(t = 15)),
+    axis.title.y = element_text(margin = margin(r = 15))
+  )
+```
+
+## Conclusion
+
+Because the p-value from the Chi-Squared test was **0.001582**, there is sufficient evidence to reject the null hypothesis in favor of the alternative that Free mindedness and views on suicide after dishonoring one's family are associated.
+
+As mentioned before, it is difficult to say with certainty why free minded individuals view suicide after family dishonor as a more viable option. Further questions and deeper data collection are needed to better understand the motivations and reasoning behind this association.
+
+One way of seeing the results is that those who strongly agree with free mindedness consider suicide as less morally taboo, promoting personal sovereignty over their body and fate. But something that is contradictory to this would be that if somebody is free minded in the sense that they want to be free from tradition or belief, wouldn't that also include familial expectation? If they believe that those traditions or expectations aren't as important, why would they consider that as reason enough to end their own life? Is their view on suicide unique for this interaction or do they always feel a person should have control over their destiny no matter the circumstances?
+
+This conclusion is nuanced and somewhat paradoxical. Further clarification is needed by the data collectors to fully understand why this interaction occurs.

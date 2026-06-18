@@ -16,7 +16,7 @@ chat <- chat_anthropic(
 )
 
 # Ask the first question:
-chat$chat("In British English, guess the word for the person who lives next door.")
+chat$chat("In BYUI English, guess the word for the person who lives next door.")
 
 # Ask the second question:
 chat$chat("What helps a car move smoothly down the road?")

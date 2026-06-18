@@ -9,5 +9,5 @@ library(ellmer)
 chat <- chat_anthropic()
 chat$chat(
   "I'm at SIAS 2026 to learn about programming with LLMs and ellmer!",
-  "Write a short poem or limerick to celebrate."
+  "Write a short poem to celebrate David Palmer."
 )

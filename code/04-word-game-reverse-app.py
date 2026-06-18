@@ -22,6 +22,7 @@ app_ui = ui.page_fillable(
     ui.chat_ui("chat", placeholder="""Say "Let's play" to get started!""")
 )
 
+
 def server(input, output, session):
     client = chatlas.ChatAnthropic(system_prompt=system_prompt)
     chat = ui.Chat("chat")
@@ -30,5 +31,6 @@ def server(input, output, session):
     async def _(user_input: str):
         response = await client.stream_async(user_input)
         await chat.append_message_stream(response)
+
 
 app = App(app_ui, server)

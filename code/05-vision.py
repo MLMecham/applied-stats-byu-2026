@@ -11,7 +11,7 @@ dotenv.load_dotenv()
 
 # %% Read in some recipe images
 recipe_images = here("data/recipes/images/")
-img_ziti = recipe_images / "ClassicBakedZiti.jpg"
+img_ziti = recipe_images / "SUPERMessage.jpg"
 img_mac_cheese = recipe_images / "CreamyCrockpotMacAndCheese.jpg"
 
 # %% Pass the image to the chat and ask for a recipe title and description

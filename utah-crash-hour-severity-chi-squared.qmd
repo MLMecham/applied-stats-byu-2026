@@ -1,0 +1,276 @@
+---
+title: "Chi-Squared Test: Hour of Day vs. Crash Severity"
+format:
+  html:
+    toc: false
+    code-fold: true
+execute:
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+#| echo: false
+library(tidyverse)
+library(arrow)
+library(ggthemes)
+library(knitr)
+library(lubridate)
+
+df <- read_parquet("data/utah-crash-data-2020.parquet")
+
+freemind_levels <- as.character(0:23)
+
+crash_counts <- df |>
+  mutate(hour = hour(CRASH_DATETIME)) |>
+  filter(!is.na(CRASH_SEVERITY_ID), !is.na(hour)) |>
+  count(hour, CRASH_SEVERITY_ID) |>
+  mutate(CRASH_SEVERITY_ID = factor(CRASH_SEVERITY_ID))
+
+my_table <- crash_counts |>
+  pivot_wider(
+    names_from = CRASH_SEVERITY_ID,
+    values_from = n,
+    values_fill = 0
+  ) |>
+  column_to_rownames("hour") |>
+  as.matrix()
+
+chi_test <- chisq.test(my_table)
+expected <- chi_test$expected
+std_resid <- chi_test$stdres
+
+data_long <- crash_counts |>
+  mutate(
+    section = case_when(
+      hour < 8 ~ "00:00–07:59",
+      hour < 16 ~ "08:00–15:59",
+      TRUE ~ "16:00–23:59"
+    )
+  )
+```
+
+## Background
+
+::: {.callout-warning}
+This analysis includes data on traffic crashes, including serious injuries and fatalities.
+:::
+
+Data is taken from the **Utah Crash Data 2020** dataset, which contains all reported crashes in the state of Utah. Two variables are examined:
+
+- **Hour of Day**: The hour in which a crash occurred, derived from the recorded crash timestamp (0–23).
+
+- **CRASH_SEVERITY_ID**: The severity of the crash on a scale of 1 to 5, where 1 represents property damage only and 5 represents a fatal crash.
+
+::: {.callout-note}
+**Assumption Note:** A standard chi-squared test of independence assumes observations are independent. Hours of the day are inherently sequential and crash rates at adjacent hours are correlated. This assumption is acknowledged as violated — results should be interpreted as exploratory rather than strictly inferential.
+:::
+
+## Question
+
+Is there a significant association between the **hour of day** a crash occurs and the **severity** of that crash?
+
+The hypotheses are defined as:
+
+$$H_0: \text{Hour of day and crash severity are independent.}$$
+
+$$H_a: \text{Hour of day and crash severity are associated.}$$
+
+The level of significance for this study is set at $\alpha = 0.05$.
+
+## Analysis
+
+Running the Chi-Squared test below yields a test statistic of **868.68** and a p-value of **< 0.0001**. This means that hour of day and crash severity are associated. The tables and charts below try to identify how the two factors are associated.
+
+```{r}
+#| label: tbl-chi
+#| tbl-cap: "Pearson's Chi-squared test"
+#| echo: false
+tibble(
+  Test = "Pearson's Chi-squared",
+  Statistic = round(chi_test$statistic, 2),
+  df = chi_test$parameter,
+  `P Value` = formatC(chi_test$p.value, format = "e", digits = 3)
+) |>
+  kable(align = "lrrr")
+```
+
+::: {.panel-tabset}
+
+## Table Counts
+
+```{r}
+#| label: tbl-observed
+#| tbl-cap: "Observed crash counts by hour and severity"
+#| echo: false
+as.data.frame.matrix(my_table) |>
+  kable()
+```
+
+## Expected Results
+
+```{r}
+#| label: fig-expected
+#| fig-cap: "Expected counts under independence — what the table would look like if hour and severity were unrelated"
+#| fig-height: 8
+#| echo: false
+as.data.frame.table(expected) |>
+  rename(Hour = Var1, Severity = Var2, Expected = Freq) |>
+  mutate(Hour = factor(as.integer(as.character(Hour)), levels = rev(0:23))) |>
+  ggplot(aes(x = Severity, y = Hour, fill = Expected)) +
+  geom_tile(color = "white") +
+  geom_text(aes(label = round(Expected, 0)), size = 2.8, fontface = "bold") +
+  scale_fill_gradient(low = "#F7F7F7", high = "#1A759F") +
+  labs(
+    title = "Expected Counts Under Independence",
+    x = "Crash Severity",
+    y = "Hour of Day",
+    fill = "Expected\nCount"
+  ) +
+  theme_fivethirtyeight() +
+  theme(
+    axis.title.x = element_text(margin = margin(t = 15)),
+    axis.title.y = element_text(margin = margin(r = 15))
+  )
+```
+
+## Residuals
+
+```{r}
+#| label: fig-residuals
+#| fig-cap: "Standardized residuals — values beyond ±2 indicate cells that meaningfully deviate from independence"
+#| fig-height: 8
+#| echo: false
+as.data.frame.table(std_resid) |>
+  rename(Hour = Var1, Severity = Var2, StdResid = Freq) |>
+  mutate(Hour = factor(as.integer(as.character(Hour)), levels = rev(0:23))) |>
+  ggplot(aes(x = Severity, y = Hour, fill = StdResid)) +
+  geom_tile(color = "white") +
+  geom_text(aes(label = round(StdResid, 1)), size = 3, fontface = "bold") +
+  scale_fill_gradient2(
+    low = "#1A759F",
+    mid = "white",
+    high = "#D73027",
+    midpoint = 0,
+    limits = c(-10, 10),
+    oob = scales::squish
+  ) +
+  labs(
+    title = "Standardized Residuals: Hour × Severity",
+    subtitle = "Red = more than expected  |  Blue = fewer than expected",
+    x = "Crash Severity",
+    y = "Hour of Day",
+    fill = "Std.\nResidual"
+  ) +
+  theme_fivethirtyeight() +
+  theme(
+    axis.title.x = element_text(margin = margin(t = 15)),
+    axis.title.y = element_text(margin = margin(r = 15))
+  )
+```
+
+:::
+
+This is the base counts of the two factors. It is noted that severity 1 crashes dominate at every hour — minor property-damage crashes make up the vast majority of all reported incidents regardless of time of day. However, the *composition* of severity across hours is what this analysis is sensitive to.
+
+::: {.panel-tabset}
+
+## Counts Graph
+
+```{r}
+#| label: fig-counts
+#| fig-cap: "Observed crash counts by hour and severity level"
+ggplot(data_long, aes(x = factor(hour), y = n, fill = CRASH_SEVERITY_ID)) +
+  geom_col(position = "dodge", color = "black") +
+  labs(
+    title = "Crash counts spike during rush hour\nbut severity stays low",
+    x = "Hour of Day",
+    y = "Count",
+    fill = "Crash Severity"
+  ) +
+  theme_fivethirtyeight() +
+  scale_fill_manual(
+    values = c("#1A759F", "#457B9D", "#E76F51", "#D73027", "#6B0000")
+  ) +
+  theme(
+    axis.title.x = element_text(margin = margin(t = 15)),
+    axis.title.y = element_text(margin = margin(r = 15)),
+    legend.position = "top",
+    legend.justification = "right"
+  )
+```
+
+## Percentage Change Graph
+
+```{r}
+#| label: fig-pct
+#| fig-cap: "% change from overall baseline — how much each hour's severity mix deviates from the average"
+overall_props <- crash_counts |>
+  mutate(
+    SeverityGroup = if_else(
+      CRASH_SEVERITY_ID %in% c("1", "2"),
+      "Minor (1–2)",
+      "Serious (3–5)"
+    )
+  ) |>
+  group_by(SeverityGroup) |>
+  summarise(total = sum(n), .groups = "drop") |>
+  mutate(overall_pct = total / sum(total) * 100)
+
+interpretable <- crash_counts |>
+  mutate(
+    SeverityGroup = if_else(
+      CRASH_SEVERITY_ID %in% c("1", "2"),
+      "Minor (1–2)",
+      "Serious (3–5)"
+    )
+  ) |>
+  group_by(hour, SeverityGroup) |>
+  summarise(n = sum(n), .groups = "drop") |>
+  group_by(hour) |>
+  mutate(pct = n / sum(n) * 100) |>
+  ungroup() |>
+  left_join(
+    overall_props |> select(SeverityGroup, overall_pct),
+    by = "SeverityGroup"
+  ) |>
+  mutate(freq = (pct - overall_pct) / overall_pct * 100)
+
+ggplot(interpretable, aes(x = factor(hour), y = freq, fill = SeverityGroup)) +
+  geom_col(position = "dodge", color = "black", width = 0.7) +
+  geom_hline(yintercept = 0, color = "black", linewidth = 0.5) +
+  labs(
+    title = "Overnight hours have disproportionately\nmore serious crashes",
+    x = "Hour of Day",
+    y = "Percent Change from Baseline",
+    fill = "Severity Group"
+  ) +
+  scale_y_continuous(
+    breaks = seq(-20, 60, 10),
+    labels = paste0(seq(-20, 60, 10), "%")
+  ) +
+  theme_fivethirtyeight() +
+  scale_fill_manual(values = c("#D73027", "#1A759F")) +
+  theme(
+    axis.title.x = element_text(margin = margin(t = 15)),
+    axis.title.y = element_text(margin(r = 15)),
+    legend.position = "top",
+    legend.justification = "right"
+  )
+```
+
+:::
+
+## Conclusion
+
+Because the p-value from the Chi-Squared test was far below $\alpha = 0.05$, there is sufficient evidence to reject the null hypothesis in favor of the alternative that hour of day and crash severity are associated.
+
+That said, with over 252,000 crashes in the dataset, the p-value is essentially guaranteed to be significant — even trivial deviations from independence will produce an enormous test statistic at this sample size. The more useful question is *where* the deviations are, which the residuals answer.
+
+The most striking finding is the contrast between rush hour and overnight. During the morning commute onset — particularly hour 7 — severity 1 crashes are vastly overrepresented (residual +7.3) and severity 3 crashes are the most suppressed in the entire table (−6.7). High-volume, low-severity fender-benders define this window. By contrast, hours 1 through 3 show the opposite: severity 4 and 5 crashes are significantly overrepresented despite far fewer total crashes. This makes intuitive sense — late-night driving tends to involve higher speeds, impairment, and less traffic to absorb impact.
+
+Hour 17 produces an interesting result of its own: severity 2 is the single most overrepresented cell in the entire table (+9.6). The evening rush generates a disproportionate share of moderately injurious crashes compared to both the overnight and midday windows.
+
+One thing that is difficult to fully untangle here is the role of exposure. More crashes happen during rush hour simply because more people are driving. Whether rush hour is genuinely *safer* per trip, or just produces different severities due to lower speeds, is a question this data alone can't fully answer. Further analysis controlling for traffic volume would be needed to separate those effects.
+

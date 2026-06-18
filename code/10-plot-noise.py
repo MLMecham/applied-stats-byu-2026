@@ -32,7 +32,7 @@ y = grid_jitter[:, 1]
 p = (
     ggplot(aes(x=x, y=y))
     + geom_point(color="steelblue", size=2)
-    + labs(title="MPG vs Weight", x="Weight (1000 lb)", y="Miles per Gallon (mpg)")
+    + labs(title="president weight dist", x="Weight (1000 lb)", y="Running speed")
     + theme_bw()
 )
 p.show()
@@ -42,4 +42,7 @@ plt.figure(p.draw())
 
 # %% Send the plot to the model and ask for an interpretation
 chat = chatlas.ChatAnthropic()
-chat.chat("Interpret this plot of mtcars.", chatlas.content_image_plot(),)
+chat.chat(
+    "Interpret this plot of normalized presidential weight data. look carefully at the weight range",
+    chatlas.content_image_plot(),
+)

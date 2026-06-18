@@ -19,7 +19,12 @@ mtcars
 p = (
     ggplot(mtcars, aes(x="wt", y="mpg"))
     + geom_point(color="steelblue", size=2)
-    + labs(title="MPG vs Weight", x="Weight (1000 lb)", y="Miles per Gallon (mpg)")
+    + labs(
+        title="Death to nothing",
+        x="People named Mitch",
+        y="Deaths in Utah",
+        subtitle="all the data is fake, do not use or interpret.",
+    )
     + theme_bw()
 )
 p.show()
@@ -29,4 +34,7 @@ plt.figure(p.draw())
 
 # %% Send the plot to the model and ask for an interpretation
 chat = chatlas.ChatAnthropic()
-chat.chat("Interpret this plot of mtcars.", chatlas.content_image_plot(),)
+chat.chat(
+    "Interpret this plot.",
+    chatlas.content_image_plot(),
+)

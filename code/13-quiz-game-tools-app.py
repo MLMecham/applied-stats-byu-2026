@@ -3,6 +3,7 @@
 # Goal: Shiny quiz show app. We provide a function that plays a sound via
 # playsound; document it well and register it as a tool the model can call.
 
+# from IPython.utils.encoding import encoding
 from pathlib import Path
 from typing import Literal
 
@@ -64,7 +65,7 @@ def server(input, output, session):
     # Set up the chat instance
     client = chatlas.ChatAnthropic(
         model="claude-sonnet-4-6",
-        system_prompt=here("code/11-quiz-game-prompt.md").read_text(),
+        system_prompt=here("code/11-quiz-game-prompt.md").read_text(encoding="utf-8"),
     )
     client.register_tool(play_sound)
 
